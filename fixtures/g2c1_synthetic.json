@@ -1,0 +1,55 @@
+{
+  "schema": "drawbridge.g2c1.synthetic.v1",
+  "task": "SIM-ENG-003-G2C1",
+  "synthetic": true,
+  "classification": "SYNTHETIC / NON-OPERATIONAL / NO BANKING AUTHORITY",
+  "note": "Every identifier and amount below is synthetic. No row stands behind any authorization_id; the label confers no authority. Amounts are decimal strings; expected values are integer cents.",
+  "currency": "USD",
+  "project": {
+    "project_id": "c2c10000-0000-4000-8000-0000000000a1",
+    "project_label": "G2C1 synthetic funding project"
+  },
+  "allocations": [
+    {"allocation_id": "c2c10000-0000-4000-8000-0000000000b1", "label": "G2C1 allocation one"},
+    {"allocation_id": "c2c10000-0000-4000-8000-0000000000b2", "label": "G2C1 allocation two"},
+    {"allocation_id": "c2c10000-0000-4000-8000-0000000000b3", "label": "G2C1 allocation three"}
+  ],
+  "sequences": [
+    {
+      "name": "baseline_three_events",
+      "allocation_id": "c2c10000-0000-4000-8000-0000000000b1",
+      "operations": [
+        {"op": "post_funding", "expected_version": 1, "amount": "500000.00", "authorization_id": "G2C1-AUTH-0001", "idempotency_key": "G2C1-IDEM-0001"},
+        {"op": "post_funding", "expected_version": 2, "amount": "250000.00", "authorization_id": "G2C1-AUTH-0002", "idempotency_key": "G2C1-IDEM-0002"},
+        {"op": "post_funding_reduction", "expected_version": 3, "amount": "100000.00", "authorization_id": "G2C1-AUTH-0003", "idempotency_key": "G2C1-IDEM-0003"}
+      ],
+      "expected": {"event_count": 3, "cash_allocated_cents": 65000000, "project_capital_cents": 65000000, "disbursed_cents": 0}
+    },
+    {
+      "name": "reduce_to_exactly_zero",
+      "allocation_id": "c2c10000-0000-4000-8000-0000000000b2",
+      "operations": [
+        {"op": "post_funding", "expected_version": 1, "amount": "1000.00", "authorization_id": "G2C1-AUTH-0101", "idempotency_key": "G2C1-IDEM-0101"},
+        {"op": "post_funding_reduction", "expected_version": 2, "amount": "1000.00", "authorization_id": "G2C1-AUTH-0102", "idempotency_key": "G2C1-IDEM-0102"}
+      ],
+      "expected": {"event_count": 2, "cash_allocated_cents": 0, "project_capital_cents": 0, "disbursed_cents": 0}
+    }
+  ],
+  "refusals": [
+    {"name": "reduction_exceeds_cash", "allocation_id": "c2c10000-0000-4000-8000-0000000000b3", "setup_funding": "10.00", "amount": "10.01",
+     "expect": {"sqlstate": "DW422", "outcome": "AUTHORITY_REDUCTION_BLOCKED", "reason": "REDUCTION_EXCEEDS_CASH"}}
+  ],
+  "limits": {
+    "max_txn_amount": "99999999999.99",
+    "over_txn_amount": "100000000000.00",
+    "max_balance_abs": "90071992547409.91",
+    "max_balance_abs_cents": 9007199254740991,
+    "max_txn_amount_cents": 9999999999999,
+    "max_postings_before_next_exceeds": 900,
+    "total_of_max_postings": "89999999999991.00",
+    "remainder_to_cap": "71992547418.91",
+    "invalid_amount_texts": ["0", "0.00", "-1.00", "0.001", "1.005", "1e3", "NaN", "Infinity", "-Infinity", "99999999999.991", "100000000000.00", ""]
+  },
+  "invalid_references": ["", "a b", "x;y", "tab\there", "new\nline", "A/B", "uni\u00e9"],
+  "retry": {"max_attempts": 3, "retriable_unique_constraints": ["journal_txn_idempotency_key_uk", "journal_txn_posting_identity_uk", "allocation_event_allocation_version_uk"]}
+}

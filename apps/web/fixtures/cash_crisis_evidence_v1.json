@@ -1,0 +1,1235 @@
+{
+  "amount_unit": "INTEGER_MINOR_UNITS_CENTS",
+  "assumptions": [
+    {
+      "id": "E3-ASM-01",
+      "label": "SYNTHETIC",
+      "subject": "opening_operating_cash",
+      "text": "Opening projected operating cash of $1,050,000.00 is a synthetic forecast input. It is not the project allocation, a wallet balance or a bank balance."
+    },
+    {
+      "id": "E3-ASM-02",
+      "label": "SYNTHETIC",
+      "subject": "owner_draw",
+      "text": "The $2,100,000.00 owner draw is scheduled 2026-11-18. The stress case assumes receipt 2026-11-30, 12 calendar days late. No receivable has been verified."
+    },
+    {
+      "id": "E3-ASM-03",
+      "label": "SYNTHETIC",
+      "subject": "other_receipts",
+      "text": "The five other receipts are planned, unverified synthetic inputs and are identical in both cases."
+    },
+    {
+      "id": "E3-ASM-04",
+      "label": "SYNTHETIC",
+      "subject": "project_spend",
+      "text": "Weekly project spend is an illustrative synthetic input and is identical in both cases."
+    },
+    {
+      "id": "E3-ASM-05",
+      "label": "SYNTHETIC",
+      "subject": "payroll",
+      "text": "Weekly payroll of $60,000.00 is an illustrative synthetic input and is identical in both cases."
+    },
+    {
+      "id": "E3-ASM-06",
+      "label": "SYNTHETIC",
+      "subject": "late_horizon",
+      "text": "Weeks 10 to 13 have incomplete inputs. Their values are illustrative placeholders, not verified projections."
+    },
+    {
+      "id": "E3-ASM-07",
+      "label": "SYNTHETIC",
+      "subject": "forecast_calendar",
+      "text": "The forecast uses calendar weeks from 2026-11-16: the draw falls in week 1 on time and in week 3 when delayed. These week numbers are not comparable with the day-count weeks of the accepted recorded-schedule forecast."
+    },
+    {
+      "id": "E3-ASM-08",
+      "label": "SYNTHETIC",
+      "subject": "requests_not_in_forecast",
+      "text": "The steel, electrical and concrete requests and the separate payable are not executed and are not added to forecast outflows."
+    }
+  ],
+  "capital": {
+    "allocation_cents": 76000000,
+    "available_after_hold_cents": 45000000,
+    "calculated_available_by_scenario_cents": {
+      "S0": 45000000,
+      "S1": 45000000
+    },
+    "concrete_hold_cents": 31000000,
+    "eligibility_demo_reference": {
+      "applied_in_this_model": false,
+      "initial_availability_cents": 30000000,
+      "note": "The accepted eligibility demonstration applies a separate $150,000.00 illustrative reserve and starts from $300,000.00. That reserve is a different accepted assumption and is not applied in this cash-crisis model.",
+      "reserve_cents": 15000000
+    },
+    "hold_application_count": 1,
+    "hold_applications": [
+      {
+        "amount_cents": 31000000,
+        "evidence_ids": [
+          "EV-CONC-001",
+          "EV-CONC-002"
+        ],
+        "obligation_id": "OBL-CONCRETE",
+        "request_id": "REQ-CONC-001"
+      }
+    ],
+    "immediate_request_ids": [
+      "REQ-STEEL-001",
+      "REQ-ELEC-001",
+      "REQ-CONC-001"
+    ],
+    "immediate_requests_cents": 91500000,
+    "new_reservable_by_scenario_cents": {
+      "S0": 45000000,
+      "S1": 0
+    },
+    "nominal_gap_cents": 15500000,
+    "notes": [
+      "Calculated availability is not authority to incur a new commitment and is not a bank balance.",
+      "S0 and S1 have identical calculated availability; S1 has zero new reservable authority by a separate policy bar.",
+      "The accepted eligibility demonstration's separate illustrative reserve is a different assumption and is not applied in this model.",
+      "The separate payable is outside the immediate requests and cannot be released by this simulation.",
+      "Forecast operating cash is a distinct synthetic input; it is not the project allocation."
+    ],
+    "separate_payable_cents": 9000000,
+    "separate_payable_in_immediate_requests": false,
+    "separate_payable_request_ids": [
+      "REQ-ELIG-001"
+    ]
+  },
+  "classification": "SYNTHETIC / NON-OPERATIONAL / NO BANKING AUTHORITY",
+  "controls": {
+    "automated_decision_authority": false,
+    "database_writes": 0,
+    "human_identity_verified": false,
+    "provider_writes": 0,
+    "read_only": true,
+    "real_payment_authority": false,
+    "release_interface_exists": false,
+    "synthetic_only": true
+  },
+  "currency": "USD",
+  "decision_counts": {
+    "S0": {
+      "BLOCKED": 2,
+      "EVIDENCE_ELIGIBLE": 1,
+      "TOTAL": 4,
+      "UNRESOLVED": 1
+    },
+    "S1": {
+      "BLOCKED": 2,
+      "EVIDENCE_ELIGIBLE": 1,
+      "TOTAL": 4,
+      "UNRESOLVED": 1
+    }
+  },
+  "decisions": {
+    "S0": [
+      {
+        "amount_cents": 42000000,
+        "database_writes": 0,
+        "decision_id": "E3-DEC-S0-REQ-STEEL-001",
+        "description": "Disputed steel pay application",
+        "evidence_ids": [
+          "EV-STEEL-001",
+          "EV-STEEL-002"
+        ],
+        "facts": {
+          "change_order_signed": true,
+          "disputed": true,
+          "evidence_complete": false,
+          "prior_transfer_state": "NONE"
+        },
+        "human_approval_required": true,
+        "in_immediate_requests": true,
+        "new_commitment_authority": true,
+        "new_reservation_permitted": false,
+        "obligation_id": "OBL-STEEL",
+        "party": "Steel subcontractor (synthetic)",
+        "provider_writes": 0,
+        "rationale": [
+          "Disputed obligation cannot be cleared.",
+          "No payment release or provider interface exists."
+        ],
+        "release_status": "NOT_AUTHORIZED",
+        "repeat_attempt": "NOT_APPLICABLE",
+        "request_id": "REQ-STEEL-001",
+        "rule_ids": [
+          "E3-RULE-101",
+          "E3-RULE-108"
+        ],
+        "scenario": "S0",
+        "status": "BLOCKED"
+      },
+      {
+        "amount_cents": 18500000,
+        "database_writes": 0,
+        "decision_id": "E3-DEC-S0-REQ-ELEC-001",
+        "description": "Unsigned electrical change order",
+        "evidence_ids": [
+          "EV-ELEC-001"
+        ],
+        "facts": {
+          "change_order_signed": false,
+          "disputed": false,
+          "evidence_complete": true,
+          "prior_transfer_state": "NONE"
+        },
+        "human_approval_required": true,
+        "in_immediate_requests": true,
+        "new_commitment_authority": true,
+        "new_reservation_permitted": false,
+        "obligation_id": "OBL-ELEC-CO",
+        "party": "Electrical subcontractor (synthetic)",
+        "provider_writes": 0,
+        "rationale": [
+          "Unsigned change order blocks eligibility.",
+          "No payment release or provider interface exists."
+        ],
+        "release_status": "NOT_AUTHORIZED",
+        "repeat_attempt": "NOT_APPLICABLE",
+        "request_id": "REQ-ELEC-001",
+        "rule_ids": [
+          "E3-RULE-102",
+          "E3-RULE-108"
+        ],
+        "scenario": "S0",
+        "status": "BLOCKED"
+      },
+      {
+        "amount_cents": 31000000,
+        "database_writes": 0,
+        "decision_id": "E3-DEC-S0-REQ-CONC-001",
+        "description": "Concrete transfer with unresolved prior transfer state",
+        "evidence_ids": [
+          "EV-CONC-001",
+          "EV-CONC-002"
+        ],
+        "facts": {
+          "change_order_signed": true,
+          "disputed": false,
+          "evidence_complete": true,
+          "prior_transfer_state": "UNKNOWN"
+        },
+        "human_approval_required": true,
+        "in_immediate_requests": true,
+        "new_commitment_authority": true,
+        "new_reservation_permitted": false,
+        "obligation_id": "OBL-CONCRETE",
+        "party": "Concrete supplier (synthetic)",
+        "provider_writes": 0,
+        "rationale": [
+          "Unknown prior-transfer state requires investigation.",
+          "A possibly in-flight transfer is never repeated.",
+          "No payment release or provider interface exists."
+        ],
+        "release_status": "NOT_AUTHORIZED",
+        "repeat_attempt": "BLOCKED",
+        "request_id": "REQ-CONC-001",
+        "rule_ids": [
+          "E3-RULE-103",
+          "E3-RULE-104",
+          "E3-RULE-108"
+        ],
+        "scenario": "S0",
+        "status": "UNRESOLVED"
+      },
+      {
+        "amount_cents": 9000000,
+        "database_writes": 0,
+        "decision_id": "E3-DEC-S0-REQ-ELIG-001",
+        "description": "Documented separate payable, review only",
+        "evidence_ids": [
+          "EV-ELIG-001",
+          "EV-ELIG-002"
+        ],
+        "facts": {
+          "change_order_signed": true,
+          "disputed": false,
+          "evidence_complete": true,
+          "prior_transfer_state": "NONE"
+        },
+        "human_approval_required": true,
+        "in_immediate_requests": false,
+        "new_commitment_authority": true,
+        "new_reservation_permitted": true,
+        "obligation_id": "OBL-FRAMING",
+        "party": "Framing subcontractor (synthetic)",
+        "provider_writes": 0,
+        "rationale": [
+          "Evidence complete; human approval still required.",
+          "No payment release or provider interface exists."
+        ],
+        "release_status": "NOT_AUTHORIZED",
+        "repeat_attempt": "NOT_APPLICABLE",
+        "request_id": "REQ-ELIG-001",
+        "rule_ids": [
+          "E3-RULE-106",
+          "E3-RULE-108"
+        ],
+        "scenario": "S0",
+        "status": "EVIDENCE_ELIGIBLE"
+      }
+    ],
+    "S1": [
+      {
+        "amount_cents": 42000000,
+        "database_writes": 0,
+        "decision_id": "E3-DEC-S1-REQ-STEEL-001",
+        "description": "Disputed steel pay application",
+        "evidence_ids": [
+          "EV-STEEL-001",
+          "EV-STEEL-002"
+        ],
+        "facts": {
+          "change_order_signed": true,
+          "disputed": true,
+          "evidence_complete": false,
+          "prior_transfer_state": "NONE"
+        },
+        "human_approval_required": true,
+        "in_immediate_requests": true,
+        "new_commitment_authority": false,
+        "new_reservation_permitted": false,
+        "obligation_id": "OBL-STEEL",
+        "party": "Steel subcontractor (synthetic)",
+        "provider_writes": 0,
+        "rationale": [
+          "Disputed obligation cannot be cleared.",
+          "No payment release or provider interface exists."
+        ],
+        "release_status": "NOT_AUTHORIZED",
+        "repeat_attempt": "NOT_APPLICABLE",
+        "request_id": "REQ-STEEL-001",
+        "rule_ids": [
+          "E3-RULE-101",
+          "E3-RULE-108"
+        ],
+        "scenario": "S1",
+        "status": "BLOCKED"
+      },
+      {
+        "amount_cents": 18500000,
+        "database_writes": 0,
+        "decision_id": "E3-DEC-S1-REQ-ELEC-001",
+        "description": "Unsigned electrical change order",
+        "evidence_ids": [
+          "EV-ELEC-001"
+        ],
+        "facts": {
+          "change_order_signed": false,
+          "disputed": false,
+          "evidence_complete": true,
+          "prior_transfer_state": "NONE"
+        },
+        "human_approval_required": true,
+        "in_immediate_requests": true,
+        "new_commitment_authority": false,
+        "new_reservation_permitted": false,
+        "obligation_id": "OBL-ELEC-CO",
+        "party": "Electrical subcontractor (synthetic)",
+        "provider_writes": 0,
+        "rationale": [
+          "Unsigned change order blocks eligibility.",
+          "No payment release or provider interface exists."
+        ],
+        "release_status": "NOT_AUTHORIZED",
+        "repeat_attempt": "NOT_APPLICABLE",
+        "request_id": "REQ-ELEC-001",
+        "rule_ids": [
+          "E3-RULE-102",
+          "E3-RULE-108"
+        ],
+        "scenario": "S1",
+        "status": "BLOCKED"
+      },
+      {
+        "amount_cents": 31000000,
+        "database_writes": 0,
+        "decision_id": "E3-DEC-S1-REQ-CONC-001",
+        "description": "Concrete transfer with unresolved prior transfer state",
+        "evidence_ids": [
+          "EV-CONC-001",
+          "EV-CONC-002"
+        ],
+        "facts": {
+          "change_order_signed": true,
+          "disputed": false,
+          "evidence_complete": true,
+          "prior_transfer_state": "UNKNOWN"
+        },
+        "human_approval_required": true,
+        "in_immediate_requests": true,
+        "new_commitment_authority": false,
+        "new_reservation_permitted": false,
+        "obligation_id": "OBL-CONCRETE",
+        "party": "Concrete supplier (synthetic)",
+        "provider_writes": 0,
+        "rationale": [
+          "Unknown prior-transfer state requires investigation.",
+          "A possibly in-flight transfer is never repeated.",
+          "No payment release or provider interface exists."
+        ],
+        "release_status": "NOT_AUTHORIZED",
+        "repeat_attempt": "BLOCKED",
+        "request_id": "REQ-CONC-001",
+        "rule_ids": [
+          "E3-RULE-103",
+          "E3-RULE-104",
+          "E3-RULE-108"
+        ],
+        "scenario": "S1",
+        "status": "UNRESOLVED"
+      },
+      {
+        "amount_cents": 9000000,
+        "database_writes": 0,
+        "decision_id": "E3-DEC-S1-REQ-ELIG-001",
+        "description": "Documented separate payable, review only",
+        "evidence_ids": [
+          "EV-ELIG-001",
+          "EV-ELIG-002"
+        ],
+        "facts": {
+          "change_order_signed": true,
+          "disputed": false,
+          "evidence_complete": true,
+          "prior_transfer_state": "NONE"
+        },
+        "human_approval_required": true,
+        "in_immediate_requests": false,
+        "new_commitment_authority": false,
+        "new_reservation_permitted": false,
+        "obligation_id": "OBL-FRAMING",
+        "party": "Framing subcontractor (synthetic)",
+        "provider_writes": 0,
+        "rationale": [
+          "Evidence complete; human approval still required.",
+          "No new commitment authority in this scenario.",
+          "No payment release or provider interface exists."
+        ],
+        "release_status": "NOT_AUTHORIZED",
+        "repeat_attempt": "NOT_APPLICABLE",
+        "request_id": "REQ-ELIG-001",
+        "rule_ids": [
+          "E3-RULE-106",
+          "E3-RULE-107",
+          "E3-RULE-108"
+        ],
+        "scenario": "S1",
+        "status": "EVIDENCE_ELIGIBLE"
+      }
+    ]
+  },
+  "draw": {
+    "amount_cents": 210000000,
+    "basis": "SYNTHETIC_ASSUMPTION",
+    "delay_days": 12,
+    "delayed_date": "2026-11-30",
+    "delayed_week": 3,
+    "evidence_id": "EV-DRAW-001",
+    "on_time_week": 1,
+    "receipt_id": "R-OWNER-DRAW",
+    "scheduled_date": "2026-11-18",
+    "status": "ILLUSTRATIVE_NOT_VERIFIED"
+  },
+  "events": [
+    {
+      "evidence_ids": [
+        "EV-DRAW-001"
+      ],
+      "finding": "The stress case moves the $2,100,000.00 draw 12 calendar days later; the synthetic cash forecast is recomputed.",
+      "id": "INC-01",
+      "prev_sha256": "0000000000000000000000000000000000000000000000000000000000000000",
+      "role": "TREASURY",
+      "sequence": 1,
+      "sha256": "d0fe6087e68365ac16a7c87ab85ef62fd305dc9ffc3b9b9eb4461352cffd9626",
+      "title": "Owner draw expected",
+      "type": "FUNDING",
+      "when": "2026-11-18"
+    },
+    {
+      "evidence_ids": [
+        "EV-STEEL-001",
+        "EV-STEEL-002"
+      ],
+      "finding": "The $420,000.00 steel pay application is disputed; eligibility is blocked by E3-RULE-101.",
+      "id": "INC-02",
+      "prev_sha256": "d0fe6087e68365ac16a7c87ab85ef62fd305dc9ffc3b9b9eb4461352cffd9626",
+      "role": "PAYMASTER",
+      "sequence": 2,
+      "sha256": "13056df59ade49ebf8ed5c5f1ca6ae83dd9a32bd9fc681312bc6253425caa152",
+      "title": "Steel application disputed",
+      "type": "DISPUTE",
+      "when": "2026-11-19"
+    },
+    {
+      "evidence_ids": [
+        "EV-ELEC-001"
+      ],
+      "finding": "The $185,000.00 electrical exposure requires a signed change order; E3-RULE-102 blocks it.",
+      "id": "INC-03",
+      "prev_sha256": "13056df59ade49ebf8ed5c5f1ca6ae83dd9a32bd9fc681312bc6253425caa152",
+      "role": "PRECON",
+      "sequence": 3,
+      "sha256": "677f7f487a7e82c7fbcc1e00f566e02955bd13d10d9284ab9afbe7c9c1600eb7",
+      "title": "Electrical change not signed",
+      "type": "CHANGE_ORDER",
+      "when": "2026-11-20"
+    },
+    {
+      "evidence_ids": [
+        "EV-CONC-001",
+        "EV-CONC-002"
+      ],
+      "finding": "The state of the $310,000.00 concrete transfer is unknown. One allocation hold of $310,000.00 is applied; a repeat attempt is blocked. Provider writes: zero.",
+      "id": "INC-04",
+      "prev_sha256": "677f7f487a7e82c7fbcc1e00f566e02955bd13d10d9284ab9afbe7c9c1600eb7",
+      "role": "PAYMASTER",
+      "sequence": 4,
+      "sha256": "f625ab9f14ae10a1b3edcb9d46c8708d8ddc13570f6b9c2d1158c293851a1823",
+      "title": "Concrete resend refused",
+      "type": "DUPLICATE_RISK",
+      "when": "2026-11-20"
+    },
+    {
+      "evidence_ids": [
+        "EV-DRAW-001"
+      ],
+      "finding": "The illustrative delayed case reaches a projected minimum of -$1,300,000.00 in week 2, a funding requirement of a synthetic unfinanced path; a funding plan is needed, not payment authority.",
+      "id": "INC-05",
+      "prev_sha256": "f625ab9f14ae10a1b3edcb9d46c8708d8ddc13570f6b9c2d1158c293851a1823",
+      "role": "PROJECT CFO",
+      "sequence": 5,
+      "sha256": "f44f8b35e0525592cdb802e5c59447a0ca644542411b7c4538fa1d3d8b3b8c33",
+      "title": "Week-two projected liquidity gap",
+      "type": "CASH_CRISIS",
+      "when": "2026-11-23"
+    },
+    {
+      "evidence_ids": [
+        "EV-DRAW-001"
+      ],
+      "finding": "The scenario models the $2,100,000.00 receipt on 2026-11-30; this is not a verified bank event.",
+      "id": "INC-06",
+      "prev_sha256": "f44f8b35e0525592cdb802e5c59447a0ca644542411b7c4538fa1d3d8b3b8c33",
+      "role": "TREASURY",
+      "sequence": 6,
+      "sha256": "3dbd1bff4908a1963776ac34dd9b9c82e41423db6aa2eb47e6490f98cb162ac1",
+      "title": "Delayed draw modeled",
+      "type": "RECEIPT",
+      "when": "2026-11-30"
+    }
+  ],
+  "evidence": [
+    {
+      "detail": "$2,100,000.00 scheduled 2026-11-18; the stress case assumes receipt 2026-11-30, 12 calendar days late. No actual receivable verified.",
+      "id": "EV-DRAW-001",
+      "kind": "Schedule",
+      "status": "SYNTHETIC",
+      "title": "Owner draw schedule"
+    },
+    {
+      "detail": "$420,000.00 requested. The dispute flag is unresolved; the obligation cannot be cleared.",
+      "id": "EV-STEEL-001",
+      "kind": "Pay application",
+      "status": "DISPUTED",
+      "title": "Steel pay application"
+    },
+    {
+      "detail": "The reported steel scope variance has no resolved signed disposition. Synthetic documentary claim only.",
+      "id": "EV-STEEL-002",
+      "kind": "Project correspondence",
+      "status": "OPEN",
+      "title": "Steel scope issue"
+    },
+    {
+      "detail": "$185,000.00 of proposed scope has not received the required signed approval.",
+      "id": "EV-ELEC-001",
+      "kind": "Change order",
+      "status": "UNSIGNED",
+      "title": "Electrical change order"
+    },
+    {
+      "detail": "A $310,000.00 transfer may already be pending; its provider state has not been checked. The transfer must not be repeated.",
+      "id": "EV-CONC-001",
+      "kind": "Transfer evidence",
+      "status": "UNKNOWN",
+      "title": "Concrete transfer reference"
+    },
+    {
+      "detail": "$310,000.00 is held once against the $760,000.00 project allocation, leaving $450,000.00 before any further policy bar.",
+      "id": "EV-CONC-002",
+      "kind": "Capital control",
+      "status": "HELD",
+      "title": "Concrete allocation hold"
+    },
+    {
+      "detail": "A separate $90,000.00 illustrative payable, outside the three incident requests that total $915,000.00.",
+      "id": "EV-ELIG-001",
+      "kind": "Invoice",
+      "status": "DOCUMENTED",
+      "title": "Framing payable invoice"
+    },
+    {
+      "detail": "Complete synthetic documentation. Human authorization and provider execution remain unavailable.",
+      "id": "EV-ELIG-002",
+      "kind": "Approval evidence",
+      "status": "DOCUMENTED",
+      "title": "Framing payable approval packet"
+    }
+  ],
+  "findings": [
+    {
+      "boundary": "No payment authority.",
+      "evidence_ids": [
+        "EV-ELEC-001"
+      ],
+      "finding": "The $185,000.00 electrical change lacks a signed approval.",
+      "role": "PRECON"
+    },
+    {
+      "boundary": "Forecast inputs are synthetic, not verified actuals.",
+      "evidence_ids": [
+        "EV-DRAW-001"
+      ],
+      "finding": "Projected gross profit of $3,200,000.00 does not prevent a $1,300,000.00 projected short-term funding requirement under the synthetic stress inputs.",
+      "role": "PROJECT CFO"
+    },
+    {
+      "boundary": "Operating cash in the forecast is not allocation authority.",
+      "evidence_ids": [
+        "EV-DRAW-001"
+      ],
+      "finding": "A 12-day delay moves the $2,100,000.00 modeled owner receipt from week 1 to week 3.",
+      "role": "TREASURY"
+    },
+    {
+      "boundary": "Zero provider writes; no release command exists.",
+      "evidence_ids": [
+        "EV-STEEL-001",
+        "EV-CONC-001"
+      ],
+      "finding": "Disputed steel is blocked; a repeat of the concrete transfer is stopped until the transfer state is resolved.",
+      "role": "PAYMASTER"
+    }
+  ],
+  "fixture": {
+    "fixture_id": "E3-SYNTH-DB-DEMO-001",
+    "path": "fixtures/cash_crisis_synthetic_v1.json",
+    "sha256": "2e9aa15bf2b980d6976fa57619c6f4656874b82c70504a7a339d532b3946c559"
+  },
+  "forecast_inputs": {
+    "opening_basis": "SYNTHETIC_ASSUMPTION",
+    "opening_operating_cash_cents": 105000000,
+    "other_receipts": [
+      {
+        "amount_cents": 120000000,
+        "basis": "SYNTHETIC_ASSUMPTION",
+        "date": "2026-12-07",
+        "id": "R-W04",
+        "status": "PLANNED_UNVERIFIED"
+      },
+      {
+        "amount_cents": 110000000,
+        "basis": "SYNTHETIC_ASSUMPTION",
+        "date": "2026-12-21",
+        "id": "R-W06",
+        "status": "PLANNED_UNVERIFIED"
+      },
+      {
+        "amount_cents": 120000000,
+        "basis": "SYNTHETIC_ASSUMPTION",
+        "date": "2027-01-04",
+        "id": "R-W08",
+        "status": "PLANNED_UNVERIFIED"
+      },
+      {
+        "amount_cents": 110000000,
+        "basis": "SYNTHETIC_ASSUMPTION",
+        "date": "2027-01-18",
+        "id": "R-W10",
+        "status": "PLANNED_UNVERIFIED"
+      },
+      {
+        "amount_cents": 100000000,
+        "basis": "SYNTHETIC_ASSUMPTION",
+        "date": "2027-02-01",
+        "id": "R-W12",
+        "status": "PLANNED_UNVERIFIED"
+      }
+    ],
+    "start_date": "2026-11-16",
+    "weeks": 13
+  },
+  "forecasts": {
+    "delayed": {
+      "case": "delayed",
+      "draw_date": "2026-11-30",
+      "draw_week": 3,
+      "ending_cash_cents": 163500000,
+      "first_negative_week": 1,
+      "funding_gap_basis": "PROJECTED_FUNDING_REQUIREMENT_OF_SYNTHETIC_UNFINANCED_PATH",
+      "incomplete_weeks": [
+        10,
+        11,
+        12,
+        13
+      ],
+      "limitations": [
+        "Projection of a synthetic unfinanced cash path; a negative value is a projected funding requirement, not an observed overdraft, loss, bank balance or contractual fact.",
+        "The steel, electrical and concrete requests and the separate payable are not executed and are not in forecast outflows; operating costs are separate illustrative inputs.",
+        "Weeks 10 to 13 have incomplete inputs; their values are illustrative placeholders, not verified projections.",
+        "Opening cash, other receipts, project spend and payroll are synthetic and unverified; no live bank balance is represented."
+      ],
+      "minimum_closing_cents": -130000000,
+      "negative_week_count": 2,
+      "opening_cash_cents": 105000000,
+      "peak_projected_funding_gap_cents": 130000000,
+      "rows": [
+        {
+          "basis": "SYNTHETIC_ASSUMPTION",
+          "closing_cents": -30000000,
+          "end": "2026-11-22",
+          "negative": true,
+          "opening_cents": 105000000,
+          "other_receipts_cents": 0,
+          "outflows_cents": 135000000,
+          "owner_draw_receipt_cents": 0,
+          "payroll_cents": 6000000,
+          "project_spend_cents": 129000000,
+          "quality": "ILLUSTRATIVE",
+          "receipt_ids": [],
+          "receipts_cents": 0,
+          "start": "2026-11-16",
+          "week": 1
+        },
+        {
+          "basis": "SYNTHETIC_ASSUMPTION",
+          "closing_cents": -130000000,
+          "end": "2026-11-29",
+          "negative": true,
+          "opening_cents": -30000000,
+          "other_receipts_cents": 0,
+          "outflows_cents": 100000000,
+          "owner_draw_receipt_cents": 0,
+          "payroll_cents": 6000000,
+          "project_spend_cents": 94000000,
+          "quality": "ILLUSTRATIVE",
+          "receipt_ids": [],
+          "receipts_cents": 0,
+          "start": "2026-11-23",
+          "week": 2
+        },
+        {
+          "basis": "SYNTHETIC_ASSUMPTION",
+          "closing_cents": 5000000,
+          "end": "2026-12-06",
+          "negative": false,
+          "opening_cents": -130000000,
+          "other_receipts_cents": 0,
+          "outflows_cents": 75000000,
+          "owner_draw_receipt_cents": 210000000,
+          "payroll_cents": 6000000,
+          "project_spend_cents": 69000000,
+          "quality": "ILLUSTRATIVE",
+          "receipt_ids": [
+            "R-OWNER-DRAW"
+          ],
+          "receipts_cents": 210000000,
+          "start": "2026-11-30",
+          "week": 3
+        },
+        {
+          "basis": "SYNTHETIC_ASSUMPTION",
+          "closing_cents": 63000000,
+          "end": "2026-12-13",
+          "negative": false,
+          "opening_cents": 5000000,
+          "other_receipts_cents": 120000000,
+          "outflows_cents": 62000000,
+          "owner_draw_receipt_cents": 0,
+          "payroll_cents": 6000000,
+          "project_spend_cents": 56000000,
+          "quality": "ILLUSTRATIVE",
+          "receipt_ids": [
+            "R-W04"
+          ],
+          "receipts_cents": 120000000,
+          "start": "2026-12-07",
+          "week": 4
+        },
+        {
+          "basis": "SYNTHETIC_ASSUMPTION",
+          "closing_cents": 4000000,
+          "end": "2026-12-20",
+          "negative": false,
+          "opening_cents": 63000000,
+          "other_receipts_cents": 0,
+          "outflows_cents": 59000000,
+          "owner_draw_receipt_cents": 0,
+          "payroll_cents": 6000000,
+          "project_spend_cents": 53000000,
+          "quality": "ILLUSTRATIVE",
+          "receipt_ids": [],
+          "receipts_cents": 0,
+          "start": "2026-12-14",
+          "week": 5
+        },
+        {
+          "basis": "SYNTHETIC_ASSUMPTION",
+          "closing_cents": 53000000,
+          "end": "2026-12-27",
+          "negative": false,
+          "opening_cents": 4000000,
+          "other_receipts_cents": 110000000,
+          "outflows_cents": 61000000,
+          "owner_draw_receipt_cents": 0,
+          "payroll_cents": 6000000,
+          "project_spend_cents": 55000000,
+          "quality": "ILLUSTRATIVE",
+          "receipt_ids": [
+            "R-W06"
+          ],
+          "receipts_cents": 110000000,
+          "start": "2026-12-21",
+          "week": 6
+        },
+        {
+          "basis": "SYNTHETIC_ASSUMPTION",
+          "closing_cents": 5000000,
+          "end": "2027-01-03",
+          "negative": false,
+          "opening_cents": 53000000,
+          "other_receipts_cents": 0,
+          "outflows_cents": 48000000,
+          "owner_draw_receipt_cents": 0,
+          "payroll_cents": 6000000,
+          "project_spend_cents": 42000000,
+          "quality": "ILLUSTRATIVE",
+          "receipt_ids": [],
+          "receipts_cents": 0,
+          "start": "2026-12-28",
+          "week": 7
+        },
+        {
+          "basis": "SYNTHETIC_ASSUMPTION",
+          "closing_cents": 85000000,
+          "end": "2027-01-10",
+          "negative": false,
+          "opening_cents": 5000000,
+          "other_receipts_cents": 120000000,
+          "outflows_cents": 40000000,
+          "owner_draw_receipt_cents": 0,
+          "payroll_cents": 6000000,
+          "project_spend_cents": 34000000,
+          "quality": "ILLUSTRATIVE",
+          "receipt_ids": [
+            "R-W08"
+          ],
+          "receipts_cents": 120000000,
+          "start": "2027-01-04",
+          "week": 8
+        },
+        {
+          "basis": "SYNTHETIC_ASSUMPTION",
+          "closing_cents": 49000000,
+          "end": "2027-01-17",
+          "negative": false,
+          "opening_cents": 85000000,
+          "other_receipts_cents": 0,
+          "outflows_cents": 36000000,
+          "owner_draw_receipt_cents": 0,
+          "payroll_cents": 6000000,
+          "project_spend_cents": 30000000,
+          "quality": "ILLUSTRATIVE",
+          "receipt_ids": [],
+          "receipts_cents": 0,
+          "start": "2027-01-11",
+          "week": 9
+        },
+        {
+          "basis": "SYNTHETIC_ASSUMPTION",
+          "closing_cents": 128000000,
+          "end": "2027-01-24",
+          "negative": false,
+          "opening_cents": 49000000,
+          "other_receipts_cents": 110000000,
+          "outflows_cents": 31000000,
+          "owner_draw_receipt_cents": 0,
+          "payroll_cents": 6000000,
+          "project_spend_cents": 25000000,
+          "quality": "INCOMPLETE_LATE_HORIZON",
+          "receipt_ids": [
+            "R-W10"
+          ],
+          "receipts_cents": 110000000,
+          "start": "2027-01-18",
+          "week": 10
+        },
+        {
+          "basis": "SYNTHETIC_ASSUMPTION",
+          "closing_cents": 103000000,
+          "end": "2027-01-31",
+          "negative": false,
+          "opening_cents": 128000000,
+          "other_receipts_cents": 0,
+          "outflows_cents": 25000000,
+          "owner_draw_receipt_cents": 0,
+          "payroll_cents": 6000000,
+          "project_spend_cents": 19000000,
+          "quality": "INCOMPLETE_LATE_HORIZON",
+          "receipt_ids": [],
+          "receipts_cents": 0,
+          "start": "2027-01-25",
+          "week": 11
+        },
+        {
+          "basis": "SYNTHETIC_ASSUMPTION",
+          "closing_cents": 181500000,
+          "end": "2027-02-07",
+          "negative": false,
+          "opening_cents": 103000000,
+          "other_receipts_cents": 100000000,
+          "outflows_cents": 21500000,
+          "owner_draw_receipt_cents": 0,
+          "payroll_cents": 6000000,
+          "project_spend_cents": 15500000,
+          "quality": "INCOMPLETE_LATE_HORIZON",
+          "receipt_ids": [
+            "R-W12"
+          ],
+          "receipts_cents": 100000000,
+          "start": "2027-02-01",
+          "week": 12
+        },
+        {
+          "basis": "SYNTHETIC_ASSUMPTION",
+          "closing_cents": 163500000,
+          "end": "2027-02-14",
+          "negative": false,
+          "opening_cents": 181500000,
+          "other_receipts_cents": 0,
+          "outflows_cents": 18000000,
+          "owner_draw_receipt_cents": 0,
+          "payroll_cents": 6000000,
+          "project_spend_cents": 12000000,
+          "quality": "INCOMPLETE_LATE_HORIZON",
+          "receipt_ids": [],
+          "receipts_cents": 0,
+          "start": "2027-02-08",
+          "week": 13
+        }
+      ],
+      "total_outflows_cents": 711500000,
+      "total_receipts_cents": 770000000,
+      "worst_week": 2
+    },
+    "on_time": {
+      "case": "on_time",
+      "draw_date": "2026-11-18",
+      "draw_week": 1,
+      "ending_cash_cents": 163500000,
+      "first_negative_week": null,
+      "funding_gap_basis": "PROJECTED_FUNDING_REQUIREMENT_OF_SYNTHETIC_UNFINANCED_PATH",
+      "incomplete_weeks": [
+        10,
+        11,
+        12,
+        13
+      ],
+      "limitations": [
+        "Projection of a synthetic unfinanced cash path; a negative value is a projected funding requirement, not an observed overdraft, loss, bank balance or contractual fact.",
+        "The steel, electrical and concrete requests and the separate payable are not executed and are not in forecast outflows; operating costs are separate illustrative inputs.",
+        "Weeks 10 to 13 have incomplete inputs; their values are illustrative placeholders, not verified projections.",
+        "Opening cash, other receipts, project spend and payroll are synthetic and unverified; no live bank balance is represented."
+      ],
+      "minimum_closing_cents": 4000000,
+      "negative_week_count": 0,
+      "opening_cash_cents": 105000000,
+      "peak_projected_funding_gap_cents": 0,
+      "rows": [
+        {
+          "basis": "SYNTHETIC_ASSUMPTION",
+          "closing_cents": 180000000,
+          "end": "2026-11-22",
+          "negative": false,
+          "opening_cents": 105000000,
+          "other_receipts_cents": 0,
+          "outflows_cents": 135000000,
+          "owner_draw_receipt_cents": 210000000,
+          "payroll_cents": 6000000,
+          "project_spend_cents": 129000000,
+          "quality": "ILLUSTRATIVE",
+          "receipt_ids": [
+            "R-OWNER-DRAW"
+          ],
+          "receipts_cents": 210000000,
+          "start": "2026-11-16",
+          "week": 1
+        },
+        {
+          "basis": "SYNTHETIC_ASSUMPTION",
+          "closing_cents": 80000000,
+          "end": "2026-11-29",
+          "negative": false,
+          "opening_cents": 180000000,
+          "other_receipts_cents": 0,
+          "outflows_cents": 100000000,
+          "owner_draw_receipt_cents": 0,
+          "payroll_cents": 6000000,
+          "project_spend_cents": 94000000,
+          "quality": "ILLUSTRATIVE",
+          "receipt_ids": [],
+          "receipts_cents": 0,
+          "start": "2026-11-23",
+          "week": 2
+        },
+        {
+          "basis": "SYNTHETIC_ASSUMPTION",
+          "closing_cents": 5000000,
+          "end": "2026-12-06",
+          "negative": false,
+          "opening_cents": 80000000,
+          "other_receipts_cents": 0,
+          "outflows_cents": 75000000,
+          "owner_draw_receipt_cents": 0,
+          "payroll_cents": 6000000,
+          "project_spend_cents": 69000000,
+          "quality": "ILLUSTRATIVE",
+          "receipt_ids": [],
+          "receipts_cents": 0,
+          "start": "2026-11-30",
+          "week": 3
+        },
+        {
+          "basis": "SYNTHETIC_ASSUMPTION",
+          "closing_cents": 63000000,
+          "end": "2026-12-13",
+          "negative": false,
+          "opening_cents": 5000000,
+          "other_receipts_cents": 120000000,
+          "outflows_cents": 62000000,
+          "owner_draw_receipt_cents": 0,
+          "payroll_cents": 6000000,
+          "project_spend_cents": 56000000,
+          "quality": "ILLUSTRATIVE",
+          "receipt_ids": [
+            "R-W04"
+          ],
+          "receipts_cents": 120000000,
+          "start": "2026-12-07",
+          "week": 4
+        },
+        {
+          "basis": "SYNTHETIC_ASSUMPTION",
+          "closing_cents": 4000000,
+          "end": "2026-12-20",
+          "negative": false,
+          "opening_cents": 63000000,
+          "other_receipts_cents": 0,
+          "outflows_cents": 59000000,
+          "owner_draw_receipt_cents": 0,
+          "payroll_cents": 6000000,
+          "project_spend_cents": 53000000,
+          "quality": "ILLUSTRATIVE",
+          "receipt_ids": [],
+          "receipts_cents": 0,
+          "start": "2026-12-14",
+          "week": 5
+        },
+        {
+          "basis": "SYNTHETIC_ASSUMPTION",
+          "closing_cents": 53000000,
+          "end": "2026-12-27",
+          "negative": false,
+          "opening_cents": 4000000,
+          "other_receipts_cents": 110000000,
+          "outflows_cents": 61000000,
+          "owner_draw_receipt_cents": 0,
+          "payroll_cents": 6000000,
+          "project_spend_cents": 55000000,
+          "quality": "ILLUSTRATIVE",
+          "receipt_ids": [
+            "R-W06"
+          ],
+          "receipts_cents": 110000000,
+          "start": "2026-12-21",
+          "week": 6
+        },
+        {
+          "basis": "SYNTHETIC_ASSUMPTION",
+          "closing_cents": 5000000,
+          "end": "2027-01-03",
+          "negative": false,
+          "opening_cents": 53000000,
+          "other_receipts_cents": 0,
+          "outflows_cents": 48000000,
+          "owner_draw_receipt_cents": 0,
+          "payroll_cents": 6000000,
+          "project_spend_cents": 42000000,
+          "quality": "ILLUSTRATIVE",
+          "receipt_ids": [],
+          "receipts_cents": 0,
+          "start": "2026-12-28",
+          "week": 7
+        },
+        {
+          "basis": "SYNTHETIC_ASSUMPTION",
+          "closing_cents": 85000000,
+          "end": "2027-01-10",
+          "negative": false,
+          "opening_cents": 5000000,
+          "other_receipts_cents": 120000000,
+          "outflows_cents": 40000000,
+          "owner_draw_receipt_cents": 0,
+          "payroll_cents": 6000000,
+          "project_spend_cents": 34000000,
+          "quality": "ILLUSTRATIVE",
+          "receipt_ids": [
+            "R-W08"
+          ],
+          "receipts_cents": 120000000,
+          "start": "2027-01-04",
+          "week": 8
+        },
+        {
+          "basis": "SYNTHETIC_ASSUMPTION",
+          "closing_cents": 49000000,
+          "end": "2027-01-17",
+          "negative": false,
+          "opening_cents": 85000000,
+          "other_receipts_cents": 0,
+          "outflows_cents": 36000000,
+          "owner_draw_receipt_cents": 0,
+          "payroll_cents": 6000000,
+          "project_spend_cents": 30000000,
+          "quality": "ILLUSTRATIVE",
+          "receipt_ids": [],
+          "receipts_cents": 0,
+          "start": "2027-01-11",
+          "week": 9
+        },
+        {
+          "basis": "SYNTHETIC_ASSUMPTION",
+          "closing_cents": 128000000,
+          "end": "2027-01-24",
+          "negative": false,
+          "opening_cents": 49000000,
+          "other_receipts_cents": 110000000,
+          "outflows_cents": 31000000,
+          "owner_draw_receipt_cents": 0,
+          "payroll_cents": 6000000,
+          "project_spend_cents": 25000000,
+          "quality": "INCOMPLETE_LATE_HORIZON",
+          "receipt_ids": [
+            "R-W10"
+          ],
+          "receipts_cents": 110000000,
+          "start": "2027-01-18",
+          "week": 10
+        },
+        {
+          "basis": "SYNTHETIC_ASSUMPTION",
+          "closing_cents": 103000000,
+          "end": "2027-01-31",
+          "negative": false,
+          "opening_cents": 128000000,
+          "other_receipts_cents": 0,
+          "outflows_cents": 25000000,
+          "owner_draw_receipt_cents": 0,
+          "payroll_cents": 6000000,
+          "project_spend_cents": 19000000,
+          "quality": "INCOMPLETE_LATE_HORIZON",
+          "receipt_ids": [],
+          "receipts_cents": 0,
+          "start": "2027-01-25",
+          "week": 11
+        },
+        {
+          "basis": "SYNTHETIC_ASSUMPTION",
+          "closing_cents": 181500000,
+          "end": "2027-02-07",
+          "negative": false,
+          "opening_cents": 103000000,
+          "other_receipts_cents": 100000000,
+          "outflows_cents": 21500000,
+          "owner_draw_receipt_cents": 0,
+          "payroll_cents": 6000000,
+          "project_spend_cents": 15500000,
+          "quality": "INCOMPLETE_LATE_HORIZON",
+          "receipt_ids": [
+            "R-W12"
+          ],
+          "receipts_cents": 100000000,
+          "start": "2027-02-01",
+          "week": 12
+        },
+        {
+          "basis": "SYNTHETIC_ASSUMPTION",
+          "closing_cents": 163500000,
+          "end": "2027-02-14",
+          "negative": false,
+          "opening_cents": 181500000,
+          "other_receipts_cents": 0,
+          "outflows_cents": 18000000,
+          "owner_draw_receipt_cents": 0,
+          "payroll_cents": 6000000,
+          "project_spend_cents": 12000000,
+          "quality": "INCOMPLETE_LATE_HORIZON",
+          "receipt_ids": [],
+          "receipts_cents": 0,
+          "start": "2027-02-08",
+          "week": 13
+        }
+      ],
+      "total_outflows_cents": 711500000,
+      "total_receipts_cents": 770000000,
+      "worst_week": 5
+    }
+  },
+  "limitations": [
+    "Offline synthetic simulation; no real project, bank, counterparty or obligation is described.",
+    "All evidence is synthetic and self-contained; no provider, owner, subcontractor or bank record has been verified.",
+    "EVIDENCE_ELIGIBLE means the documents are complete; it is not a payment authorization and nothing is released.",
+    "Forecast week numbers follow this model's own calendar and are not comparable with the accepted recorded-schedule forecast.",
+    "Weeks 10 to 13 are marked incomplete.",
+    "No provider, database or human-authentication function is implemented."
+  ],
+  "project": {
+    "contract_cents": 2480000000,
+    "gross_margin_basis_points": 1290,
+    "label": "Synthetic distribution-center build",
+    "project_id": "DB-DEMO-001",
+    "projected_gross_profit_cents": 320000000
+  },
+  "rules": {
+    "E3-RULE-101": "Disputed obligation cannot be cleared.",
+    "E3-RULE-102": "Unsigned change order blocks eligibility.",
+    "E3-RULE-103": "Unknown prior-transfer state requires investigation.",
+    "E3-RULE-104": "A possibly in-flight transfer is never repeated.",
+    "E3-RULE-105": "Missing evidence prevents clearance.",
+    "E3-RULE-106": "Evidence complete; human approval still required.",
+    "E3-RULE-107": "No new commitment authority in this scenario.",
+    "E3-RULE-108": "No payment release or provider interface exists."
+  },
+  "scenarios": [
+    {
+      "id": "S0",
+      "new_commitment_authority": true,
+      "note": "Baseline facts. New commitments may be reviewed up to the calculated availability."
+    },
+    {
+      "id": "S1",
+      "new_commitment_authority": false,
+      "note": "Same facts and the same calculated availability, with a separate policy bar: no new commitment authority."
+    }
+  ],
+  "schema": "drawbridge.sim-eng-002-e3.cash-crisis-evidence.v1",
+  "snapshot_content_sha256": "85b968cec1750fc071da7eb26daa287437e62d13fbf104ddd7f6344fce33fca9",
+  "synthetic": true,
+  "task": "SIM-ENG-002-E3"
+}

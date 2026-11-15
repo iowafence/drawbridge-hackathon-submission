@@ -1,0 +1,86 @@
+# 2026-11-14T17:39:29-06:00 AWX sandbox read-only smoke (sanitized). Command: python3 -B smoke_readonly.py
+{
+ "base_url": "https://api.sandbox.airwallex.com/api/v1",
+ "base_is_sandbox": true,
+ "calls": [
+  {
+   "id": "AWX-SMOKE-01",
+   "request": "POST /api/v1/authentication/login",
+   "http_status": 201,
+   "authenticated": true,
+   "response_keys": [
+    "expires_at",
+    "token"
+   ],
+   "expires_at": "2026-11-15T00:09:29+0000",
+   "error": null,
+   "seconds": 0.79
+  },
+  {
+   "id": "AWX-SMOKE-02",
+   "request": "GET /api/v1/balances/current",
+   "http_status": 200,
+   "seconds": 0.53,
+   "response_type": "list",
+   "entries": 46,
+   "currencies": [
+    "AED",
+    "ARS",
+    "AUD",
+    "BDT",
+    "BHD",
+    "BOB",
+    "BRL",
+    "CAD",
+    "CHF",
+    "CLP",
+    "CNY",
+    "COP",
+    "CZK",
+    "DKK",
+    "EGP",
+    "EUR",
+    "GBP",
+    "HKD",
+    "HRK",
+    "HUF",
+    "IDR",
+    "ILS",
+    "INR",
+    "JPY",
+    "KRW",
+    "LKR",
+    "MAD",
+    "MXN",
+    "MYR",
+    "NOK",
+    "NPR",
+    "NZD",
+    "PEN",
+    "PHP",
+    "PKR",
+    "PLN",
+    "RON",
+    "SAR",
+    "SEK",
+    "SGD",
+    "THB",
+    "TRY",
+    "USD",
+    "UYU",
+    "VND",
+    "ZAR"
+   ],
+   "entry_keys": [
+    "account_type",
+    "available_amount",
+    "currency",
+    "pending_amount",
+    "prepayment_amount",
+    "reserved_amount",
+    "total_amount"
+   ]
+  }
+ ]
+}
+rc=0

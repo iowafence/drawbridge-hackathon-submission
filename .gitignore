@@ -1,0 +1,24 @@
+# Credentials: never commit. Only .env.example files are tracked.
+.env
+.env.*
+!.env.example
+*.pem
+*.key
+
+# Node / Next.js
+node_modules/
+.next/
+next-env.d.ts
+*.tsbuildinfo
+apps/web/AGENTS.md
+
+# Python
+__pycache__/
+*.pyc
+
+# Local database clusters and runtime state created by the G2C1 runner
+build/
+
+# Editor / OS
+.DS_Store
+*.swp

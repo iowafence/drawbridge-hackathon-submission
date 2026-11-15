@@ -1,0 +1,162 @@
+{
+ "normalization_version": "v1",
+ "derived": "expected values hand-derived from G1S section 7.9.4, not produced by the function",
+ "cases": [
+  {
+   "id": "W1",
+   "input": "INV-0012",
+   "expect": "INV12",
+   "why": "worked example \u00a77.9.4"
+  },
+  {
+   "id": "W2",
+   "input": "inv 12",
+   "expect": "INV12",
+   "why": "worked example: case and space"
+  },
+  {
+   "id": "W3",
+   "input": "\uff29\uff2e\uff36\uff0d\uff11\uff12",
+   "expect": "INV12",
+   "why": "worked example: fullwidth NFKC"
+  },
+  {
+   "id": "W4",
+   "input": "INV-0012-R",
+   "expect": "INV12R",
+   "why": "worked example"
+  },
+  {
+   "id": "W5",
+   "input": "#7",
+   "expect": null,
+   "why": "worked example: unusable (1 char)"
+  },
+  {
+   "id": "W6",
+   "input": "\u8acb\u6c42\u66f8",
+   "expect": null,
+   "why": "non-Latin only -> empty -> unusable"
+  },
+  {
+   "id": "W7",
+   "input": "AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+   "expect": "REJECT",
+   "why": "200 characters rejected"
+  },
+  {
+   "id": "C1",
+   "input": "\ufb0112",
+   "expect": "FI12",
+   "why": "compatibility: fi ligature U+FB01"
+  },
+  {
+   "id": "C2",
+   "input": "\u212a12",
+   "expect": "K12",
+   "why": "compatibility: Kelvin sign U+212A"
+  },
+  {
+   "id": "C3",
+   "input": "\u017f12",
+   "expect": "S12",
+   "why": "compatibility: long s U+017F"
+  },
+  {
+   "id": "C4",
+   "input": "e\u0301x12",
+   "expect": "X12",
+   "why": "combining sequence: precomposed e-acute is non-ASCII and removed"
+  },
+  {
+   "id": "Z1",
+   "input": "0",
+   "expect": null,
+   "why": "zero run 0 -> one digit, 1 char, unusable"
+  },
+  {
+   "id": "Z2",
+   "input": "000",
+   "expect": null,
+   "why": "zero run 000 -> 0, unusable"
+  },
+  {
+   "id": "Z3",
+   "input": "A0B00",
+   "expect": "A0B0",
+   "why": "zero runs kept to one digit per run"
+  },
+  {
+   "id": "Z4",
+   "input": "INV-007-0010",
+   "expect": "INV70010",
+   "why": "separators removed before runs are formed, so runs merge"
+  },
+  {
+   "id": "Z5",
+   "input": "0012A",
+   "expect": "12A",
+   "why": "leading zeros at start"
+  },
+  {
+   "id": "B1",
+   "input": "AB0",
+   "expect": "AB0",
+   "why": "3-character boundary with a digit"
+  },
+  {
+   "id": "B2",
+   "input": "A12",
+   "expect": "A12",
+   "why": "3 characters, digit"
+  },
+  {
+   "id": "B3",
+   "input": "A1",
+   "expect": null,
+   "why": "2 characters"
+  },
+  {
+   "id": "B4",
+   "input": "AB",
+   "expect": null,
+   "why": "no digit"
+  },
+  {
+   "id": "B5",
+   "input": "AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA1",
+   "expect": "AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA1",
+   "why": "128-character boundary kept"
+  },
+  {
+   "id": "B6",
+   "input": "AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA1",
+   "expect": "REJECT",
+   "why": "129 raw characters rejected"
+  },
+  {
+   "id": "B7",
+   "input": "\ud835\udfcf\ud835\udfcf\ud835\udfcf\ud835\udfcf\ud835\udfcf\ud835\udfcf\ud835\udfcf\ud835\udfcf\ud835\udfcf\ud835\udfcf\ud835\udfcf\ud835\udfcf\ud835\udfcf\ud835\udfcf\ud835\udfcf\ud835\udfcf\ud835\udfcf\ud835\udfcf\ud835\udfcf\ud835\udfcf\ud835\udfcf\ud835\udfcf\ud835\udfcf\ud835\udfcf\ud835\udfcf\ud835\udfcf\ud835\udfcf\ud835\udfcf\ud835\udfcf\ud835\udfcf\ud835\udfcf\ud835\udfcf\ud835\udfcf\ud835\udfcf\ud835\udfcf\ud835\udfcf\ud835\udfcf\ud835\udfcf\ud835\udfcf\ud835\udfcf\ud835\udfcf\ud835\udfcf\ud835\udfcf\ud835\udfcf\ud835\udfcf\ud835\udfcf\ud835\udfcf\ud835\udfcf\ud835\udfcf\ud835\udfcf\ud835\udfcf\ud835\udfcf\ud835\udfcf\ud835\udfcf\ud835\udfcf\ud835\udfcf\ud835\udfcf\ud835\udfcf\ud835\udfcf\ud835\udfcf\ud835\udfcf\ud835\udfcf\ud835\udfcf\ud835\udfcf\ud835\udfcf\ud835\udfcf\ud835\udfcf\ud835\udfcf\ud835\udfcf\ud835\udfcf\ud835\udfcf\ud835\udfcf\ud835\udfcf\ud835\udfcf\ud835\udfcf\ud835\udfcf\ud835\udfcf\ud835\udfcf\ud835\udfcf\ud835\udfcf\ud835\udfcf\ud835\udfcf\ud835\udfcf\ud835\udfcf\ud835\udfcf\ud835\udfcf\ud835\udfcf\ud835\udfcf\ud835\udfcf\ud835\udfcf\ud835\udfcf\ud835\udfcf\ud835\udfcf\ud835\udfcf\ud835\udfcf\ud835\udfcf\ud835\udfcf\ud835\udfcf\ud835\udfcf\ud835\udfcf\ud835\udfcf\ud835\udfcf\ud835\udfcf\ud835\udfcf\ud835\udfcf\ud835\udfcf\ud835\udfcf\ud835\udfcf\ud835\udfcf\ud835\udfcf\ud835\udfcf\ud835\udfcf\ud835\udfcf\ud835\udfcf\ud835\udfcf\ud835\udfcf\ud835\udfcf\ud835\udfcf\ud835\udfcf\ud835\udfcf\ud835\udfcf\ud835\udfcf\ud835\udfcf\ud835\udfcf\ud835\udfcf\ud835\udfcf\ud835\udfcf\ud835\udfcf",
+   "expect": "11111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111",
+   "why": "128 four-octet chars = 512 octets, NFKC to 128 digits"
+  },
+  {
+   "id": "B8",
+   "input": "\u3391\u3391\u3391\u3391\u3391\u3391\u3391\u3391\u3391\u3391\u3391\u3391\u3391\u3391\u3391\u3391\u3391\u3391\u3391\u3391\u3391\u3391\u3391\u3391\u3391\u3391\u3391\u3391\u3391\u3391\u3391\u3391\u3391\u3391\u3391\u3391\u3391\u3391\u3391\u3391\u3391\u3391\u3391\u3391\u3391\u3391\u3391\u3391\u3391\u3391",
+   "expect": "REJECT",
+   "why": "50 raw chars expand under NFKC to 150 normalized characters -> rejected at step 5"
+  },
+  {
+   "id": "D1",
+   "input": "A|B1",
+   "expect": "AB1",
+   "why": "delimiter-like characters removed"
+  },
+  {
+   "id": "D2",
+   "input": "abc-12",
+   "expect": "ABC12",
+   "why": "lowercase"
+  }
+ ]
+}

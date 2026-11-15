@@ -1,0 +1,240 @@
+{
+  "provenance": "SYNTHETIC_FIXTURE",
+  "scenarioId": "S1",
+  "title": "S1 - Unknown exposure blocks new commitment",
+  "description": "Same facts as S0, plus an unattributed provider observation of unknown amount. Available capacity is still positive, but authorized new commitment is zero.",
+  "asOf": "2026-10-28",
+  "project": {
+    "projectId": "DB-DEMO-001",
+    "name": "Synthetic commercial build",
+    "contractAmount": "24800000.00",
+    "grossProfitBaseline": "3200000.00"
+  },
+  "allocation": {
+    "allocationId": "ALLOC-SYN-001",
+    "basis": "PRE_DEBIT",
+    "cash": "760000.00"
+  },
+  "sandboxWallet": {
+    "label": "Airwallex sandbox wallet (synthetic)",
+    "amount": "10000000.00",
+    "isProjectCash": false
+  },
+  "obligations": [
+    {
+      "obligationId": "OBL-CONCRETE",
+      "label": "Concrete supply transfer",
+      "kind": "MATERIAL",
+      "counterpartyLabel": "Concrete supplier (synthetic)",
+      "amount": "310000.00",
+      "eligibility": "ELIGIBLE",
+      "eligibilityNote": "Eligible, but the provider outcome of the transfer is unknown.",
+      "payableClass": "INVOICE_BACKED",
+      "invoiceRefDisplay": "INV-CONC-0412",
+      "lineageId": "LIN-CONCRETE",
+      "isLineageHead": true,
+      "hasNonterminalIntent": false,
+      "barred": false,
+      "requested": true
+    },
+    {
+      "obligationId": "OBL-STEEL",
+      "label": "Structural steel pay application",
+      "kind": "SUBCONTRACTOR",
+      "counterpartyLabel": "Steel subcontractor (synthetic)",
+      "amount": "420000.00",
+      "eligibility": "DISPUTED",
+      "eligibilityNote": "Questionable: quantities on the pay application are disputed.",
+      "payableClass": "INVOICE_BACKED",
+      "invoiceRefDisplay": "PA-STL-07",
+      "lineageId": "LIN-STEEL",
+      "isLineageHead": true,
+      "hasNonterminalIntent": false,
+      "barred": false,
+      "requested": true
+    },
+    {
+      "obligationId": "OBL-ELEC-CO",
+      "label": "Electrical change order",
+      "kind": "CHANGE_ORDER",
+      "counterpartyLabel": "Electrical subcontractor (synthetic)",
+      "amount": "185000.00",
+      "eligibility": "UNAPPROVED",
+      "eligibilityNote": "Change order has not been approved by the owner.",
+      "payableClass": "EVIDENCE_ATTESTED",
+      "invoiceRefDisplay": null,
+      "lineageId": "LIN-ELEC-CO",
+      "isLineageHead": true,
+      "hasNonterminalIntent": false,
+      "barred": false,
+      "requested": true
+    },
+    {
+      "obligationId": "OBL-FRAMING",
+      "label": "Framing subcontract (added illustration)",
+      "kind": "SUBCONTRACTOR",
+      "counterpartyLabel": "Framing subcontractor (synthetic)",
+      "amount": "90000.00",
+      "eligibility": "ELIGIBLE",
+      "eligibilityNote": "Eligible and not part of the requested outflows. Added so the labels can be told apart.",
+      "payableClass": "INVOICE_BACKED",
+      "invoiceRefDisplay": "INV-FRM-0220",
+      "lineageId": "LIN-FRAMING",
+      "isLineageHead": true,
+      "hasNonterminalIntent": false,
+      "barred": false,
+      "requested": false
+    }
+  ],
+  "exposures": [
+    {
+      "exposureId": "EXP-CONCRETE-1",
+      "obligationId": "OBL-CONCRETE",
+      "amount": "310000.00",
+      "r": "0.00",
+      "d": "0.00",
+      "u": "310000.00",
+      "nRet": "0.00",
+      "nRes": "0.00"
+    }
+  ],
+  "reservations": [],
+  "cases": [
+    {
+      "caseId": "CASE-CONCRETE",
+      "scope": "OBLIGATION",
+      "obligationId": "OBL-CONCRETE",
+      "kind": "UNCERTAIN_OUTCOME",
+      "state": "OPEN",
+      "executionBlocking": true,
+      "unknownAmount": false,
+      "summary": "Transfer may have been sent. The provider lookup returned no record, and a negative lookup never proves non-payment."
+    },
+    {
+      "caseId": "CASE-UNKNOWN-1",
+      "scope": "ALLOCATION",
+      "obligationId": null,
+      "kind": "UNATTRIBUTED_OBSERVATION",
+      "state": "OPEN",
+      "executionBlocking": true,
+      "unknownAmount": true,
+      "summary": "A provider observation could not be attributed to any known transfer. Its amount is unknown, so the whole allocation is blocked for new commitment."
+    }
+  ],
+  "events": [
+    {
+      "seq": 1,
+      "at": "Day -9 (synthetic)",
+      "kind": "FUNDING_POSTED",
+      "text": "Allocation funded to $760,000.00 (PRE_DEBIT basis).",
+      "reference": "JT-FUND-1"
+    },
+    {
+      "seq": 2,
+      "at": "Day -3 (synthetic)",
+      "kind": "CLAIM_COMMITTED",
+      "text": "Concrete transfer claimed and begin_send committed (POSSIBLY_SENT).",
+      "reference": "CLM-CONCRETE-1"
+    },
+    {
+      "seq": 3,
+      "at": "Day -3 (synthetic)",
+      "kind": "PRE_SEND_CHECK",
+      "text": "pre_send_check returned OK. A bar or stop after this point cannot recall the POST (Case B / C).",
+      "reference": "CLM-CONCRETE-1"
+    },
+    {
+      "seq": 4,
+      "at": "Day -2 (synthetic)",
+      "kind": "PROVIDER_LOOKUP",
+      "text": "Lookup returned no record. Treated as unknown, not as non-payment.",
+      "reference": "EXP-CONCRETE-1"
+    },
+    {
+      "seq": 5,
+      "at": "Day -2 (synthetic)",
+      "kind": "HOLD_CREATED",
+      "text": "Exposure moved to an uncovered hold of $310,000.00.",
+      "reference": "EXP-CONCRETE-1"
+    },
+    {
+      "seq": 6,
+      "at": "Day -2 (synthetic)",
+      "kind": "CASE_OPENED",
+      "text": "Obligation-scope blocking case opened. No resend is possible.",
+      "reference": "CASE-CONCRETE"
+    },
+    {
+      "seq": 7,
+      "at": "Day 0 (synthetic)",
+      "kind": "FORECAST_CHANGE",
+      "text": "Owner draw of $2,100,000.00 recorded as delayed by 12 days.",
+      "reference": null
+    },
+    {
+      "seq": 8,
+      "at": "Day 0 (synthetic)",
+      "kind": "OBSERVATION_RECORDED",
+      "text": "Unattributed provider observation recorded. Amount unknown.",
+      "reference": "OBS-UNKNOWN-1"
+    },
+    {
+      "seq": 9,
+      "at": "Day 0 (synthetic)",
+      "kind": "CASE_OPENED",
+      "text": "Allocation-scope blocking case opened. Authorized new commitment is now zero.",
+      "reference": "CASE-UNKNOWN-1"
+    }
+  ],
+  "forecast": {
+    "weeks": 13,
+    "scheduleRecordedThroughWeek": 9,
+    "recurring": [
+      {
+        "label": "Payroll and site costs (illustrative)",
+        "amount": "60000.00",
+        "fromWeek": 1,
+        "toWeek": 9,
+        "illustrative": true
+      }
+    ],
+    "dated": [
+      {
+        "label": "Owner draw",
+        "direction": "IN",
+        "amount": "2100000.00",
+        "dueDay": 18,
+        "delayDays": 12,
+        "illustrative": false
+      },
+      {
+        "label": "Structural steel pay application (disputed, undated)",
+        "direction": "OUT",
+        "amount": "420000.00",
+        "dueDay": null,
+        "delayDays": 0,
+        "illustrative": false
+      },
+      {
+        "label": "Electrical change order (unapproved, undated)",
+        "direction": "OUT",
+        "amount": "185000.00",
+        "dueDay": null,
+        "delayDays": 0,
+        "illustrative": false
+      }
+    ]
+  },
+  "approvalPreview": {
+    "obligationId": "OBL-FRAMING",
+    "beneficiaryLabel": "Framing subcontractor (synthetic)",
+    "beneficiaryFingerprint": "FP-SYN-9F3A-21C7",
+    "currency": "USD",
+    "amount": "90000.00",
+    "evidenceKind": "INVOICE_DOCUMENT",
+    "evidenceDigestShort": "sha256:7c1e…9b40 (synthetic)",
+    "policyRevision": "POLICY-SYN-r1",
+    "preparer": "Preparer role A (synthetic)",
+    "approver": "Approver role B (synthetic)"
+  }
+}

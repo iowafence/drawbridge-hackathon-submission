@@ -1,0 +1,882 @@
+{
+  "counts": {
+    "ALLOWED": 4,
+    "BLOCKED": 8,
+    "TOTAL": 21,
+    "UNRESOLVED": 9
+  },
+  "decisions": [
+    {
+      "decision_id": "DEC-REQ-DEMO-001",
+      "evidence_sha256": "ccc35ea132aeafe76fe0dc4eccd3875611beefe4e7614719f32a81992bfce738",
+      "facts": {
+        "approval_status": "APPROVED",
+        "basis": "VENDOR_PAYMENT",
+        "faults": []
+      },
+      "input_sha256": {
+        "fixtures/demo_requests_synthetic_v1.json": "604c0b81e21b88c7c56783d3b49da6cc06cd3b9e3c4ff5e5ee46ba9358ed2109",
+        "fixtures/project_synthetic_v0.json": "58c3d40717b30607b1a31d9227dba4c5a1387cd15494b8339f83b64321ba3af3"
+      },
+      "manifest_sha256": "ea86aeb27411317b81d1b2c570a7664cd02c7b68d8449646af73ea2447949b01",
+      "measures": {
+        "allocated_minor": 12000000,
+        "allocation_minor": 76000000,
+        "amount_minor": 12000000,
+        "available_after_minor": 18000000,
+        "available_before_minor": 30000000,
+        "available_if_reserves_released_minor": 45000000,
+        "committed_before_minor": 0,
+        "holds_minor": 31000000,
+        "reserves_minor": 15000000
+      },
+      "request_id": "REQ-DEMO-001",
+      "rule_ids": [
+        "DEMO-R01-APPROVAL-MISSING",
+        "DEMO-R02-DISPUTED",
+        "DEMO-R03-NOT-APPROVED",
+        "DEMO-R04-APPROVAL-INVALID",
+        "DEMO-R05-INPUT-UNRESOLVED",
+        "DEMO-R06-RESERVE-HOLD-CAPACITY",
+        "DEMO-R07-ALLOWED"
+      ],
+      "state": "ALLOWED"
+    },
+    {
+      "decision_id": "DEC-REQ-DEMO-002",
+      "evidence_sha256": "05904acbef1ec8a55afd2b1a9bfe230026b39c12d2e147d013445452099cce8d",
+      "facts": {
+        "approval_status": "APPROVED",
+        "basis": "PAY_APPLICATION",
+        "faults": []
+      },
+      "input_sha256": {
+        "fixtures/demo_requests_synthetic_v1.json": "604c0b81e21b88c7c56783d3b49da6cc06cd3b9e3c4ff5e5ee46ba9358ed2109",
+        "fixtures/project_synthetic_v0.json": "58c3d40717b30607b1a31d9227dba4c5a1387cd15494b8339f83b64321ba3af3"
+      },
+      "manifest_sha256": "ea86aeb27411317b81d1b2c570a7664cd02c7b68d8449646af73ea2447949b01",
+      "measures": {
+        "allocated_minor": 7500000,
+        "allocation_minor": 76000000,
+        "amount_minor": 7500000,
+        "available_after_minor": 10500000,
+        "available_before_minor": 18000000,
+        "available_if_reserves_released_minor": 33000000,
+        "committed_before_minor": 12000000,
+        "holds_minor": 31000000,
+        "reserves_minor": 15000000
+      },
+      "request_id": "REQ-DEMO-002",
+      "rule_ids": [
+        "DEMO-R01-APPROVAL-MISSING",
+        "DEMO-R02-DISPUTED",
+        "DEMO-R03-NOT-APPROVED",
+        "DEMO-R04-APPROVAL-INVALID",
+        "DEMO-R05-INPUT-UNRESOLVED",
+        "DEMO-R06-RESERVE-HOLD-CAPACITY",
+        "DEMO-R07-ALLOWED"
+      ],
+      "state": "ALLOWED"
+    },
+    {
+      "decision_id": "DEC-REQ-DEMO-003",
+      "evidence_sha256": "00520d2778daebea0346c9952b4bcb8e0c0977d7b030b79b34b6e9a3b0d0b2ab",
+      "facts": {
+        "approval_status": "APPROVED",
+        "basis": "CHANGE_ORDER",
+        "faults": []
+      },
+      "input_sha256": {
+        "fixtures/demo_requests_synthetic_v1.json": "604c0b81e21b88c7c56783d3b49da6cc06cd3b9e3c4ff5e5ee46ba9358ed2109",
+        "fixtures/project_synthetic_v0.json": "58c3d40717b30607b1a31d9227dba4c5a1387cd15494b8339f83b64321ba3af3"
+      },
+      "manifest_sha256": "ea86aeb27411317b81d1b2c570a7664cd02c7b68d8449646af73ea2447949b01",
+      "measures": {
+        "allocated_minor": 5525025,
+        "allocation_minor": 76000000,
+        "amount_minor": 5525025,
+        "available_after_minor": 4974975,
+        "available_before_minor": 10500000,
+        "available_if_reserves_released_minor": 25500000,
+        "committed_before_minor": 19500000,
+        "holds_minor": 31000000,
+        "reserves_minor": 15000000
+      },
+      "request_id": "REQ-DEMO-003",
+      "rule_ids": [
+        "DEMO-R01-APPROVAL-MISSING",
+        "DEMO-R02-DISPUTED",
+        "DEMO-R03-NOT-APPROVED",
+        "DEMO-R04-APPROVAL-INVALID",
+        "DEMO-R05-INPUT-UNRESOLVED",
+        "DEMO-R06-RESERVE-HOLD-CAPACITY",
+        "DEMO-R07-ALLOWED"
+      ],
+      "state": "ALLOWED"
+    },
+    {
+      "decision_id": "DEC-REQ-DEMO-004",
+      "evidence_sha256": "83f1cd2c6060fba465bbf4991d2347fb7760d0a77ee9ca09eac7e784343ef917",
+      "facts": {
+        "approval_status": "DISPUTED",
+        "basis": "PAY_APPLICATION",
+        "faults": []
+      },
+      "input_sha256": {
+        "fixtures/demo_requests_synthetic_v1.json": "604c0b81e21b88c7c56783d3b49da6cc06cd3b9e3c4ff5e5ee46ba9358ed2109",
+        "fixtures/project_synthetic_v0.json": "58c3d40717b30607b1a31d9227dba4c5a1387cd15494b8339f83b64321ba3af3"
+      },
+      "manifest_sha256": "ea86aeb27411317b81d1b2c570a7664cd02c7b68d8449646af73ea2447949b01",
+      "measures": {
+        "allocated_minor": 0,
+        "allocation_minor": 76000000,
+        "amount_minor": 4000000,
+        "available_after_minor": 4974975,
+        "available_before_minor": 4974975,
+        "available_if_reserves_released_minor": 19974975,
+        "committed_before_minor": 25025025,
+        "holds_minor": 31000000,
+        "reserves_minor": 15000000
+      },
+      "request_id": "REQ-DEMO-004",
+      "rule_ids": [
+        "DEMO-R01-APPROVAL-MISSING",
+        "DEMO-R02-DISPUTED"
+      ],
+      "state": "BLOCKED"
+    },
+    {
+      "decision_id": "DEC-REQ-DEMO-005",
+      "evidence_sha256": "4a2b3c8d8cffad82aa65282085cd74aa4e7e428c95195feea6ae920c153ef665",
+      "facts": {
+        "approval_status": "DISPUTED",
+        "basis": "VENDOR_PAYMENT",
+        "faults": []
+      },
+      "input_sha256": {
+        "fixtures/demo_requests_synthetic_v1.json": "604c0b81e21b88c7c56783d3b49da6cc06cd3b9e3c4ff5e5ee46ba9358ed2109",
+        "fixtures/project_synthetic_v0.json": "58c3d40717b30607b1a31d9227dba4c5a1387cd15494b8339f83b64321ba3af3"
+      },
+      "manifest_sha256": "ea86aeb27411317b81d1b2c570a7664cd02c7b68d8449646af73ea2447949b01",
+      "measures": {
+        "allocated_minor": 0,
+        "allocation_minor": 76000000,
+        "amount_minor": 1850000,
+        "available_after_minor": 4974975,
+        "available_before_minor": 4974975,
+        "available_if_reserves_released_minor": 19974975,
+        "committed_before_minor": 25025025,
+        "holds_minor": 31000000,
+        "reserves_minor": 15000000
+      },
+      "request_id": "REQ-DEMO-005",
+      "rule_ids": [
+        "DEMO-R01-APPROVAL-MISSING",
+        "DEMO-R02-DISPUTED"
+      ],
+      "state": "BLOCKED"
+    },
+    {
+      "decision_id": "DEC-REQ-DEMO-006",
+      "evidence_sha256": "460d02e67a70fbae25a10fe9f15405ed2a58d0ad1a5d27dd203feb4dcc1369ab",
+      "facts": {
+        "approval_status": "UNAPPROVED",
+        "basis": "CHANGE_ORDER",
+        "faults": []
+      },
+      "input_sha256": {
+        "fixtures/demo_requests_synthetic_v1.json": "604c0b81e21b88c7c56783d3b49da6cc06cd3b9e3c4ff5e5ee46ba9358ed2109",
+        "fixtures/project_synthetic_v0.json": "58c3d40717b30607b1a31d9227dba4c5a1387cd15494b8339f83b64321ba3af3"
+      },
+      "manifest_sha256": "ea86aeb27411317b81d1b2c570a7664cd02c7b68d8449646af73ea2447949b01",
+      "measures": {
+        "allocated_minor": 0,
+        "allocation_minor": 76000000,
+        "amount_minor": 2200000,
+        "available_after_minor": 4974975,
+        "available_before_minor": 4974975,
+        "available_if_reserves_released_minor": 19974975,
+        "committed_before_minor": 25025025,
+        "holds_minor": 31000000,
+        "reserves_minor": 15000000
+      },
+      "request_id": "REQ-DEMO-006",
+      "rule_ids": [
+        "DEMO-R01-APPROVAL-MISSING",
+        "DEMO-R02-DISPUTED",
+        "DEMO-R03-NOT-APPROVED"
+      ],
+      "state": "BLOCKED"
+    },
+    {
+      "decision_id": "DEC-REQ-DEMO-007",
+      "evidence_sha256": "72d31d6dbdb8916e855ada613f3c4015374f5530b7e51198db4f644b6168a4aa",
+      "facts": {
+        "approval_status": "UNAPPROVED",
+        "basis": "VENDOR_PAYMENT",
+        "faults": []
+      },
+      "input_sha256": {
+        "fixtures/demo_requests_synthetic_v1.json": "604c0b81e21b88c7c56783d3b49da6cc06cd3b9e3c4ff5e5ee46ba9358ed2109",
+        "fixtures/project_synthetic_v0.json": "58c3d40717b30607b1a31d9227dba4c5a1387cd15494b8339f83b64321ba3af3"
+      },
+      "manifest_sha256": "ea86aeb27411317b81d1b2c570a7664cd02c7b68d8449646af73ea2447949b01",
+      "measures": {
+        "allocated_minor": 0,
+        "allocation_minor": 76000000,
+        "amount_minor": 975000,
+        "available_after_minor": 4974975,
+        "available_before_minor": 4974975,
+        "available_if_reserves_released_minor": 19974975,
+        "committed_before_minor": 25025025,
+        "holds_minor": 31000000,
+        "reserves_minor": 15000000
+      },
+      "request_id": "REQ-DEMO-007",
+      "rule_ids": [
+        "DEMO-R01-APPROVAL-MISSING",
+        "DEMO-R02-DISPUTED",
+        "DEMO-R03-NOT-APPROVED"
+      ],
+      "state": "BLOCKED"
+    },
+    {
+      "decision_id": "DEC-REQ-DEMO-008",
+      "evidence_sha256": "738a9d70e73e7022d0c56a27991c343bec113c70cb8f949416648c55144ab335",
+      "facts": {
+        "approval_status": "MISSING",
+        "basis": "VENDOR_PAYMENT",
+        "faults": []
+      },
+      "input_sha256": {
+        "fixtures/demo_requests_synthetic_v1.json": "604c0b81e21b88c7c56783d3b49da6cc06cd3b9e3c4ff5e5ee46ba9358ed2109",
+        "fixtures/project_synthetic_v0.json": "58c3d40717b30607b1a31d9227dba4c5a1387cd15494b8339f83b64321ba3af3"
+      },
+      "manifest_sha256": "ea86aeb27411317b81d1b2c570a7664cd02c7b68d8449646af73ea2447949b01",
+      "measures": {
+        "allocated_minor": 0,
+        "allocation_minor": 76000000,
+        "amount_minor": 1200000,
+        "available_after_minor": 4974975,
+        "available_before_minor": 4974975,
+        "available_if_reserves_released_minor": 19974975,
+        "committed_before_minor": 25025025,
+        "holds_minor": 31000000,
+        "reserves_minor": 15000000
+      },
+      "request_id": "REQ-DEMO-008",
+      "rule_ids": [
+        "DEMO-R01-APPROVAL-MISSING"
+      ],
+      "state": "BLOCKED"
+    },
+    {
+      "decision_id": "DEC-REQ-DEMO-009",
+      "evidence_sha256": "91fd2fcca63b3922dd6e6a0ae54bbdea183f717b750d17ad5678e7a053cea28c",
+      "facts": {
+        "approval_status": "APPROVED",
+        "basis": "PAY_APPLICATION",
+        "faults": []
+      },
+      "input_sha256": {
+        "fixtures/demo_requests_synthetic_v1.json": "604c0b81e21b88c7c56783d3b49da6cc06cd3b9e3c4ff5e5ee46ba9358ed2109",
+        "fixtures/project_synthetic_v0.json": "58c3d40717b30607b1a31d9227dba4c5a1387cd15494b8339f83b64321ba3af3"
+      },
+      "manifest_sha256": "ea86aeb27411317b81d1b2c570a7664cd02c7b68d8449646af73ea2447949b01",
+      "measures": {
+        "allocated_minor": 0,
+        "allocation_minor": 76000000,
+        "amount_minor": 6000000,
+        "available_after_minor": 4974975,
+        "available_before_minor": 4974975,
+        "available_if_reserves_released_minor": 19974975,
+        "committed_before_minor": 25025025,
+        "holds_minor": 31000000,
+        "reserves_minor": 15000000
+      },
+      "request_id": "REQ-DEMO-009",
+      "rule_ids": [
+        "DEMO-R01-APPROVAL-MISSING",
+        "DEMO-R02-DISPUTED",
+        "DEMO-R03-NOT-APPROVED",
+        "DEMO-R04-APPROVAL-INVALID",
+        "DEMO-R05-INPUT-UNRESOLVED",
+        "DEMO-R06-RESERVE-HOLD-CAPACITY"
+      ],
+      "state": "BLOCKED"
+    },
+    {
+      "decision_id": "DEC-REQ-DEMO-010",
+      "evidence_sha256": "7736f47249d9faf70f9c84d7c8b3ce8d2d72a96250d00e206fce575594cb4174",
+      "facts": {
+        "approval_status": "APPROVED",
+        "basis": "PAY_APPLICATION",
+        "faults": []
+      },
+      "input_sha256": {
+        "fixtures/demo_requests_synthetic_v1.json": "604c0b81e21b88c7c56783d3b49da6cc06cd3b9e3c4ff5e5ee46ba9358ed2109",
+        "fixtures/project_synthetic_v0.json": "58c3d40717b30607b1a31d9227dba4c5a1387cd15494b8339f83b64321ba3af3"
+      },
+      "manifest_sha256": "ea86aeb27411317b81d1b2c570a7664cd02c7b68d8449646af73ea2447949b01",
+      "measures": {
+        "allocated_minor": 0,
+        "allocation_minor": 76000000,
+        "amount_minor": 85000000,
+        "available_after_minor": 4974975,
+        "available_before_minor": 4974975,
+        "available_if_reserves_released_minor": 19974975,
+        "committed_before_minor": 25025025,
+        "holds_minor": 31000000,
+        "reserves_minor": 15000000
+      },
+      "request_id": "REQ-DEMO-010",
+      "rule_ids": [
+        "DEMO-R01-APPROVAL-MISSING",
+        "DEMO-R02-DISPUTED",
+        "DEMO-R03-NOT-APPROVED",
+        "DEMO-R04-APPROVAL-INVALID",
+        "DEMO-R05-INPUT-UNRESOLVED",
+        "DEMO-R06-RESERVE-HOLD-CAPACITY"
+      ],
+      "state": "BLOCKED"
+    },
+    {
+      "decision_id": "DEC-REQ-DEMO-011",
+      "evidence_sha256": "84c49dd0361234849f62ebb9e2ceaeae61e8aa4aad7bc17255fab9f052c1b850",
+      "facts": {
+        "approval_status": "APPROVED",
+        "basis": "VENDOR_PAYMENT",
+        "faults": [
+          {
+            "code": "AMOUNT_MISSING",
+            "field": "amount"
+          }
+        ]
+      },
+      "input_sha256": {
+        "fixtures/demo_requests_synthetic_v1.json": "604c0b81e21b88c7c56783d3b49da6cc06cd3b9e3c4ff5e5ee46ba9358ed2109",
+        "fixtures/project_synthetic_v0.json": "58c3d40717b30607b1a31d9227dba4c5a1387cd15494b8339f83b64321ba3af3"
+      },
+      "manifest_sha256": "ea86aeb27411317b81d1b2c570a7664cd02c7b68d8449646af73ea2447949b01",
+      "measures": {
+        "allocated_minor": 0,
+        "allocation_minor": 76000000,
+        "amount_minor": null,
+        "available_after_minor": 4974975,
+        "available_before_minor": 4974975,
+        "available_if_reserves_released_minor": 19974975,
+        "committed_before_minor": 25025025,
+        "holds_minor": 31000000,
+        "reserves_minor": 15000000
+      },
+      "request_id": "REQ-DEMO-011",
+      "rule_ids": [
+        "DEMO-R01-APPROVAL-MISSING",
+        "DEMO-R02-DISPUTED",
+        "DEMO-R03-NOT-APPROVED",
+        "DEMO-R04-APPROVAL-INVALID",
+        "DEMO-R05-INPUT-UNRESOLVED"
+      ],
+      "state": "UNRESOLVED"
+    },
+    {
+      "decision_id": "DEC-REQ-DEMO-012",
+      "evidence_sha256": "ee15027a94c7c14db4bed6461ab3f0c5406758c29686ecb9fa04907fff3d8f82",
+      "facts": {
+        "approval_status": "APPROVED",
+        "basis": "VENDOR_PAYMENT",
+        "faults": [
+          {
+            "code": "AMOUNT_FORMAT",
+            "field": "amount"
+          }
+        ]
+      },
+      "input_sha256": {
+        "fixtures/demo_requests_synthetic_v1.json": "604c0b81e21b88c7c56783d3b49da6cc06cd3b9e3c4ff5e5ee46ba9358ed2109",
+        "fixtures/project_synthetic_v0.json": "58c3d40717b30607b1a31d9227dba4c5a1387cd15494b8339f83b64321ba3af3"
+      },
+      "manifest_sha256": "ea86aeb27411317b81d1b2c570a7664cd02c7b68d8449646af73ea2447949b01",
+      "measures": {
+        "allocated_minor": 0,
+        "allocation_minor": 76000000,
+        "amount_minor": null,
+        "available_after_minor": 4974975,
+        "available_before_minor": 4974975,
+        "available_if_reserves_released_minor": 19974975,
+        "committed_before_minor": 25025025,
+        "holds_minor": 31000000,
+        "reserves_minor": 15000000
+      },
+      "request_id": "REQ-DEMO-012",
+      "rule_ids": [
+        "DEMO-R01-APPROVAL-MISSING",
+        "DEMO-R02-DISPUTED",
+        "DEMO-R03-NOT-APPROVED",
+        "DEMO-R04-APPROVAL-INVALID",
+        "DEMO-R05-INPUT-UNRESOLVED"
+      ],
+      "state": "UNRESOLVED"
+    },
+    {
+      "decision_id": "DEC-REQ-DEMO-013",
+      "evidence_sha256": "60775a7cf601abcb413871a42e867d522e7215a08735c17ff5a9e9ac722adddc",
+      "facts": {
+        "approval_status": "APPROVED",
+        "basis": "VENDOR_PAYMENT",
+        "faults": [
+          {
+            "code": "AMOUNT_FORMAT",
+            "field": "amount"
+          }
+        ]
+      },
+      "input_sha256": {
+        "fixtures/demo_requests_synthetic_v1.json": "604c0b81e21b88c7c56783d3b49da6cc06cd3b9e3c4ff5e5ee46ba9358ed2109",
+        "fixtures/project_synthetic_v0.json": "58c3d40717b30607b1a31d9227dba4c5a1387cd15494b8339f83b64321ba3af3"
+      },
+      "manifest_sha256": "ea86aeb27411317b81d1b2c570a7664cd02c7b68d8449646af73ea2447949b01",
+      "measures": {
+        "allocated_minor": 0,
+        "allocation_minor": 76000000,
+        "amount_minor": null,
+        "available_after_minor": 4974975,
+        "available_before_minor": 4974975,
+        "available_if_reserves_released_minor": 19974975,
+        "committed_before_minor": 25025025,
+        "holds_minor": 31000000,
+        "reserves_minor": 15000000
+      },
+      "request_id": "REQ-DEMO-013",
+      "rule_ids": [
+        "DEMO-R01-APPROVAL-MISSING",
+        "DEMO-R02-DISPUTED",
+        "DEMO-R03-NOT-APPROVED",
+        "DEMO-R04-APPROVAL-INVALID",
+        "DEMO-R05-INPUT-UNRESOLVED"
+      ],
+      "state": "UNRESOLVED"
+    },
+    {
+      "decision_id": "DEC-REQ-DEMO-014",
+      "evidence_sha256": "f03a5e97147913c737a075155e175e875d013283a35b40803fb92cf2ec3cd3c6",
+      "facts": {
+        "approval_status": "APPROVED",
+        "basis": "VENDOR_PAYMENT",
+        "faults": [
+          {
+            "code": "AMOUNT_FORMAT",
+            "field": "amount"
+          }
+        ]
+      },
+      "input_sha256": {
+        "fixtures/demo_requests_synthetic_v1.json": "604c0b81e21b88c7c56783d3b49da6cc06cd3b9e3c4ff5e5ee46ba9358ed2109",
+        "fixtures/project_synthetic_v0.json": "58c3d40717b30607b1a31d9227dba4c5a1387cd15494b8339f83b64321ba3af3"
+      },
+      "manifest_sha256": "ea86aeb27411317b81d1b2c570a7664cd02c7b68d8449646af73ea2447949b01",
+      "measures": {
+        "allocated_minor": 0,
+        "allocation_minor": 76000000,
+        "amount_minor": null,
+        "available_after_minor": 4974975,
+        "available_before_minor": 4974975,
+        "available_if_reserves_released_minor": 19974975,
+        "committed_before_minor": 25025025,
+        "holds_minor": 31000000,
+        "reserves_minor": 15000000
+      },
+      "request_id": "REQ-DEMO-014",
+      "rule_ids": [
+        "DEMO-R01-APPROVAL-MISSING",
+        "DEMO-R02-DISPUTED",
+        "DEMO-R03-NOT-APPROVED",
+        "DEMO-R04-APPROVAL-INVALID",
+        "DEMO-R05-INPUT-UNRESOLVED"
+      ],
+      "state": "UNRESOLVED"
+    },
+    {
+      "decision_id": "DEC-REQ-DEMO-015",
+      "evidence_sha256": "acff1a874457ab7ef75f1537c0dd0513d0cf37a15a31bed214f44456f1b6fc17",
+      "facts": {
+        "approval_status": "APPROVED",
+        "basis": "VENDOR_PAYMENT",
+        "faults": [
+          {
+            "code": "AMOUNT_NOT_STRING",
+            "field": "amount"
+          }
+        ]
+      },
+      "input_sha256": {
+        "fixtures/demo_requests_synthetic_v1.json": "604c0b81e21b88c7c56783d3b49da6cc06cd3b9e3c4ff5e5ee46ba9358ed2109",
+        "fixtures/project_synthetic_v0.json": "58c3d40717b30607b1a31d9227dba4c5a1387cd15494b8339f83b64321ba3af3"
+      },
+      "manifest_sha256": "ea86aeb27411317b81d1b2c570a7664cd02c7b68d8449646af73ea2447949b01",
+      "measures": {
+        "allocated_minor": 0,
+        "allocation_minor": 76000000,
+        "amount_minor": null,
+        "available_after_minor": 4974975,
+        "available_before_minor": 4974975,
+        "available_if_reserves_released_minor": 19974975,
+        "committed_before_minor": 25025025,
+        "holds_minor": 31000000,
+        "reserves_minor": 15000000
+      },
+      "request_id": "REQ-DEMO-015",
+      "rule_ids": [
+        "DEMO-R01-APPROVAL-MISSING",
+        "DEMO-R02-DISPUTED",
+        "DEMO-R03-NOT-APPROVED",
+        "DEMO-R04-APPROVAL-INVALID",
+        "DEMO-R05-INPUT-UNRESOLVED"
+      ],
+      "state": "UNRESOLVED"
+    },
+    {
+      "decision_id": "DEC-REQ-DEMO-016",
+      "evidence_sha256": "dead5ae030b648410381f6e99f593e93e523638fd7fff562465ceb32185069a8",
+      "facts": {
+        "approval_status": "APPROVED",
+        "basis": "VENDOR_PAYMENT",
+        "faults": [
+          {
+            "code": "AMOUNT_NOT_POSITIVE",
+            "field": "amount"
+          }
+        ]
+      },
+      "input_sha256": {
+        "fixtures/demo_requests_synthetic_v1.json": "604c0b81e21b88c7c56783d3b49da6cc06cd3b9e3c4ff5e5ee46ba9358ed2109",
+        "fixtures/project_synthetic_v0.json": "58c3d40717b30607b1a31d9227dba4c5a1387cd15494b8339f83b64321ba3af3"
+      },
+      "manifest_sha256": "ea86aeb27411317b81d1b2c570a7664cd02c7b68d8449646af73ea2447949b01",
+      "measures": {
+        "allocated_minor": 0,
+        "allocation_minor": 76000000,
+        "amount_minor": null,
+        "available_after_minor": 4974975,
+        "available_before_minor": 4974975,
+        "available_if_reserves_released_minor": 19974975,
+        "committed_before_minor": 25025025,
+        "holds_minor": 31000000,
+        "reserves_minor": 15000000
+      },
+      "request_id": "REQ-DEMO-016",
+      "rule_ids": [
+        "DEMO-R01-APPROVAL-MISSING",
+        "DEMO-R02-DISPUTED",
+        "DEMO-R03-NOT-APPROVED",
+        "DEMO-R04-APPROVAL-INVALID",
+        "DEMO-R05-INPUT-UNRESOLVED"
+      ],
+      "state": "UNRESOLVED"
+    },
+    {
+      "decision_id": "DEC-REQ-DEMO-017",
+      "evidence_sha256": "585928ea03d6005a320e27b9d28836ce62a7e46e90c6dfcb1b5fad9ae51a4929",
+      "facts": {
+        "approval_status": "APPROVED",
+        "basis": null,
+        "faults": [
+          {
+            "code": "BASIS_MISSING",
+            "field": "basis"
+          }
+        ]
+      },
+      "input_sha256": {
+        "fixtures/demo_requests_synthetic_v1.json": "604c0b81e21b88c7c56783d3b49da6cc06cd3b9e3c4ff5e5ee46ba9358ed2109",
+        "fixtures/project_synthetic_v0.json": "58c3d40717b30607b1a31d9227dba4c5a1387cd15494b8339f83b64321ba3af3"
+      },
+      "manifest_sha256": "ea86aeb27411317b81d1b2c570a7664cd02c7b68d8449646af73ea2447949b01",
+      "measures": {
+        "allocated_minor": 0,
+        "allocation_minor": 76000000,
+        "amount_minor": 800000,
+        "available_after_minor": 4974975,
+        "available_before_minor": 4974975,
+        "available_if_reserves_released_minor": 19974975,
+        "committed_before_minor": 25025025,
+        "holds_minor": 31000000,
+        "reserves_minor": 15000000
+      },
+      "request_id": "REQ-DEMO-017",
+      "rule_ids": [
+        "DEMO-R01-APPROVAL-MISSING",
+        "DEMO-R02-DISPUTED",
+        "DEMO-R03-NOT-APPROVED",
+        "DEMO-R04-APPROVAL-INVALID",
+        "DEMO-R05-INPUT-UNRESOLVED"
+      ],
+      "state": "UNRESOLVED"
+    },
+    {
+      "decision_id": "DEC-REQ-DEMO-018",
+      "evidence_sha256": "b59510e1c36c2b692be6d5617a7024caf1ec7e5a334113383254d98bba5a84cf",
+      "facts": {
+        "approval_status": "APPROVED",
+        "basis": "VENDOR_PAYMENT",
+        "faults": []
+      },
+      "input_sha256": {
+        "fixtures/demo_requests_synthetic_v1.json": "604c0b81e21b88c7c56783d3b49da6cc06cd3b9e3c4ff5e5ee46ba9358ed2109",
+        "fixtures/project_synthetic_v0.json": "58c3d40717b30607b1a31d9227dba4c5a1387cd15494b8339f83b64321ba3af3"
+      },
+      "manifest_sha256": "ea86aeb27411317b81d1b2c570a7664cd02c7b68d8449646af73ea2447949b01",
+      "measures": {
+        "allocated_minor": 4974975,
+        "allocation_minor": 76000000,
+        "amount_minor": 4974975,
+        "available_after_minor": 0,
+        "available_before_minor": 4974975,
+        "available_if_reserves_released_minor": 19974975,
+        "committed_before_minor": 25025025,
+        "holds_minor": 31000000,
+        "reserves_minor": 15000000
+      },
+      "request_id": "REQ-DEMO-018",
+      "rule_ids": [
+        "DEMO-R01-APPROVAL-MISSING",
+        "DEMO-R02-DISPUTED",
+        "DEMO-R03-NOT-APPROVED",
+        "DEMO-R04-APPROVAL-INVALID",
+        "DEMO-R05-INPUT-UNRESOLVED",
+        "DEMO-R06-RESERVE-HOLD-CAPACITY",
+        "DEMO-R07-ALLOWED"
+      ],
+      "state": "ALLOWED"
+    },
+    {
+      "decision_id": "DEC-REQ-DEMO-019",
+      "evidence_sha256": "eb80f5bc0de7a9b7e54bee6379461b6f15440dad7c034b564084b5fb1dd0af15",
+      "facts": {
+        "approval_status": "APPROVED",
+        "basis": "VENDOR_PAYMENT",
+        "faults": []
+      },
+      "input_sha256": {
+        "fixtures/demo_requests_synthetic_v1.json": "604c0b81e21b88c7c56783d3b49da6cc06cd3b9e3c4ff5e5ee46ba9358ed2109",
+        "fixtures/project_synthetic_v0.json": "58c3d40717b30607b1a31d9227dba4c5a1387cd15494b8339f83b64321ba3af3"
+      },
+      "manifest_sha256": "ea86aeb27411317b81d1b2c570a7664cd02c7b68d8449646af73ea2447949b01",
+      "measures": {
+        "allocated_minor": 0,
+        "allocation_minor": 76000000,
+        "amount_minor": 1,
+        "available_after_minor": 0,
+        "available_before_minor": 0,
+        "available_if_reserves_released_minor": 15000000,
+        "committed_before_minor": 30000000,
+        "holds_minor": 31000000,
+        "reserves_minor": 15000000
+      },
+      "request_id": "REQ-DEMO-019",
+      "rule_ids": [
+        "DEMO-R01-APPROVAL-MISSING",
+        "DEMO-R02-DISPUTED",
+        "DEMO-R03-NOT-APPROVED",
+        "DEMO-R04-APPROVAL-INVALID",
+        "DEMO-R05-INPUT-UNRESOLVED",
+        "DEMO-R06-RESERVE-HOLD-CAPACITY"
+      ],
+      "state": "BLOCKED"
+    },
+    {
+      "decision_id": "DEC-REQ-DEMO-020",
+      "evidence_sha256": "f88c896badd69f1910357c555f86ff0a9b2d6636a4dd5f7a5f746d598776d031",
+      "facts": {
+        "approval_status": "APPROVED",
+        "basis": "VENDOR_PAYMENT",
+        "faults": [
+          {
+            "code": "AMOUNT_FORMAT",
+            "field": "amount"
+          }
+        ]
+      },
+      "input_sha256": {
+        "fixtures/demo_requests_synthetic_v1.json": "604c0b81e21b88c7c56783d3b49da6cc06cd3b9e3c4ff5e5ee46ba9358ed2109",
+        "fixtures/project_synthetic_v0.json": "58c3d40717b30607b1a31d9227dba4c5a1387cd15494b8339f83b64321ba3af3"
+      },
+      "manifest_sha256": "ea86aeb27411317b81d1b2c570a7664cd02c7b68d8449646af73ea2447949b01",
+      "measures": {
+        "allocated_minor": 0,
+        "allocation_minor": 76000000,
+        "amount_minor": null,
+        "available_after_minor": 0,
+        "available_before_minor": 0,
+        "available_if_reserves_released_minor": 15000000,
+        "committed_before_minor": 30000000,
+        "holds_minor": 31000000,
+        "reserves_minor": 15000000
+      },
+      "request_id": "REQ-DEMO-020",
+      "rule_ids": [
+        "DEMO-R01-APPROVAL-MISSING",
+        "DEMO-R02-DISPUTED",
+        "DEMO-R03-NOT-APPROVED",
+        "DEMO-R04-APPROVAL-INVALID",
+        "DEMO-R05-INPUT-UNRESOLVED"
+      ],
+      "state": "UNRESOLVED"
+    },
+    {
+      "decision_id": "DEC-REQ-DEMO-021",
+      "evidence_sha256": "df2dc72355e7ed7cd5292cbed9b7cb75dc0215e1c463b879152443450ed9fbeb",
+      "facts": {
+        "approval_status": "INVALID",
+        "basis": "CHANGE_ORDER",
+        "faults": []
+      },
+      "input_sha256": {
+        "fixtures/demo_requests_synthetic_v1.json": "604c0b81e21b88c7c56783d3b49da6cc06cd3b9e3c4ff5e5ee46ba9358ed2109",
+        "fixtures/project_synthetic_v0.json": "58c3d40717b30607b1a31d9227dba4c5a1387cd15494b8339f83b64321ba3af3"
+      },
+      "manifest_sha256": "ea86aeb27411317b81d1b2c570a7664cd02c7b68d8449646af73ea2447949b01",
+      "measures": {
+        "allocated_minor": 0,
+        "allocation_minor": 76000000,
+        "amount_minor": 330000,
+        "available_after_minor": 0,
+        "available_before_minor": 0,
+        "available_if_reserves_released_minor": 15000000,
+        "committed_before_minor": 30000000,
+        "holds_minor": 31000000,
+        "reserves_minor": 15000000
+      },
+      "request_id": "REQ-DEMO-021",
+      "rule_ids": [
+        "DEMO-R01-APPROVAL-MISSING",
+        "DEMO-R02-DISPUTED",
+        "DEMO-R03-NOT-APPROVED",
+        "DEMO-R04-APPROVAL-INVALID"
+      ],
+      "state": "UNRESOLVED"
+    }
+  ],
+  "inputs": [
+    {
+      "path": "fixtures/demo_requests_synthetic_v1.json",
+      "role": "requests_fixture",
+      "sha256": "604c0b81e21b88c7c56783d3b49da6cc06cd3b9e3c4ff5e5ee46ba9358ed2109"
+    },
+    {
+      "path": "fixtures/project_synthetic_v0.json",
+      "role": "project_fixture",
+      "sha256": "58c3d40717b30607b1a31d9227dba4c5a1387cd15494b8339f83b64321ba3af3"
+    },
+    {
+      "path": "services/api/app/domain/finance/calc.py",
+      "role": "component",
+      "sha256": "f77438a899f1e1eb29c0f7b588d59ac731af04d51cfce3ce24df8ff9cc66eac1"
+    },
+    {
+      "path": "services/api/app/domain/finance/commitments_v4.py",
+      "role": "component",
+      "sha256": "a9cecea47694d9188bd0dbf873970d669043104879cd70c67d5207d555c87a59"
+    },
+    {
+      "path": "services/api/app/domain/finance/limits.py",
+      "role": "component",
+      "sha256": "86a9232ad89374ed0bb5dd6629d44c72aa2f0758b1f7c34c406e46a5284a33db"
+    },
+    {
+      "path": "services/api/app/domain/finance/models.py",
+      "role": "component",
+      "sha256": "f0b4423369670164ca995d4b53ad698757b52287c370fa709aeb70155f56b90c"
+    },
+    {
+      "path": "services/api/app/domain/finance/money.py",
+      "role": "component",
+      "sha256": "50ae384c8505b4786f1d0d4226d8a43d1085b29885943179cb7a041c76e4c152"
+    },
+    {
+      "path": "services/api/app/domain/finance/scenario.py",
+      "role": "component",
+      "sha256": "33e05502d53a3c0b5c89dd6e75ff30c16ee13e26fff81369922615c1e8d7fd36"
+    }
+  ],
+  "manifest_sha256": "ea86aeb27411317b81d1b2c570a7664cd02c7b68d8449646af73ea2447949b01",
+  "non_operational": true,
+  "project": {
+    "allocation_minor": 76000000,
+    "availability_final": {
+      "allocation": 76000000,
+      "available_if_holds_release": 31000000,
+      "available_to_commit": 0,
+      "contingent_shortfall": 60500000,
+      "eligible_uncommitted": 30000000,
+      "excluded_exposure": 60500000,
+      "holds_deducted": 31000000,
+      "in_flight_holds": 31000000,
+      "raw_request_gap": 45500000,
+      "requested_total": 121500000,
+      "restricted_reserves": 15000000
+    },
+    "availability_initial": {
+      "allocation": 76000000,
+      "available_if_holds_release": 61000000,
+      "available_to_commit": 30000000,
+      "contingent_shortfall": 30500000,
+      "eligible_uncommitted": 0,
+      "excluded_exposure": 60500000,
+      "holds_deducted": 31000000,
+      "in_flight_holds": 31000000,
+      "raw_request_gap": 15500000,
+      "requested_total": 91500000,
+      "restricted_reserves": 15000000
+    },
+    "commitment_state_check": {
+      "findings": [],
+      "obligations": 4,
+      "validate": "PASS"
+    },
+    "currency": "USD",
+    "hold_basis": "ALLOCATION_EXCLUDES_HOLD",
+    "holds": [
+      {
+        "amount_minor": 31000000,
+        "attempt_id": "PRQ-CONCRETE-001",
+        "obligation_id": "OBL-CONCRETE",
+        "status": "UNCERTAIN"
+      }
+    ],
+    "project_id": "DB-DEMO-001",
+    "reserves": [
+      {
+        "amount_minor": 10000000,
+        "reserve_id": "RSV-SYN-RETAINAGE"
+      },
+      {
+        "amount_minor": 5000000,
+        "reserve_id": "RSV-SYN-CONTINGENCY"
+      }
+    ]
+  },
+  "reconciliation": {
+    "allocation_delta_minor": 0,
+    "allocation_minor": 76000000,
+    "allowed_minor": 30000000,
+    "count_delta": 0,
+    "holds_minor": 31000000,
+    "invalid_amount_count": 7,
+    "remaining_available_minor": 0,
+    "requested_total_delta_minor": 0,
+    "requested_valid_amount_total_minor": 132355001,
+    "reserves_minor": 15000000,
+    "stated_total_minor": 132355001
+  },
+  "release_boundary": {
+    "events": [
+      "RELEASE_RECORDED"
+    ],
+    "moves_funds": false,
+    "operation": "SIMULATION_ONLY"
+  },
+  "schema": "drawbridge.sim-eng-002-e1.demo-eligibility-evidence.v1",
+  "synthetic": true,
+  "task": "SIM-ENG-002-E1"
+}

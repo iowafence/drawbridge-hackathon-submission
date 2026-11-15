@@ -1,0 +1,32 @@
+{
+  "note": "UI redesign candidate pins. Not the accepted E3 baseline; that remains reproducible from the accepted commit.",
+  "acceptedE3Commit": "f88af200a3e76b31c1f6129bfeae04e2ca64a24a",
+  "candidate": {
+    "src/app/globals.css": "9b5350beafac6aec7fe75a7535222d78cac6fbf0aab5c6b2074b8b735c2cacd4",
+    "src/components/Shell.tsx": "2862a523886fdc089d752276bbb60fd2eff5040aec671d87ffd2943f1d5d8950",
+    "src/components/Command.tsx": "df2efce7d972d719e768af397dd3732293a0e9a324675548a73a94bf09babd83",
+    "src/app/overview/page.tsx": "6bbe115c99e0d5e27f4504b09ea4da81f20471a39cdd6e845d389154c1c187a0",
+    "src/components/IncidentRoom.tsx": "23c23856a142319b8d08aaf76c7fb15213132c6420f2de5c31523d013d3d99f8",
+    "src/app/incident/page.tsx": "bd59fa25fe6e73c3685a9395101d50827618a8e1ca41da2fbb9bd2cded88e7de",
+    "src/components/RecorderView.tsx": "556abe89274e17ed66235dd269322fedd9c0ee09cbd366079322258b74bc9a08",
+    "src/app/recorder/page.tsx": "a04a9f0f26e672881ab520a110a633a022c8412d0f213cf6275f446b1fe90634",
+    "src/components/PayablesView.tsx": "477d669539d555c9e965838ad2d34478e8b801e854ce7f9723b6e527fcd3c919",
+    "src/app/payables/page.tsx": "4403abca1872b4adb99f92b05527bb100c073fa2c082c9f2061ba35f8e062b86"
+  },
+  "preserved": {
+    "src/contract/derive.ts": "5a46b76752e46f77821f9d1de0be7c687fdcdf14d4abc0c8a0fc25054fe1ea84",
+    "src/contract/money.ts": "6e0e283e4211b39fdd554a59dade6c74bdbd002cc4335b78043f255838fb2eee",
+    "src/contract/types.ts": "2bb08b9334ea64825a883b331d27f612aed4d94d4315c1519aa31b5d878fc5c8",
+    "src/data/adapter.ts": "8bd41ffedba7891e3b6ab7d3ee7a3c85b99208dd141cd3e6d5171b26295c6b5b",
+    "src/data/cashCrisis.ts": "ad12f8acdd75c9f96b4b472db04640120201ef00d26282b68a85d1d71d642492",
+    "src/data/load.ts": "cd523b96da7ad1a5f9ad3791399fe29bec653306c65a0d1d40e427390ed98d95",
+    "src/components/CashCrisisForecast.tsx": "a7290c3448c98bdec1eda6eb525788c3acbb4a28ee9200ac3847f8d4547d6fa5",
+    "src/components/CashCrisisIncident.tsx": "f77d8ecdcb5489910b2f4d34ee11c052600079c8002a0ab3612eeafac7d5b0a6",
+    "src/components/ForecastChart.tsx": "eb4f0c86236473c0dad5540063435c6e52a04625057497a8c1450fcd6cfa873b",
+    "src/components/Figure.tsx": "07771986e7ac34f5d5953a131f069b0a3ff69b8bd106db509245a97f47aa515f",
+    "fixtures/s0.json": "284c81c1939a230f0f52c7d93a49a1686926cd9c794e39bdf4d3e617e997e9c6",
+    "fixtures/s1.json": "d16ce1a220e110d8a72cf4c494a69ac3188d78c22f3948a942336a647ac964d6",
+    "fixtures/cash_crisis_evidence_v1.json": "2cb989455cc6ba0fe18d2a604010ac7fdf96c797afaca53e8bbc156d058187a0",
+    "fixtures/eligibility_evidence_v1.json": "60c18bb46bb3a8d774c55a77d0592d3608340c5d346740cd2d31543bc7779350"
+  }
+}
