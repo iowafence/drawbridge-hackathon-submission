@@ -1,5 +1,7 @@
 # DRAWBRIDGE
 
+**Demo video:** [Watch the DRAWBRIDGE Demo (4:12)](https://drive.google.com/file/d/1AbEwaq3Op9TUT1PVn7-exSrqh524vsEf/view?usp=drive_link)
+
 Copyright 2026 Iowa Fence Inc. All rights reserved. See `NOTICE`. No open-source license is granted.
 
 DRAWBRIDGE is a treasury-control prototype for a construction contractor. Its rule is: **AI investigates and explains,
@@ -47,7 +49,7 @@ payment system. No E3 obligation was paid, and no E3 figure uses a sandbox balan
 `docs/evidence/airwallex_sandbox_transfer_2026-11-15_sanitized.md`. Design, controls and limits:
 `docs/AIRWALLEX_SANDBOX_INTEGRATION.md`.
 
-Demo video: `<DEMO VIDEO LINK — to be added by the owner>`
+Demo video: [Watch the DRAWBRIDGE Demo (4:12)](https://drive.google.com/file/d/1AbEwaq3Op9TUT1PVn7-exSrqh524vsEf/view?usp=drive_link)
 
 ---
 
@@ -210,7 +212,7 @@ See `docs/KNOWN_LIMITATIONS.md` for the full list. In short:
 
 ## 8. Demo video
 
-`<DEMO VIDEO LINK — to be added by the owner>`
+[Watch the DRAWBRIDGE Demo (4:12)](https://drive.google.com/file/d/1AbEwaq3Op9TUT1PVn7-exSrqh524vsEf/view?usp=drive_link)
 
 ## Repository contents and provenance
 
