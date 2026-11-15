@@ -11,6 +11,7 @@ screen added on 2026-11-15:
 | Component | Path | What it is | Data |
 |---|---|---|---|
 | Airwallex sandbox screen | `apps/web/src/app/sandbox/`, `apps/web/src/server/` | Operator-protected `/sandbox` page: live sandbox balance read, deterministic reserve policy, human-approved sandbox transfer, local audit chain | Live Airwallex **sandbox** test data |
+| Evidence Analysis Agent | `apps/web/src/app/sandbox/agent/`, `apps/web/src/server/agent*.ts` | Operator-protected `/agent` page: Claude Opus 5.5 (or optional local Ollama) analyses synthetic evidence with read-only tools; a positive-proof gate over a synthetic trusted registry decides. **No financial authority** | Synthetic evidence; live model inference |
 | Incident Room UI | `apps/web/` | Next.js demo of a cash-crisis incident: Command, Incident, Payables, Recorder (plus Approvals and Eligibility) | Synthetic fixtures only |
 | Airwallex read-only provider | `providers/airwallex/` | Standalone, sandbox-only Airwallex client restricted to login and three read endpoints | Your own sandbox credentials, if you choose to run the live preflight |
 | Funding ledger (G2C1) | `db/migrations/`, `services/api/app/domain/g2_db/`, `fixtures/`, `contracts/` | PostgreSQL double-entry funding ledger schema, hash-pinned cluster runner, Python replay/reconcile/manifest tooling | Synthetic |
@@ -18,6 +19,18 @@ screen added on 2026-11-15:
 **The six Incident Room screens (the E3 scenario) are synthetic and do not call Airwallex or read the ledger. The
 ledger does not call Airwallex.** The `/sandbox` screen talks to the Airwallex **sandbox** only; it shares no data,
 balance or decision engine with the E3 scenario. Nothing here is connected to a real bank account or real money.
+
+### Runtime AI: the Evidence Analysis Agent
+
+`/agent` runs a real model at request time (Claude Opus 5.5 through the Claude API; the page shows the provider, the
+model ID the API reported, latency and request IDs). The model reads synthetic evidence, may call up to two read-only
+tools, extracts typed claims and recommends. Nothing the document or the model says is treated as proof: a
+deterministic gate decides HOLD, REVIEW or ELIGIBLE FOR HUMAN REVIEW, and eligibility requires eleven proofs verified
+from a trusted, read-only **synthetic** registry (registered source document, obligation, approval record, document
+manifest, dispute status) plus the provider-read balance. The agent cannot create, approve or submit a payment and
+has no access to the transfer workflow or its credential. This is separate from the payment workflow below, in which
+a human approved one sandbox transfer. Details: `docs/EVIDENCE_AGENT.md`; gate specification:
+`docs/EVIDENCE_AGENT_POLICY.md`.
 
 ### E3 scenario and Airwallex sandbox, side by side
 
@@ -71,6 +84,7 @@ Parameters: `?d=delayed` or `?d=on_time` (draw case), `?s=S1` (spending-blocked 
 If the dev server reports "Too many open files", start it with `ulimit -Sn 16384` and `WATCHPACK_POLLING=1000`.
 
 Sandbox integration tests (all provider calls mocked, no network): `npm run test:sandbox`, expected **17 tests, 17 pass**.
+Evidence agent tests (scripted model, no network): `npm run test:agent`, expected **17 tests, 17 pass**.
 
 Expected `npm test` result in this repository: **106 tests, 104 pass, 0 fail, 2 skipped.** The two skipped tests
 (`UI-B3`, `UI-B4`) re-check pinned files against the original internal commit
@@ -176,7 +190,8 @@ cluster created by the runner and operator-approved migration digests. See `docs
 | E3 scenario ↔ Airwallex, UI ↔ ledger, ledger ↔ Airwallex | **Not connected** |
 | `/sandbox` screen ↔ Airwallex sandbox | Connected, server-side only, operator sign-in required |
 | Concurrency, durability/crash recovery, injection resistance, production readiness | **Not established** |
-| AI agents | The "agent findings" in the UI are synthetic fixture text. No model is called at runtime |
+| AI on the Incident Room (E3) screens | The "agent findings" there are synthetic fixture text. No model is called |
+| Evidence Analysis Agent (`/agent`) | Implemented: live Claude Opus 5.5 inference with client tool use (or local Ollama when selected), excerpt checks and a positive-proof gate over a synthetic trusted registry. Recommends only; no financial authority |
 
 ## 7. Known limitations and untested claims
 

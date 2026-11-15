@@ -30,7 +30,7 @@ function Frame({ children }: { children: ReactNode }) {
         </div>
       </header>
       <main id="main-content" className="wrap" style={{ paddingTop: 16, paddingBottom: 40 }}>
-        <p className="muted"><a href="/overview?s=S0">← Incident Room (synthetic E3 scenario, unchanged)</a></p>
+        <p className="muted"><a href="/overview?s=S0">← Incident Room (synthetic E3 scenario, unchanged)</a> · <a href="/sandbox/agent">Evidence Analysis Agent →</a></p>
         <h1>Airwallex sandbox integration</h1>
         <p className="muted">
           Live reads from <code>{AWX_ORIGIN}</code> through a server-only adapter. These figures are sandbox test balances. They are

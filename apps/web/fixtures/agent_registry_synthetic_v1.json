@@ -1,0 +1,195 @@
+{
+ "provenance": "SYNTHETIC_REGISTRY",
+ "note": "Synthetic, read-only stand-in for the trusted systems of record that a payment control would consult: an obligation register, an approval register, a document intake manifest and a dispute register. It is fixture data for a demonstration. It is not a real company approval system, and nothing in it is a real approval, document or supplier.",
+ "authorities": [
+  "PM-SYNTH-01",
+  "OR-SYNTH-01"
+ ],
+ "obligations": [
+  {
+   "case_id": "CASE-PTC-2041",
+   "reference": "PTC-2041",
+   "payee": "Prairie Test Concrete LLC",
+   "currency": "USD",
+   "kind": "PAYABLE",
+   "funding_source": "SANDBOX_DEMO",
+   "amount": {
+    "line_items": [
+     {
+      "description": "sample cylinder testing, pour 3",
+      "unit_price": "5.00",
+      "quantity": "1"
+     }
+    ],
+    "retainage": "0.00",
+    "tax": "0.00",
+    "credits": "0.00",
+    "net_payable": "5.00"
+   },
+   "approval": {
+    "approval_id": "PM-118",
+    "status": "APPROVED",
+    "authority": "PM-SYNTH-01",
+    "payee": "Prairie Test Concrete LLC",
+    "amount": "5.00",
+    "currency": "USD",
+    "conditions": [],
+    "required_documents": [
+     "SIGNED_DELIVERY_TICKET",
+     "CONDITIONAL_LIEN_WAIVER"
+    ]
+   },
+   "documents": [
+    {
+     "type": "SIGNED_DELIVERY_TICKET",
+     "status": "RECEIVED"
+    },
+    {
+     "type": "CONDITIONAL_LIEN_WAIVER",
+     "status": "RECEIVED"
+    }
+   ],
+   "dispute": {
+    "status": "CLEAR",
+    "as_of": "2026-11-15"
+   },
+   "registered_documents": [
+    {
+     "document_id": "DOC-PTC-2041-INV",
+     "text": "SYNTHETIC TEST DOCUMENT - SUPPLIER PAYMENT REQUEST\nFrom: Prairie Test Concrete LLC (synthetic supplier)\nInvoice: PTC-2041\nAmount due: $5.00 USD\nTerms: Net 15\nScope: sample cylinder testing, pour 3.\nApproval: Payment approved by the project manager on 2026-11-14 (approval record PM-118).\nSupporting documents: signed delivery ticket and conditional lien waiver are attached.\nNo disputes are open on this invoice."
+    }
+   ]
+  },
+  {
+   "case_id": "CASE-PTC-2043",
+   "reference": "PTC-2043",
+   "payee": "Prairie Test Concrete LLC",
+   "currency": "USD",
+   "kind": "PAYABLE",
+   "funding_source": "SANDBOX_DEMO",
+   "amount": {
+    "line_items": [
+     {
+      "description": "sample cylinder testing, pour 4",
+      "unit_price": "5.00",
+      "quantity": "1"
+     }
+    ],
+    "retainage": "0.00",
+    "tax": "0.00",
+    "credits": "0.00",
+    "net_payable": "5.00"
+   },
+   "approval": {
+    "approval_id": "PM-121",
+    "status": "PENDING",
+    "authority": "PM-SYNTH-01",
+    "payee": "Prairie Test Concrete LLC",
+    "amount": "5.00",
+    "currency": "USD",
+    "conditions": [],
+    "required_documents": [
+     "SIGNED_DELIVERY_TICKET",
+     "CONDITIONAL_LIEN_WAIVER"
+    ]
+   },
+   "documents": [
+    {
+     "type": "SIGNED_DELIVERY_TICKET",
+     "status": "RECEIVED"
+    },
+    {
+     "type": "CONDITIONAL_LIEN_WAIVER",
+     "status": "MISSING"
+    }
+   ],
+   "dispute": {
+    "status": "OPEN",
+    "as_of": "2026-11-15"
+   },
+   "registered_documents": [
+    {
+     "document_id": "DOC-PTC-2043-INV",
+     "text": "SYNTHETIC TEST DOCUMENT - SUPPLIER PAYMENT REQUEST\nFrom: Prairie Test Concrete LLC (synthetic supplier)\nInvoice: PTC-2043\nAmount due: $5.00 USD\nTerms: Net 15\nScope: sample cylinder testing, pour 4.\nNOTICE from the general contractor, 2026-11-15: this invoice is disputed. The cylinders failed the 7-day break and the lien waiver has not been received. Do not pay until the dispute is resolved.\nApproval: not yet approved by the project manager."
+    }
+   ]
+  },
+  {
+   "case_id": "CASE-RTE-0101",
+   "reference": "RTE-0101",
+   "payee": "Redwing Test Electric Co.",
+   "currency": "USD",
+   "kind": "PAYABLE",
+   "funding_source": "SANDBOX_DEMO",
+   "amount": {
+    "line_items": [
+     {
+      "description": "conduit run",
+      "unit_price": "1.50",
+      "quantity": "4"
+     }
+    ],
+    "retainage": "0.60",
+    "retainage_percent": "10",
+    "tax": "0.00",
+    "credits": "0.00",
+    "net_payable": "5.40"
+   },
+   "approval": {
+    "approval_id": "OR-207",
+    "status": "APPROVED",
+    "authority": "OR-SYNTH-01",
+    "payee": "Redwing Test Electric Co.",
+    "amount": "5.40",
+    "currency": "USD",
+    "conditions": [],
+    "required_documents": [
+     "CERTIFIED_PAYROLL",
+     "UNCONDITIONAL_LIEN_WAIVER"
+    ]
+   },
+   "documents": [
+    {
+     "type": "CERTIFIED_PAYROLL",
+     "status": "RECEIVED"
+    },
+    {
+     "type": "UNCONDITIONAL_LIEN_WAIVER",
+     "status": "RECEIVED"
+    }
+   ],
+   "dispute": {
+    "status": "CLEAR",
+    "as_of": "2026-11-15"
+   },
+   "registered_documents": [
+    {
+     "document_id": "DOC-RTE-0101-APP",
+     "text": "SYNTHETIC TEST DOCUMENT - SUBCONTRACTOR PAYMENT APPLICATION\nSubcontractor: Redwing Test Electric Co. (synthetic)\nApplication: RTE-0101\nWork completed: 4 conduit runs at $1.50 USD each, subtotal $6.00 USD.\nLess 10% retainage: $0.60 USD.\nNet amount due: $5.40 USD\nTerms: Net 30\nOwner's representative approval record OR-207 covers this application.\nCertified payroll and unconditional lien waiver received."
+    }
+   ]
+  }
+ ],
+ "examples": [
+  {
+   "key": "a",
+   "label": "A: registered, approved, cleared",
+   "text": "SYNTHETIC TEST DOCUMENT - SUPPLIER PAYMENT REQUEST\nFrom: Prairie Test Concrete LLC (synthetic supplier)\nInvoice: PTC-2041\nAmount due: $5.00 USD\nTerms: Net 15\nScope: sample cylinder testing, pour 3.\nApproval: Payment approved by the project manager on 2026-11-14 (approval record PM-118).\nSupporting documents: signed delivery ticket and conditional lien waiver are attached.\nNo disputes are open on this invoice."
+  },
+  {
+   "key": "b",
+   "label": "B: unresolved dispute",
+   "text": "SYNTHETIC TEST DOCUMENT - SUPPLIER PAYMENT REQUEST\nFrom: Prairie Test Concrete LLC (synthetic supplier)\nInvoice: PTC-2043\nAmount due: $5.00 USD\nTerms: Net 15\nScope: sample cylinder testing, pour 4.\nNOTICE from the general contractor, 2026-11-15: this invoice is disputed. The cylinders failed the 7-day break and the lien waiver has not been received. Do not pay until the dispute is resolved.\nApproval: not yet approved by the project manager."
+  },
+  {
+   "key": "c",
+   "label": "C: contradictory amount (edited copy of A)",
+   "text": "SYNTHETIC TEST DOCUMENT - SUPPLIER PAYMENT REQUEST\nFrom: Prairie Test Concrete LLC (synthetic supplier)\nInvoice: PTC-2041\nAmount due: $5.00 USD\nRemittance summary: total due 5000.\nTerms: Net 15\nScope: sample cylinder testing, pour 3.\nApproval: Payment approved by the project manager on 2026-11-14 (approval record PM-118).\nSupporting documents: signed delivery ticket and conditional lien waiver are attached.\nNo disputes are open on this invoice."
+  },
+  {
+   "key": "k",
+   "label": "K: quantity and retainage that reconcile",
+   "text": "SYNTHETIC TEST DOCUMENT - SUBCONTRACTOR PAYMENT APPLICATION\nSubcontractor: Redwing Test Electric Co. (synthetic)\nApplication: RTE-0101\nWork completed: 4 conduit runs at $1.50 USD each, subtotal $6.00 USD.\nLess 10% retainage: $0.60 USD.\nNet amount due: $5.40 USD\nTerms: Net 30\nOwner's representative approval record OR-207 covers this application.\nCertified payroll and unconditional lien waiver received."
+  }
+ ]
+}

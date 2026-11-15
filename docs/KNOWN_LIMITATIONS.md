@@ -9,7 +9,9 @@
   screens do not read the ledger or call Airwallex. The ledger does not call Airwallex. The `/sandbox` screen calls
   the Airwallex sandbox but shares no data or decision engine with the E3 scenario.
 - **Local only.** There is no hosted deployment.
-- **Agents.** The "agent findings" shown in the UI are fixture text. No AI model is called at runtime.
+- **Agents.** The "agent findings" on the Incident Room (E3) screens are fixture text. The separate `/agent` page
+  calls a real model at runtime (Claude API, or local Ollama when selected); it recommends only and has no
+  financial authority. Its limits are in `docs/EVIDENCE_AGENT.md`.
 - **Reviews are not third-party audits.** "Independent" reviews were fresh-context agents on the same account and
   model family as the builder.
 - **Internal references.** Source comments and the original component READMEs cite internal governance documents,
