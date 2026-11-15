@@ -1,0 +1,14 @@
+{
+  "provenance": "SYNTHETIC_PROPOSAL",
+  "note": "One synthetic supplier-payment proposal for the Airwallex sandbox demonstration. Not a real payable. Separate from the E3 scenario fixtures and never used in E3 calculations.",
+  "proposal": {
+    "proposal_id": "SBX-PROP-0001",
+    "description": "Synthetic supplier payment (sandbox test beneficiary)",
+    "amount": "5.00",
+    "currency": "USD",
+    "reference": "DB-SBX-0001",
+    "reason": "goods_purchased",
+    "transfer_method": "LOCAL",
+    "reserve_threshold": "100.00"
+  }
+}

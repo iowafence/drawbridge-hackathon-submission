@@ -3,16 +3,17 @@
   "version": "0.1.0",
   "private": true,
   "type": "module",
-  "description": "DRAWBRIDGE Incident Room - synthetic, read-only demonstration front end",
+  "description": "DRAWBRIDGE Incident Room (synthetic, read-only screens) plus a separate operator-protected Airwallex sandbox screen",
   "engines": {
     "node": ">=22.18.0"
   },
   "scripts": {
-    "dev": "next dev --port 3100",
+    "dev": "next dev --hostname 127.0.0.1 --port 3100",
     "build": "next build",
-    "start": "next start --port 3100",
+    "start": "next start --hostname 127.0.0.1 --port 3100",
     "typecheck": "tsc --noEmit",
     "test": "node --test \"tests/*.test.ts\"",
+    "test:sandbox": "node --test \"tests/sandbox/*.test.ts\"",
     "reset:fixtures": "node scripts/reset-fixtures.mjs",
     "cleanroom": "npm run reset:fixtures && npm run typecheck && npm test && npm run build",
     "ui:baseline": "node scripts/ui-baseline.mjs"

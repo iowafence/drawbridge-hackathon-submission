@@ -22,3 +22,6 @@ build/
 # Editor / OS
 .DS_Store
 *.swp
+
+# Airwallex sandbox integration: local audit data and role credential files
+.data/

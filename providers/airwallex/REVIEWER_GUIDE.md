@@ -6,7 +6,10 @@ See `NOTICE` (all rights reserved; provided for hackathon review and evaluation)
 
 A standalone, **sandbox-only** Airwallex client (`scripts/awx_client.py`). `ReadOnlyClient` may only log in and call `GET /global_accounts`, `GET /balances/current` and `GET /beneficiaries`. It refuses any environment other than `sandbox`, any base URL other than `https://api.sandbox.airwallex.com/api/v1`, any method or path outside its allowlist, a credential file not named `.env.read`, and one readable by group or others, all **before** any network access. Errors are fixed codes; tokens and keys are never printed. There is no payment, transfer or executor client.
 
-**What it is not:** the DRAWBRIDGE UI demonstration and the PostgreSQL funding ledger do **not** call Airwallex; the UI shows synthetic scenario data. Payments, transfers, token refresh and any end-to-end Airwallex workflow are not implemented.
+**Scope note:** this guide covers the standalone Python client in this directory only. The separate `/sandbox` screen
+in `apps/web` has its own TypeScript sandbox adapter; see `docs/AIRWALLEX_SANDBOX_INTEGRATION.md`.
+
+**What it is not:** the DRAWBRIDGE Incident Room (E3) screens and the PostgreSQL funding ledger do **not** call Airwallex; the UI shows synthetic scenario data. This Python client implements no payment, transfer or token refresh.
 
 ## Evidence
 

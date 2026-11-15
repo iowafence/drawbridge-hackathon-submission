@@ -1,5 +1,10 @@
 # DRAWBRIDGE Incident Room (front end)
 
+> **Scope note (2026-11-15).** Everything below describes the six Incident Room screens, which are synthetic and
+> unchanged. The app now also serves a separate, operator-protected `/sandbox` screen that calls the Airwallex
+> **sandbox** from the server and has working approval controls for one sandbox test transfer. See
+> `docs/AIRWALLEX_SANDBOX_INTEGRATION.md` in the repository root. `npm run dev` and `npm run start` bind to 127.0.0.1.
+
 Synthetic, read-only, five-screen demonstration. It shows a construction treasury incident from fixture data.
 It is not a financial authority. It has no backend, no bank connection, no credentials and no write path.
 

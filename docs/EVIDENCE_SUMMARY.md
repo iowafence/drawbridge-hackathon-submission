@@ -111,3 +111,13 @@ connection.
 | Offline boundary tests | 30 collected, 29 pass, 0 fail, 1 skipped |
 | Sandbox smoke, 2026-11-14 | login HTTP 201; `GET /balances/current` HTTP 200 (46 currency entries). Sanitized record in `providers/airwallex/evidence/` |
 | Credential review | No credential, token or key appears in this repository. The credentials used for the internal run were regenerated afterwards |
+
+## 7. Airwallex sandbox transfer (2026-11-15)
+
+One human-approved 5.00 USD **sandbox** transfer from the `/sandbox` screen: balance read HTTP 200, policy ALLOW,
+validation HTTP 200, creation HTTP 201 (provider ID `cd93a12c-4ce0-4d2d-b097-187f311594d9`), status read HTTP 200 with
+status `PROCESSING`. Not reported as paid. It is separate from the E3 scenario and the funding ledger. Full sanitized
+record and its limits: `docs/evidence/airwallex_sandbox_transfer_2026-11-15_sanitized.md`. Tests: `npm run test:sandbox`,
+17 of 17 pass with all provider calls mocked. The integration was reviewed by a fresh-context agent on the same account
+(PASS WITH FINDINGS: 0 Critical, 0 High, 3 Medium, 10 Low; the Medium findings and most Low findings were fixed before
+release, and the rest are listed in `docs/KNOWN_LIMITATIONS.md`).

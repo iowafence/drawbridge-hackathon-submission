@@ -2,10 +2,12 @@
 
 ## Whole system
 
-- **Synthetic only.** All UI data, ledger data and authorizations are synthetic. Nothing here is a payment authority,
+- **Synthetic only, except the sandbox screen.** All Incident Room (E3) data, ledger data and authorizations are
+  synthetic. The `/sandbox` screen shows Airwallex sandbox test data. Nothing here is a payment authority,
   an approval, a bank balance or real money.
-- **Not integrated.** The UI, the funding ledger and the Airwallex provider are separate components. The UI does not
-  read the ledger or call Airwallex. The ledger does not call Airwallex.
+- **Not integrated.** The E3 scenario screens, the funding ledger and the Airwallex components are separate. The E3
+  screens do not read the ledger or call Airwallex. The ledger does not call Airwallex. The `/sandbox` screen calls
+  the Airwallex sandbox but shares no data or decision engine with the E3 scenario.
 - **Local only.** There is no hosted deployment.
 - **Agents.** The "agent findings" shown in the UI are fixture text. No AI model is called at runtime.
 - **Reviews are not third-party audits.** "Independent" reviews were fresh-context agents on the same account and
@@ -31,6 +33,23 @@
   There is no payment, transfer, beneficiary-creation, token-refresh or production path.
 - It was exercised against the sandbox once (2026-11-14).
 - The credential-file test skips unless all three role files exist, which a reviewer normally does not have.
+
+## Airwallex sandbox screen (`/sandbox`)
+
+- Sandbox only. One 5.00 USD test transfer was created; its last status read was PROCESSING. It is not claimed as paid.
+- Single-operator passphrase login on a local server; sessions are in memory. Not a multi-user identity system.
+- The audit chain is a local file without a secret key and is not externally anchored. The same OS account could
+  rewrite it, including a forged approval.
+- Truncating the end of the audit file is not detected: removing trailing events leaves a valid shorter chain, which
+  would also reset the one-create limit for a new request.
+- If the server stops while writing an audit event, a stale `audit.lock` file in the data directory blocks every
+  later write (`AUDIT_LOCKED`) until it is deleted by hand.
+- The human-approval gate is enforced at the HTTP endpoint. A process running as the same OS user could call the
+  workflow code directly.
+- The policy reads the sandbox balance at approval time; it is not re-read at submission.
+- One fixed synthetic proposal; no free-form payments. No beneficiary creation, cancellation or status simulation.
+- Provider status names come from Airwallex documentation; only SCHEDULED and PROCESSING have been observed.
+- Full details: `docs/AIRWALLEX_SANDBOX_INTEGRATION.md`.
 
 ## Funding ledger
 

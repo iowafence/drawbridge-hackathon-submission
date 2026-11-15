@@ -5,17 +5,34 @@ Copyright 2026 Iowa Fence Inc. All rights reserved. See `NOTICE`. No open-source
 DRAWBRIDGE is a treasury-control prototype for a construction contractor. Its rule is: **AI investigates and explains,
 deterministic code decides eligibility, a person approves, and nothing moves until the controls say so.**
 
-This repository is a curated hackathon submission. It contains three **separate** components that are **not connected to
-each other**:
+This repository is a curated hackathon submission. It contains three **separate** components, plus one integration
+screen added on 2026-11-15:
 
 | Component | Path | What it is | Data |
 |---|---|---|---|
+| Airwallex sandbox screen | `apps/web/src/app/sandbox/`, `apps/web/src/server/` | Operator-protected `/sandbox` page: live sandbox balance read, deterministic reserve policy, human-approved sandbox transfer, local audit chain | Live Airwallex **sandbox** test data |
 | Incident Room UI | `apps/web/` | Next.js demo of a cash-crisis incident: Command, Incident, Payables, Recorder (plus Approvals and Eligibility) | Synthetic fixtures only |
 | Airwallex read-only provider | `providers/airwallex/` | Standalone, sandbox-only Airwallex client restricted to login and three read endpoints | Your own sandbox credentials, if you choose to run the live preflight |
 | Funding ledger (G2C1) | `db/migrations/`, `services/api/app/domain/g2_db/`, `fixtures/`, `contracts/` | PostgreSQL double-entry funding ledger schema, hash-pinned cluster runner, Python replay/reconcile/manifest tooling | Synthetic |
 
-**The UI does not call Airwallex and does not read the ledger. The ledger does not call Airwallex.** No component moves,
-reserves, approves or sends money. Nothing here is connected to a real bank account.
+**The six Incident Room screens (the E3 scenario) are synthetic and do not call Airwallex or read the ledger. The
+ledger does not call Airwallex.** The `/sandbox` screen talks to the Airwallex **sandbox** only; it shares no data,
+balance or decision engine with the E3 scenario. Nothing here is connected to a real bank account or real money.
+
+### E3 scenario and Airwallex sandbox, side by side
+
+| | Incident Room (E3 scenario) | Airwallex sandbox (`/sandbox`) |
+|---|---|---|
+| Data | Synthetic fixtures | Live Airwallex sandbox test data |
+| Decision | Funding controls block disbursement. **Ready to send: $0.00** | A separate 5.00 USD synthetic proposal **passes** a reserve policy on the sandbox balance (ALLOW) |
+| Human step | Approval controls disabled by design | An authenticated operator approved the exact request |
+| Provider | None | Airwallex validated the request (HTTP 200) and created one sandbox transfer (HTTP 201) |
+| Outcome | Nothing moves | Provider status read back as **PROCESSING**. It is **not** reported as paid |
+
+These are two demonstrations of the same rule (deterministic code decides, a person approves), **not** one integrated
+payment system. No E3 obligation was paid, and no E3 figure uses a sandbox balance. Evidence:
+`docs/evidence/airwallex_sandbox_transfer_2026-11-15_sanitized.md`. Design, controls and limits:
+`docs/AIRWALLEX_SANDBOX_INTEGRATION.md`.
 
 Demo video: `<DEMO VIDEO LINK — to be added by the owner>`
 
@@ -53,6 +70,8 @@ Parameters: `?d=delayed` or `?d=on_time` (draw case), `?s=S1` (spending-blocked 
 
 If the dev server reports "Too many open files", start it with `ulimit -Sn 16384` and `WATCHPACK_POLLING=1000`.
 
+Sandbox integration tests (all provider calls mocked, no network): `npm run test:sandbox`, expected **17 tests, 17 pass**.
+
 Expected `npm test` result in this repository: **106 tests, 104 pass, 0 fail, 2 skipped.** The two skipped tests
 (`UI-B3`, `UI-B4`) re-check pinned files against the original internal commit
 `f88af200a3e76b31c1f6129bfeae04e2ca64a24a`, which is deliberately not part of this repository's history. They skip
@@ -77,7 +96,8 @@ all exist in `providers/airwallex/`; a reviewer normally has none of them.
 
 ## 4. Reproduce the read-only Airwallex sandbox preflight (optional)
 
-This is the only part of the repository that makes network calls. It needs **your own Airwallex sandbox** API
+Apart from the `/sandbox` screen (which needs server-side configuration and makes no call without it), this is the
+only part of the repository that makes network calls. It needs **your own Airwallex sandbox** API
 credentials (read access is enough) and performs one token login (POST) and two GETs. It never creates, pays,
 transfers or converts anything, and it refuses any non-sandbox host.
 
@@ -148,11 +168,13 @@ cluster created by the runner and operator-approved migration digests. See `docs
 | Claim | Status |
 |---|---|
 | UI screens, money formatting, derivation and fixture validation | Implemented and tested; **all data synthetic** |
-| Approve / reserve / send in the UI | **Not implemented.** Controls are disabled by design |
+| Approve / reserve / send on the Incident Room (E3) screens | **Not implemented.** Controls are disabled by design |
 | Airwallex sandbox login and read-only GETs | Implemented; verified once in the sandbox on 2026-11-14 |
-| Airwallex payments, transfers, beneficiaries, token refresh, production access | **Not implemented** |
+| Airwallex sandbox transfer (validate, create once, read status) from `/sandbox` | Implemented; one 5.00 USD sandbox transfer created on 2026-11-15, last status read PROCESSING, not reported as paid |
+| Airwallex production access, beneficiary creation, token refresh, cancellation, status simulation | **Not implemented** |
 | Funding ledger schema and tooling | Implemented as source; offline suite passes; 13 selected database cases passed once in an isolated scratch cluster (see evidence) |
-| UI ↔ ledger, UI ↔ Airwallex, ledger ↔ Airwallex | **Not connected** |
+| E3 scenario ↔ Airwallex, UI ↔ ledger, ledger ↔ Airwallex | **Not connected** |
+| `/sandbox` screen ↔ Airwallex sandbox | Connected, server-side only, operator sign-in required |
 | Concurrency, durability/crash recovery, injection resistance, production readiness | **Not established** |
 | AI agents | The "agent findings" in the UI are synthetic fixture text. No model is called at runtime |
 
@@ -165,7 +187,9 @@ See `docs/KNOWN_LIMITATIONS.md` for the full list. In short:
   durability, crash/restart and injection are untested.
 - The Gate C review is a same-account, fresh-context agent review, **not a third-party audit**. Its finding is PASS
   WITH FINDINGS: 4 Low, 7 Info.
-- The Airwallex provider was exercised against the sandbox once, read-only.
+- The Airwallex sandbox transfer is one 5.00 USD test transfer whose last status read was PROCESSING. It is not
+  claimed as paid, and it did not pay any E3 obligation.
+- The sandbox audit chain is a local file without a secret key; the same OS account could rewrite it.
 - Source comments cite internal review and governance identifiers (for example `G1S`, `LOOM-2 V04`, `AWX-P2-…`).
   Those documents are not included.
 
