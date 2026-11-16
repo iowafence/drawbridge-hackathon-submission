@@ -244,7 +244,7 @@ See `docs/KNOWN_LIMITATIONS.md` for the full list. In short:
 
 [Watch the DRAWBRIDGE Demo (4:12)](https://drive.google.com/file/d/1AbEwaq3Op9TUT1PVn7-exSrqh524vsEf/view?usp=drive_link)
 
-Updated walkthrough covering all four demonstrations (4:31): NEW_VIDEO_LINK_PLACEHOLDER
+Updated walkthrough covering all four demonstrations (4:31): [Watch the updated DRAWBRIDGE walkthrough (4:31)](https://drive.google.com/file/d/1vxt9AsoGocjRTmru5Z2sgNUGY460eh6F/view?usp=sharing)
 
 ## Repository contents and provenance
 
