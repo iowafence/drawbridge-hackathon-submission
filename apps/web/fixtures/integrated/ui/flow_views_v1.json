@@ -1,0 +1,1041 @@
+{
+  "contract": "flow-v1",
+  "kind": "UI_FIXTURE",
+  "provenance": "A6 UI fixtures. Gate sections are the output of the real agentPolicy.evaluate on the shipped synthetic registry with a fixed mock-mode balance. State, authorization, submission, audit and echo sections are hand-authored FlowView states for UI testing; their digests (including every echo digest) and ids are placeholders, not flowCanonical output. Not a record of any flow, approval or transfer.",
+  "mock_balance_usd": "10000000.00",
+  "views": [
+    {
+      "fixture": {
+        "id": "evidence-ready",
+        "label": "Evidence attached, gate not run",
+        "description": "Registered document attached by fixture replay; the gate has not evaluated yet.",
+        "gate_reason": "Every requirement is verified from trusted records for CASE-PTC-2041: 5.00 USD to Prairie Test Concrete LLC. A human must still review and approve. No payment was created.",
+        "gate_balance_input": "10000000.00",
+        "note": null
+      },
+      "flow_id": "a279231a-87b9-440b-8790-a46b170effdd",
+      "state": "EVIDENCE_READY",
+      "version": 2,
+      "terminal": false,
+      "proposal": {
+        "flow_id": "a279231a-87b9-440b-8790-a46b170effdd",
+        "obligation_id": "CASE-PTC-2041",
+        "payee": "Prairie Test Concrete LLC",
+        "beneficiary_label": "Synthetic test supplier",
+        "beneficiary_id_suffix": "00be",
+        "amount_minor": "500",
+        "amount_display": "5.00 USD",
+        "currency": "USD",
+        "reference": "PTC-2041",
+        "transfer_method": "LOCAL",
+        "reason": "supplier_invoice",
+        "provider_request_id": "cedbc2f1-7607-4ad5-85a6-5d9905ead23c"
+      },
+      "gate": null,
+      "authorization": null,
+      "ledger": null,
+      "submission": {
+        "attempt_id": null,
+        "attempt_recorded_at_ms": null,
+        "provider_mode": null,
+        "provider_transfer_id": null,
+        "create_http_status": null,
+        "create_reported_status": null,
+        "last_provider_status": null,
+        "last_provider_read_at_ms": null
+      },
+      "audit": {
+        "count": 2,
+        "head": "c2ed59a7e6b655aca08ffdf752cd41a00875a6dd3510b7abe8975c7c5b059f18",
+        "verified": true,
+        "code": null
+      },
+      "echo": {
+        "proposal_digest": "330571e4f47af131ff678ac4270dde793ca011fc53755fc870a5a90275b3dd40",
+        "gate_digest": null,
+        "authorization_digest": null
+      },
+      "balance_display": null,
+      "provider_mode": "mock",
+      "flags": {
+        "ledger": false,
+        "e3": false,
+        "external_audit": false
+      }
+    },
+    {
+      "fixture": {
+        "id": "awaiting-human",
+        "label": "Eligible for human review",
+        "description": "All 11 proofs VERIFIED. A human must now review and approve the exact proposal; nothing is approved yet.",
+        "gate_reason": "Every requirement is verified from trusted records for CASE-PTC-2041: 5.00 USD to Prairie Test Concrete LLC. A human must still review and approve. No payment was created.",
+        "gate_balance_input": "10000000.00",
+        "note": null
+      },
+      "flow_id": "c165ec98-4685-4cda-8255-e9f3d9479be9",
+      "state": "AWAITING_HUMAN",
+      "version": 3,
+      "terminal": false,
+      "proposal": {
+        "flow_id": "c165ec98-4685-4cda-8255-e9f3d9479be9",
+        "obligation_id": "CASE-PTC-2041",
+        "payee": "Prairie Test Concrete LLC",
+        "beneficiary_label": "Synthetic test supplier",
+        "beneficiary_id_suffix": "00be",
+        "amount_minor": "500",
+        "amount_display": "5.00 USD",
+        "currency": "USD",
+        "reference": "PTC-2041",
+        "transfer_method": "LOCAL",
+        "reason": "supplier_invoice",
+        "provider_request_id": "53b2a72e-28d2-4281-81cf-aec81ab21157"
+      },
+      "gate": {
+        "decision": "ELIGIBLE_FOR_HUMAN_REVIEW",
+        "rule": "P-ALL VERIFIED",
+        "gate_refused": false,
+        "proof_states": {
+          "S": "VERIFIED",
+          "A": "VERIFIED",
+          "B": "VERIFIED",
+          "C": "VERIFIED",
+          "D": "VERIFIED",
+          "E": "VERIFIED",
+          "F": "VERIFIED",
+          "G": "VERIFIED",
+          "H": "VERIFIED",
+          "I": "VERIFIED",
+          "J": "VERIFIED"
+        },
+        "proof_reasons": {
+          "S": "The submitted text is exactly registered document DOC-PTC-2041-INV.",
+          "A": "Matches the trusted record exactly.",
+          "B": "Every figure read from the document reconciles with the record; net payable 5.00 recomputed from its components.",
+          "C": "Matches the trusted record exactly.",
+          "D": "Matches the trusted record exactly.",
+          "E": "All 2 required documents are recorded as received.",
+          "F": "Approval PM-118 by PM-SYNTH-01 is unconditional and matches the payee, amount and currency exactly.",
+          "G": "The dispute register shows CLEAR as of 2026-11-15.",
+          "H": "Funding source is the sandbox demonstration account.",
+          "I": "Within the demo cap, and the sandbox reserve holds after 5.00 USD.",
+          "J": "Enforced by design: the strongest outcome of this gate is eligibility for a human to review. It creates no payment and no approval."
+        },
+        "evidence_source": "FIXTURE_REPLAY",
+        "document_id": "DOC-PTC-2041-INV",
+        "document_binding": "REGISTERED_DOCUMENT",
+        "evaluated_at_ms": 1794780060000,
+        "expires_at_ms": 1794780660000,
+        "policy_version": "agentPolicy.evaluate/11-proof/v1@6063b1c"
+      },
+      "authorization": null,
+      "ledger": null,
+      "submission": {
+        "attempt_id": null,
+        "attempt_recorded_at_ms": null,
+        "provider_mode": null,
+        "provider_transfer_id": null,
+        "create_http_status": null,
+        "create_reported_status": null,
+        "last_provider_status": null,
+        "last_provider_read_at_ms": null
+      },
+      "audit": {
+        "count": 3,
+        "head": "350b422f936250ce6a1dc6dcb1ea961fb4f8b46fd53b7ced936449f5b228bc3a",
+        "verified": true,
+        "code": null
+      },
+      "echo": {
+        "proposal_digest": "3cf9d9e605bb15c1909f1a952df554e3de6ad382d8cbec49e2ece97f65ff77a8",
+        "gate_digest": "4028d663bcb985d843807c0260ddcbb83b5a10158ee08a6285994d4707c4d1ce",
+        "authorization_digest": null
+      },
+      "balance_display": "10000000.00",
+      "provider_mode": "mock",
+      "flags": {
+        "ledger": false,
+        "e3": false,
+        "external_audit": false
+      }
+    },
+    {
+      "fixture": {
+        "id": "human-approved",
+        "label": "Human approved, not submitted",
+        "description": "An operator approved the exact proposal digest. No transfer has been requested.",
+        "gate_reason": "Every requirement is verified from trusted records for CASE-PTC-2041: 5.00 USD to Prairie Test Concrete LLC. A human must still review and approve. No payment was created.",
+        "gate_balance_input": "10000000.00",
+        "note": null
+      },
+      "flow_id": "03a2a3e1-8dc0-4058-8130-7a6d12a49c41",
+      "state": "HUMAN_APPROVED",
+      "version": 5,
+      "terminal": false,
+      "proposal": {
+        "flow_id": "03a2a3e1-8dc0-4058-8130-7a6d12a49c41",
+        "obligation_id": "CASE-PTC-2041",
+        "payee": "Prairie Test Concrete LLC",
+        "beneficiary_label": "Synthetic test supplier",
+        "beneficiary_id_suffix": "00be",
+        "amount_minor": "500",
+        "amount_display": "5.00 USD",
+        "currency": "USD",
+        "reference": "PTC-2041",
+        "transfer_method": "LOCAL",
+        "reason": "supplier_invoice",
+        "provider_request_id": "925c1f30-636f-4523-8bc1-cd974321ffbd"
+      },
+      "gate": {
+        "decision": "ELIGIBLE_FOR_HUMAN_REVIEW",
+        "rule": "P-ALL VERIFIED",
+        "gate_refused": false,
+        "proof_states": {
+          "S": "VERIFIED",
+          "A": "VERIFIED",
+          "B": "VERIFIED",
+          "C": "VERIFIED",
+          "D": "VERIFIED",
+          "E": "VERIFIED",
+          "F": "VERIFIED",
+          "G": "VERIFIED",
+          "H": "VERIFIED",
+          "I": "VERIFIED",
+          "J": "VERIFIED"
+        },
+        "proof_reasons": {
+          "S": "The submitted text is exactly registered document DOC-PTC-2041-INV.",
+          "A": "Matches the trusted record exactly.",
+          "B": "Every figure read from the document reconciles with the record; net payable 5.00 recomputed from its components.",
+          "C": "Matches the trusted record exactly.",
+          "D": "Matches the trusted record exactly.",
+          "E": "All 2 required documents are recorded as received.",
+          "F": "Approval PM-118 by PM-SYNTH-01 is unconditional and matches the payee, amount and currency exactly.",
+          "G": "The dispute register shows CLEAR as of 2026-11-15.",
+          "H": "Funding source is the sandbox demonstration account.",
+          "I": "Within the demo cap, and the sandbox reserve holds after 5.00 USD.",
+          "J": "Enforced by design: the strongest outcome of this gate is eligibility for a human to review. It creates no payment and no approval."
+        },
+        "evidence_source": "FIXTURE_REPLAY",
+        "document_id": "DOC-PTC-2041-INV",
+        "document_binding": "REGISTERED_DOCUMENT",
+        "evaluated_at_ms": 1794780060000,
+        "expires_at_ms": 1794780660000,
+        "policy_version": "agentPolicy.evaluate/11-proof/v1@6063b1c"
+      },
+      "authorization": {
+        "operator_id": "human:operator",
+        "approved_at_ms": 1794780180000,
+        "expires_at_ms": 1794780780000
+      },
+      "ledger": null,
+      "submission": {
+        "attempt_id": null,
+        "attempt_recorded_at_ms": null,
+        "provider_mode": null,
+        "provider_transfer_id": null,
+        "create_http_status": null,
+        "create_reported_status": null,
+        "last_provider_status": null,
+        "last_provider_read_at_ms": null
+      },
+      "audit": {
+        "count": 5,
+        "head": "2a797fec7fc599bbbcf74a51f9995bb7106ed7ff01503d8e75f82519af146910",
+        "verified": true,
+        "code": null
+      },
+      "echo": {
+        "proposal_digest": "1235486cf04293674d423eb16fe04272e63ad7d0a2b230dc8baa304910ff875d",
+        "gate_digest": "e1ebdbb9c95f5d4fff64c2b6711b1c1c52369e3649683174bd3636974f9526c0",
+        "authorization_digest": "c33ed4113122e5aac9f307b67b7ed10a66871038e1c2b772df33ddc9826046df"
+      },
+      "balance_display": "10000000.00",
+      "provider_mode": "mock",
+      "flags": {
+        "ledger": false,
+        "e3": false,
+        "external_audit": false
+      }
+    },
+    {
+      "fixture": {
+        "id": "submitted",
+        "label": "Submitted to mock provider",
+        "description": "The mock provider accepted one create request (HTTP 201). No provider read yet.",
+        "gate_reason": "Every requirement is verified from trusted records for CASE-PTC-2041: 5.00 USD to Prairie Test Concrete LLC. A human must still review and approve. No payment was created.",
+        "gate_balance_input": "10000000.00",
+        "note": null
+      },
+      "flow_id": "37ec6229-bb93-4e88-8df8-9a0700c1337c",
+      "state": "SUBMITTED",
+      "version": 7,
+      "terminal": false,
+      "proposal": {
+        "flow_id": "37ec6229-bb93-4e88-8df8-9a0700c1337c",
+        "obligation_id": "CASE-PTC-2041",
+        "payee": "Prairie Test Concrete LLC",
+        "beneficiary_label": "Synthetic test supplier",
+        "beneficiary_id_suffix": "00be",
+        "amount_minor": "500",
+        "amount_display": "5.00 USD",
+        "currency": "USD",
+        "reference": "PTC-2041",
+        "transfer_method": "LOCAL",
+        "reason": "supplier_invoice",
+        "provider_request_id": "3c94a2c5-c770-415d-8aee-520e6221c1cf"
+      },
+      "gate": {
+        "decision": "ELIGIBLE_FOR_HUMAN_REVIEW",
+        "rule": "P-ALL VERIFIED",
+        "gate_refused": false,
+        "proof_states": {
+          "S": "VERIFIED",
+          "A": "VERIFIED",
+          "B": "VERIFIED",
+          "C": "VERIFIED",
+          "D": "VERIFIED",
+          "E": "VERIFIED",
+          "F": "VERIFIED",
+          "G": "VERIFIED",
+          "H": "VERIFIED",
+          "I": "VERIFIED",
+          "J": "VERIFIED"
+        },
+        "proof_reasons": {
+          "S": "The submitted text is exactly registered document DOC-PTC-2041-INV.",
+          "A": "Matches the trusted record exactly.",
+          "B": "Every figure read from the document reconciles with the record; net payable 5.00 recomputed from its components.",
+          "C": "Matches the trusted record exactly.",
+          "D": "Matches the trusted record exactly.",
+          "E": "All 2 required documents are recorded as received.",
+          "F": "Approval PM-118 by PM-SYNTH-01 is unconditional and matches the payee, amount and currency exactly.",
+          "G": "The dispute register shows CLEAR as of 2026-11-15.",
+          "H": "Funding source is the sandbox demonstration account.",
+          "I": "Within the demo cap, and the sandbox reserve holds after 5.00 USD.",
+          "J": "Enforced by design: the strongest outcome of this gate is eligibility for a human to review. It creates no payment and no approval."
+        },
+        "evidence_source": "FIXTURE_REPLAY",
+        "document_id": "DOC-PTC-2041-INV",
+        "document_binding": "REGISTERED_DOCUMENT",
+        "evaluated_at_ms": 1794780060000,
+        "expires_at_ms": 1794780660000,
+        "policy_version": "agentPolicy.evaluate/11-proof/v1@6063b1c"
+      },
+      "authorization": {
+        "operator_id": "human:operator",
+        "approved_at_ms": 1794780180000,
+        "expires_at_ms": 1794780780000
+      },
+      "ledger": null,
+      "submission": {
+        "attempt_id": "0a45bc11-269b-420d-845e-00febf6e3457",
+        "attempt_recorded_at_ms": 1794780210000,
+        "provider_mode": "mock",
+        "provider_transfer_id": "9ff090da-c128-4b9b-8745-ed0ba4dc6069",
+        "create_http_status": 201,
+        "create_reported_status": "PROCESSING",
+        "last_provider_status": null,
+        "last_provider_read_at_ms": null
+      },
+      "audit": {
+        "count": 7,
+        "head": "017d82caa9d4118cfa1fc3233072fe196e85f89ef4b2860cf89dbcc117ec7871",
+        "verified": true,
+        "code": null
+      },
+      "echo": {
+        "proposal_digest": "652b82f1fcf9e411e85632ea685e7f403f3c2a6723561f7100eda8e810ffc8fc",
+        "gate_digest": "e7a9daacbf0a2fd855d34d620bd3144a96bacb435222efcefe1ad0900e538533",
+        "authorization_digest": "f2246570b731003c311114b767af77ca98afcb21b928a05a11257368f7f6de48"
+      },
+      "balance_display": "10000000.00",
+      "provider_mode": "mock",
+      "flags": {
+        "ledger": false,
+        "e3": false,
+        "external_audit": false
+      }
+    },
+    {
+      "fixture": {
+        "id": "processing",
+        "label": "Provider read: PROCESSING",
+        "description": "A provider read returned PROCESSING for the matching record. Not settled.",
+        "gate_reason": "Every requirement is verified from trusted records for CASE-PTC-2041: 5.00 USD to Prairie Test Concrete LLC. A human must still review and approve. No payment was created.",
+        "gate_balance_input": "10000000.00",
+        "note": null
+      },
+      "flow_id": "3d9f899e-98c5-4de7-877b-1f88cf599532",
+      "state": "PROVIDER_PROCESSING",
+      "version": 8,
+      "terminal": false,
+      "proposal": {
+        "flow_id": "3d9f899e-98c5-4de7-877b-1f88cf599532",
+        "obligation_id": "CASE-PTC-2041",
+        "payee": "Prairie Test Concrete LLC",
+        "beneficiary_label": "Synthetic test supplier",
+        "beneficiary_id_suffix": "00be",
+        "amount_minor": "500",
+        "amount_display": "5.00 USD",
+        "currency": "USD",
+        "reference": "PTC-2041",
+        "transfer_method": "LOCAL",
+        "reason": "supplier_invoice",
+        "provider_request_id": "b3b3db82-9726-4f67-8740-8cb407a7ffec"
+      },
+      "gate": {
+        "decision": "ELIGIBLE_FOR_HUMAN_REVIEW",
+        "rule": "P-ALL VERIFIED",
+        "gate_refused": false,
+        "proof_states": {
+          "S": "VERIFIED",
+          "A": "VERIFIED",
+          "B": "VERIFIED",
+          "C": "VERIFIED",
+          "D": "VERIFIED",
+          "E": "VERIFIED",
+          "F": "VERIFIED",
+          "G": "VERIFIED",
+          "H": "VERIFIED",
+          "I": "VERIFIED",
+          "J": "VERIFIED"
+        },
+        "proof_reasons": {
+          "S": "The submitted text is exactly registered document DOC-PTC-2041-INV.",
+          "A": "Matches the trusted record exactly.",
+          "B": "Every figure read from the document reconciles with the record; net payable 5.00 recomputed from its components.",
+          "C": "Matches the trusted record exactly.",
+          "D": "Matches the trusted record exactly.",
+          "E": "All 2 required documents are recorded as received.",
+          "F": "Approval PM-118 by PM-SYNTH-01 is unconditional and matches the payee, amount and currency exactly.",
+          "G": "The dispute register shows CLEAR as of 2026-11-15.",
+          "H": "Funding source is the sandbox demonstration account.",
+          "I": "Within the demo cap, and the sandbox reserve holds after 5.00 USD.",
+          "J": "Enforced by design: the strongest outcome of this gate is eligibility for a human to review. It creates no payment and no approval."
+        },
+        "evidence_source": "FIXTURE_REPLAY",
+        "document_id": "DOC-PTC-2041-INV",
+        "document_binding": "REGISTERED_DOCUMENT",
+        "evaluated_at_ms": 1794780060000,
+        "expires_at_ms": 1794780660000,
+        "policy_version": "agentPolicy.evaluate/11-proof/v1@6063b1c"
+      },
+      "authorization": {
+        "operator_id": "human:operator",
+        "approved_at_ms": 1794780180000,
+        "expires_at_ms": 1794780780000
+      },
+      "ledger": null,
+      "submission": {
+        "attempt_id": "5401f3c9-bda6-4bcd-8c0c-2b0675a49342",
+        "attempt_recorded_at_ms": 1794780210000,
+        "provider_mode": "mock",
+        "provider_transfer_id": "7e139226-879b-46a0-8f0c-7c24589f0cc8",
+        "create_http_status": 201,
+        "create_reported_status": "PROCESSING",
+        "last_provider_status": "PROCESSING",
+        "last_provider_read_at_ms": 1794780270000
+      },
+      "audit": {
+        "count": 8,
+        "head": "2201574eb699feed01b497ee337f9aa4ce9df3c976d9755053d333175ca471c0",
+        "verified": true,
+        "code": null
+      },
+      "echo": {
+        "proposal_digest": "faeafa8552eb45b936f8c4423a5995c6dc828e7a239851bfca3cee041c47bb06",
+        "gate_digest": "0b54150e768b22e49340bf38a8a779eb44d06ba2da1847340664797083198969",
+        "authorization_digest": "c3c6d9eae91d6e98d556567b580b7d02f8747b003a18689d314e46e200aac7cb"
+      },
+      "balance_display": "10000000.00",
+      "provider_mode": "mock",
+      "flags": {
+        "ledger": false,
+        "e3": false,
+        "external_audit": false
+      }
+    },
+    {
+      "fixture": {
+        "id": "uncertain",
+        "label": "Submission uncertain",
+        "description": "The create call timed out after the intent was recorded. No retry; reconciliation by read only.",
+        "gate_reason": "Every requirement is verified from trusted records for CASE-PTC-2041: 5.00 USD to Prairie Test Concrete LLC. A human must still review and approve. No payment was created.",
+        "gate_balance_input": "10000000.00",
+        "note": null
+      },
+      "flow_id": "d7fae655-9df5-4fe1-8a34-2915c9e2dd8c",
+      "state": "SUBMISSION_UNCERTAIN",
+      "version": 7,
+      "terminal": false,
+      "proposal": {
+        "flow_id": "d7fae655-9df5-4fe1-8a34-2915c9e2dd8c",
+        "obligation_id": "CASE-PTC-2041",
+        "payee": "Prairie Test Concrete LLC",
+        "beneficiary_label": "Synthetic test supplier",
+        "beneficiary_id_suffix": "00be",
+        "amount_minor": "500",
+        "amount_display": "5.00 USD",
+        "currency": "USD",
+        "reference": "PTC-2041",
+        "transfer_method": "LOCAL",
+        "reason": "supplier_invoice",
+        "provider_request_id": "cc8fd67d-d29a-4886-8885-8b145425191d"
+      },
+      "gate": {
+        "decision": "ELIGIBLE_FOR_HUMAN_REVIEW",
+        "rule": "P-ALL VERIFIED",
+        "gate_refused": false,
+        "proof_states": {
+          "S": "VERIFIED",
+          "A": "VERIFIED",
+          "B": "VERIFIED",
+          "C": "VERIFIED",
+          "D": "VERIFIED",
+          "E": "VERIFIED",
+          "F": "VERIFIED",
+          "G": "VERIFIED",
+          "H": "VERIFIED",
+          "I": "VERIFIED",
+          "J": "VERIFIED"
+        },
+        "proof_reasons": {
+          "S": "The submitted text is exactly registered document DOC-PTC-2041-INV.",
+          "A": "Matches the trusted record exactly.",
+          "B": "Every figure read from the document reconciles with the record; net payable 5.00 recomputed from its components.",
+          "C": "Matches the trusted record exactly.",
+          "D": "Matches the trusted record exactly.",
+          "E": "All 2 required documents are recorded as received.",
+          "F": "Approval PM-118 by PM-SYNTH-01 is unconditional and matches the payee, amount and currency exactly.",
+          "G": "The dispute register shows CLEAR as of 2026-11-15.",
+          "H": "Funding source is the sandbox demonstration account.",
+          "I": "Within the demo cap, and the sandbox reserve holds after 5.00 USD.",
+          "J": "Enforced by design: the strongest outcome of this gate is eligibility for a human to review. It creates no payment and no approval."
+        },
+        "evidence_source": "FIXTURE_REPLAY",
+        "document_id": "DOC-PTC-2041-INV",
+        "document_binding": "REGISTERED_DOCUMENT",
+        "evaluated_at_ms": 1794780060000,
+        "expires_at_ms": 1794780660000,
+        "policy_version": "agentPolicy.evaluate/11-proof/v1@6063b1c"
+      },
+      "authorization": {
+        "operator_id": "human:operator",
+        "approved_at_ms": 1794780180000,
+        "expires_at_ms": 1794780780000
+      },
+      "ledger": null,
+      "submission": {
+        "attempt_id": "3dc7c87b-03cf-4bcb-80f5-b03b8e7dfc4f",
+        "attempt_recorded_at_ms": 1794780210000,
+        "provider_mode": "mock",
+        "provider_transfer_id": null,
+        "create_http_status": null,
+        "create_reported_status": null,
+        "last_provider_status": null,
+        "last_provider_read_at_ms": null
+      },
+      "audit": {
+        "count": 7,
+        "head": "41cd54a395db52635de586a9fc6e8595acd91b11e805350ba603c00841c9e544",
+        "verified": true,
+        "code": null
+      },
+      "echo": {
+        "proposal_digest": "9a02c36edb4d5865b901dd50498215f64a12aa3cc36f3d713098f93a5f410072",
+        "gate_digest": "229451670fc1784caf414b87d0c732014bc676a2bca4741b1c03fbf3d1e58f43",
+        "authorization_digest": "2f71122de4c8c5a53b2b1289310de677a42b1dcbd24954e6543654d7d8be90b2"
+      },
+      "balance_display": "10000000.00",
+      "provider_mode": "mock",
+      "flags": {
+        "ledger": false,
+        "e3": false,
+        "external_audit": false
+      }
+    },
+    {
+      "fixture": {
+        "id": "paid-mock",
+        "label": "Mock provider read: PAID",
+        "description": "The mock provider's read returned PAID. In mock mode no money exists or moves.",
+        "gate_reason": "Every requirement is verified from trusted records for CASE-PTC-2041: 5.00 USD to Prairie Test Concrete LLC. A human must still review and approve. No payment was created.",
+        "gate_balance_input": "10000000.00",
+        "note": null
+      },
+      "flow_id": "64157009-8029-44e9-875e-367125633f5d",
+      "state": "PROVIDER_PAID",
+      "version": 8,
+      "terminal": true,
+      "proposal": {
+        "flow_id": "64157009-8029-44e9-875e-367125633f5d",
+        "obligation_id": "CASE-PTC-2041",
+        "payee": "Prairie Test Concrete LLC",
+        "beneficiary_label": "Synthetic test supplier",
+        "beneficiary_id_suffix": "00be",
+        "amount_minor": "500",
+        "amount_display": "5.00 USD",
+        "currency": "USD",
+        "reference": "PTC-2041",
+        "transfer_method": "LOCAL",
+        "reason": "supplier_invoice",
+        "provider_request_id": "f7072990-bddd-4006-832a-e50efc2b2649"
+      },
+      "gate": {
+        "decision": "ELIGIBLE_FOR_HUMAN_REVIEW",
+        "rule": "P-ALL VERIFIED",
+        "gate_refused": false,
+        "proof_states": {
+          "S": "VERIFIED",
+          "A": "VERIFIED",
+          "B": "VERIFIED",
+          "C": "VERIFIED",
+          "D": "VERIFIED",
+          "E": "VERIFIED",
+          "F": "VERIFIED",
+          "G": "VERIFIED",
+          "H": "VERIFIED",
+          "I": "VERIFIED",
+          "J": "VERIFIED"
+        },
+        "proof_reasons": {
+          "S": "The submitted text is exactly registered document DOC-PTC-2041-INV.",
+          "A": "Matches the trusted record exactly.",
+          "B": "Every figure read from the document reconciles with the record; net payable 5.00 recomputed from its components.",
+          "C": "Matches the trusted record exactly.",
+          "D": "Matches the trusted record exactly.",
+          "E": "All 2 required documents are recorded as received.",
+          "F": "Approval PM-118 by PM-SYNTH-01 is unconditional and matches the payee, amount and currency exactly.",
+          "G": "The dispute register shows CLEAR as of 2026-11-15.",
+          "H": "Funding source is the sandbox demonstration account.",
+          "I": "Within the demo cap, and the sandbox reserve holds after 5.00 USD.",
+          "J": "Enforced by design: the strongest outcome of this gate is eligibility for a human to review. It creates no payment and no approval."
+        },
+        "evidence_source": "FIXTURE_REPLAY",
+        "document_id": "DOC-PTC-2041-INV",
+        "document_binding": "REGISTERED_DOCUMENT",
+        "evaluated_at_ms": 1794780060000,
+        "expires_at_ms": 1794780660000,
+        "policy_version": "agentPolicy.evaluate/11-proof/v1@6063b1c"
+      },
+      "authorization": {
+        "operator_id": "human:operator",
+        "approved_at_ms": 1794780180000,
+        "expires_at_ms": 1794780780000
+      },
+      "ledger": null,
+      "submission": {
+        "attempt_id": "1ad3a0b3-4df7-4361-8667-a2ed38ea4a93",
+        "attempt_recorded_at_ms": 1794780210000,
+        "provider_mode": "mock",
+        "provider_transfer_id": "ed187951-da7e-4237-87c9-ab50e1b3afe0",
+        "create_http_status": 201,
+        "create_reported_status": "PROCESSING",
+        "last_provider_status": "PAID",
+        "last_provider_read_at_ms": 1794780480000
+      },
+      "audit": {
+        "count": 8,
+        "head": "3ac4b6ad2c3cfa27f49e0015a510acb18236132fd07f1eed75adb641c58ba0bf",
+        "verified": true,
+        "code": null
+      },
+      "echo": {
+        "proposal_digest": "f7be62626ca250b6ffe399909af357921881e959ab58fc8963c746ddd7b2b555",
+        "gate_digest": "42b7bf310be9efd23c3207991eb4677ed999f7dde62fa84063cc187736bb6816",
+        "authorization_digest": "97ad85cefb8719013a25baa7343bf5a3e956b2541b98de73f12de68ecb18f5ea"
+      },
+      "balance_display": "10000000.00",
+      "provider_mode": "mock",
+      "flags": {
+        "ledger": false,
+        "e3": false,
+        "external_audit": false
+      }
+    },
+    {
+      "fixture": {
+        "id": "expired",
+        "label": "Approval expired",
+        "description": "The approval was not used within its 10-minute lifetime.",
+        "gate_reason": "Every requirement is verified from trusted records for CASE-PTC-2041: 5.00 USD to Prairie Test Concrete LLC. A human must still review and approve. No payment was created.",
+        "gate_balance_input": "10000000.00",
+        "note": null
+      },
+      "flow_id": "83d79757-11e7-4a23-8a0e-a205c7148431",
+      "state": "EXPIRED",
+      "version": 6,
+      "terminal": true,
+      "proposal": {
+        "flow_id": "83d79757-11e7-4a23-8a0e-a205c7148431",
+        "obligation_id": "CASE-PTC-2041",
+        "payee": "Prairie Test Concrete LLC",
+        "beneficiary_label": "Synthetic test supplier",
+        "beneficiary_id_suffix": "00be",
+        "amount_minor": "500",
+        "amount_display": "5.00 USD",
+        "currency": "USD",
+        "reference": "PTC-2041",
+        "transfer_method": "LOCAL",
+        "reason": "supplier_invoice",
+        "provider_request_id": "9e24cb12-48ef-47a9-8ced-8b637c4d4796"
+      },
+      "gate": {
+        "decision": "ELIGIBLE_FOR_HUMAN_REVIEW",
+        "rule": "P-ALL VERIFIED",
+        "gate_refused": false,
+        "proof_states": {
+          "S": "VERIFIED",
+          "A": "VERIFIED",
+          "B": "VERIFIED",
+          "C": "VERIFIED",
+          "D": "VERIFIED",
+          "E": "VERIFIED",
+          "F": "VERIFIED",
+          "G": "VERIFIED",
+          "H": "VERIFIED",
+          "I": "VERIFIED",
+          "J": "VERIFIED"
+        },
+        "proof_reasons": {
+          "S": "The submitted text is exactly registered document DOC-PTC-2041-INV.",
+          "A": "Matches the trusted record exactly.",
+          "B": "Every figure read from the document reconciles with the record; net payable 5.00 recomputed from its components.",
+          "C": "Matches the trusted record exactly.",
+          "D": "Matches the trusted record exactly.",
+          "E": "All 2 required documents are recorded as received.",
+          "F": "Approval PM-118 by PM-SYNTH-01 is unconditional and matches the payee, amount and currency exactly.",
+          "G": "The dispute register shows CLEAR as of 2026-11-15.",
+          "H": "Funding source is the sandbox demonstration account.",
+          "I": "Within the demo cap, and the sandbox reserve holds after 5.00 USD.",
+          "J": "Enforced by design: the strongest outcome of this gate is eligibility for a human to review. It creates no payment and no approval."
+        },
+        "evidence_source": "FIXTURE_REPLAY",
+        "document_id": "DOC-PTC-2041-INV",
+        "document_binding": "REGISTERED_DOCUMENT",
+        "evaluated_at_ms": 1794780060000,
+        "expires_at_ms": 1794780660000,
+        "policy_version": "agentPolicy.evaluate/11-proof/v1@6063b1c"
+      },
+      "authorization": {
+        "operator_id": "human:operator",
+        "approved_at_ms": 1794780180000,
+        "expires_at_ms": 1794780780000
+      },
+      "ledger": null,
+      "submission": {
+        "attempt_id": null,
+        "attempt_recorded_at_ms": null,
+        "provider_mode": null,
+        "provider_transfer_id": null,
+        "create_http_status": null,
+        "create_reported_status": null,
+        "last_provider_status": null,
+        "last_provider_read_at_ms": null
+      },
+      "audit": {
+        "count": 6,
+        "head": "2216d014cba0b122770a991a54dba7c822db3c80c309debee48f60a59e5ccb13",
+        "verified": true,
+        "code": null
+      },
+      "echo": {
+        "proposal_digest": "ac0f44bca24887bdce9c08c9c24470fc9c87de1732b20c1e6e0e08504bb4acbd",
+        "gate_digest": "fd718fb0f2d7121135c629328a3d0db89cfc8cb16976a9fe1359c4f934ba9c2c",
+        "authorization_digest": "3606e9fd1d1740e1562a720887323f206f458926712fdd29a61f8917f8efe02a"
+      },
+      "balance_display": "10000000.00",
+      "provider_mode": "mock",
+      "flags": {
+        "ledger": false,
+        "e3": false,
+        "external_audit": false
+      }
+    },
+    {
+      "fixture": {
+        "id": "hold-dispute",
+        "label": "HOLD: open dispute, pending approval",
+        "description": "Registered document for PTC-2043; the registry shows an open dispute and no affirmative approval.",
+        "gate_reason": "E Required documents present: Not received according to the manifest: CONDITIONAL_LIEN_WAIVER. F Valid affirmative approval: The approval record status is PENDING, not APPROVED. G Dispute status cleared: The dispute register shows OPEN as of 2026-11-15.",
+        "gate_balance_input": "10000000.00",
+        "note": null
+      },
+      "flow_id": "4655ab1a-4b13-43e9-8c48-7f910d265946",
+      "state": "GATE_HOLD",
+      "version": 3,
+      "terminal": true,
+      "proposal": {
+        "flow_id": "4655ab1a-4b13-43e9-8c48-7f910d265946",
+        "obligation_id": "CASE-PTC-2043",
+        "payee": "Prairie Test Concrete LLC",
+        "beneficiary_label": "Synthetic test supplier",
+        "beneficiary_id_suffix": "00be",
+        "amount_minor": "500",
+        "amount_display": "5.00 USD",
+        "currency": "USD",
+        "reference": "PTC-2043",
+        "transfer_method": "LOCAL",
+        "reason": "supplier_invoice",
+        "provider_request_id": "8fefd3f3-b9f7-4f55-8287-3477bee4a740"
+      },
+      "gate": {
+        "decision": "HOLD",
+        "rule": "P-E MISSING",
+        "gate_refused": false,
+        "proof_states": {
+          "S": "VERIFIED",
+          "A": "VERIFIED",
+          "B": "VERIFIED",
+          "C": "VERIFIED",
+          "D": "VERIFIED",
+          "E": "MISSING",
+          "F": "MISSING",
+          "G": "CONTRADICTED",
+          "H": "VERIFIED",
+          "I": "VERIFIED",
+          "J": "VERIFIED"
+        },
+        "proof_reasons": {
+          "S": "The submitted text is exactly registered document DOC-PTC-2043-INV.",
+          "A": "Matches the trusted record exactly.",
+          "B": "Every figure read from the document reconciles with the record; net payable 5.00 recomputed from its components.",
+          "C": "Matches the trusted record exactly.",
+          "D": "Matches the trusted record exactly.",
+          "E": "Not received according to the manifest: CONDITIONAL_LIEN_WAIVER.",
+          "F": "The approval record status is PENDING, not APPROVED.",
+          "G": "The dispute register shows OPEN as of 2026-11-15.",
+          "H": "Funding source is the sandbox demonstration account.",
+          "I": "Within the demo cap, and the sandbox reserve holds after 5.00 USD.",
+          "J": "Enforced by design: the strongest outcome of this gate is eligibility for a human to review. It creates no payment and no approval."
+        },
+        "evidence_source": "FIXTURE_REPLAY",
+        "document_id": "DOC-PTC-2043-INV",
+        "document_binding": "REGISTERED_DOCUMENT",
+        "evaluated_at_ms": 1794780060000,
+        "expires_at_ms": 1794780660000,
+        "policy_version": "agentPolicy.evaluate/11-proof/v1@6063b1c"
+      },
+      "authorization": null,
+      "ledger": null,
+      "submission": {
+        "attempt_id": null,
+        "attempt_recorded_at_ms": null,
+        "provider_mode": null,
+        "provider_transfer_id": null,
+        "create_http_status": null,
+        "create_reported_status": null,
+        "last_provider_status": null,
+        "last_provider_read_at_ms": null
+      },
+      "audit": {
+        "count": 3,
+        "head": "abc9f62b999ea72e99e61d92f2700468b8ed2e4c0062de00f94804e01be14b7e",
+        "verified": true,
+        "code": null
+      },
+      "echo": {
+        "proposal_digest": "961ff6bc2b4d9655c5aa0953325877d2b740d3cf21982863bf8d01bafa6825c0",
+        "gate_digest": "65b42099990ff354f5e54c5627c03804c984b6a50d2209c5a8b666e8d4836fa6",
+        "authorization_digest": null
+      },
+      "balance_display": "10000000.00",
+      "provider_mode": "mock",
+      "flags": {
+        "ledger": false,
+        "e3": false,
+        "external_audit": false
+      }
+    },
+    {
+      "fixture": {
+        "id": "hold-edited",
+        "label": "HOLD: edited copy of a registered invoice",
+        "description": "The PTC-2041 invoice with one added line. Any edit breaks the registered-document binding.",
+        "gate_reason": "B Exact obligation amount: TOTAL_DUE 5000 does not reconcile with the trusted record.",
+        "gate_balance_input": "10000000.00",
+        "note": "Rule shown is the gate's own. In the integrated flow A1 additionally forces HOLD for any non-registered binding (rule P-BIND <code>); the proof states are unchanged."
+      },
+      "flow_id": "a559f969-2069-4881-868f-6f80e13b8bb0",
+      "state": "GATE_HOLD",
+      "version": 3,
+      "terminal": true,
+      "proposal": {
+        "flow_id": "a559f969-2069-4881-868f-6f80e13b8bb0",
+        "obligation_id": "CASE-PTC-2041",
+        "payee": "Prairie Test Concrete LLC",
+        "beneficiary_label": "Synthetic test supplier",
+        "beneficiary_id_suffix": "00be",
+        "amount_minor": "500",
+        "amount_display": "5.00 USD",
+        "currency": "USD",
+        "reference": "PTC-2041",
+        "transfer_method": "LOCAL",
+        "reason": "supplier_invoice",
+        "provider_request_id": "7364addf-ca05-42c1-8123-2f8ba6f11791"
+      },
+      "gate": {
+        "decision": "HOLD",
+        "rule": "P-B CONTRADICTED",
+        "gate_refused": false,
+        "proof_states": {
+          "S": "UNTRUSTED",
+          "A": "UNTRUSTED",
+          "B": "CONTRADICTED",
+          "C": "UNTRUSTED",
+          "D": "UNTRUSTED",
+          "E": "UNTRUSTED",
+          "F": "UNTRUSTED",
+          "G": "UNTRUSTED",
+          "H": "UNTRUSTED",
+          "I": "UNTRUSTED",
+          "J": "VERIFIED"
+        },
+        "proof_reasons": {
+          "S": "The submitted text is not a document registered in the trusted intake manifest. New or edited evidence cannot establish eligibility.",
+          "A": "Matches the trusted record exactly. The record was found only through a reference read from an unregistered document, so this is not proof.",
+          "B": "TOTAL_DUE 5000 does not reconcile with the trusted record.",
+          "C": "Matches the trusted record exactly. The record was found only through a reference read from an unregistered document, so this is not proof.",
+          "D": "Matches the trusted record exactly. The record was found only through a reference read from an unregistered document, so this is not proof.",
+          "E": "All 2 required documents are recorded as received. The record was found only through a reference read from an unregistered document, so this is not proof.",
+          "F": "Approval PM-118 by PM-SYNTH-01 is unconditional and matches the payee, amount and currency exactly. The record was found only through a reference read from an unregistered document, so this is not proof.",
+          "G": "The dispute register shows CLEAR as of 2026-11-15. The record was found only through a reference read from an unregistered document, so this is not proof.",
+          "H": "Funding source is the sandbox demonstration account. The record was found only through a reference read from an unregistered document, so this is not proof.",
+          "I": "Within the demo cap, and the sandbox reserve holds after 5.00 USD. The record was found only through a reference read from an unregistered document, so this is not proof.",
+          "J": "Enforced by design: the strongest outcome of this gate is eligibility for a human to review. It creates no payment and no approval."
+        },
+        "evidence_source": "FIXTURE_REPLAY",
+        "document_id": null,
+        "document_binding": "UNTRUSTED_REFERENCE",
+        "evaluated_at_ms": 1794780060000,
+        "expires_at_ms": 1794780660000,
+        "policy_version": "agentPolicy.evaluate/11-proof/v1@6063b1c"
+      },
+      "authorization": null,
+      "ledger": null,
+      "submission": {
+        "attempt_id": null,
+        "attempt_recorded_at_ms": null,
+        "provider_mode": null,
+        "provider_transfer_id": null,
+        "create_http_status": null,
+        "create_reported_status": null,
+        "last_provider_status": null,
+        "last_provider_read_at_ms": null
+      },
+      "audit": {
+        "count": 3,
+        "head": "199d74a660c4758b348eda5bbfdaae66f5201e02b3b160f94cfc4ae72d7e683c",
+        "verified": true,
+        "code": null
+      },
+      "echo": {
+        "proposal_digest": "dc2776fa5a5c5e7fd88bafb92881a9d96e194eef004b6e3b659fe4edbb4a8359",
+        "gate_digest": "fcb0dcd73e7b8625865225479e101b376bfb492f76d607adc43a4dbc3c6b7921",
+        "authorization_digest": null
+      },
+      "balance_display": "10000000.00",
+      "provider_mode": "mock",
+      "flags": {
+        "ledger": false,
+        "e3": false,
+        "external_audit": false
+      }
+    },
+    {
+      "fixture": {
+        "id": "review-balance-unknown",
+        "label": "REVIEW: sandbox balance unreadable",
+        "description": "Registered, approved, cleared invoice, but the sandbox balance read failed, so proof I is UNKNOWN. Not eligible.",
+        "gate_reason": "Not eligible. I Financial policy satisfied: The sandbox balance could not be read, so the reserve test cannot be done.",
+        "gate_balance_input": null,
+        "note": null
+      },
+      "flow_id": "2fb703e3-5b18-4a0b-879f-db4ee2dcd869",
+      "state": "GATE_REVIEW",
+      "version": 3,
+      "terminal": true,
+      "proposal": {
+        "flow_id": "2fb703e3-5b18-4a0b-879f-db4ee2dcd869",
+        "obligation_id": "CASE-PTC-2041",
+        "payee": "Prairie Test Concrete LLC",
+        "beneficiary_label": "Synthetic test supplier",
+        "beneficiary_id_suffix": "00be",
+        "amount_minor": "500",
+        "amount_display": "5.00 USD",
+        "currency": "USD",
+        "reference": "PTC-2041",
+        "transfer_method": "LOCAL",
+        "reason": "supplier_invoice",
+        "provider_request_id": "82cc2119-15f4-4379-8aa2-9fffbb9f6b35"
+      },
+      "gate": {
+        "decision": "REVIEW",
+        "rule": "P-I UNKNOWN",
+        "gate_refused": false,
+        "proof_states": {
+          "S": "VERIFIED",
+          "A": "VERIFIED",
+          "B": "VERIFIED",
+          "C": "VERIFIED",
+          "D": "VERIFIED",
+          "E": "VERIFIED",
+          "F": "VERIFIED",
+          "G": "VERIFIED",
+          "H": "VERIFIED",
+          "I": "UNKNOWN",
+          "J": "VERIFIED"
+        },
+        "proof_reasons": {
+          "S": "The submitted text is exactly registered document DOC-PTC-2041-INV.",
+          "A": "Matches the trusted record exactly.",
+          "B": "Every figure read from the document reconciles with the record; net payable 5.00 recomputed from its components.",
+          "C": "Matches the trusted record exactly.",
+          "D": "Matches the trusted record exactly.",
+          "E": "All 2 required documents are recorded as received.",
+          "F": "Approval PM-118 by PM-SYNTH-01 is unconditional and matches the payee, amount and currency exactly.",
+          "G": "The dispute register shows CLEAR as of 2026-11-15.",
+          "H": "Funding source is the sandbox demonstration account.",
+          "I": "The sandbox balance could not be read, so the reserve test cannot be done.",
+          "J": "Enforced by design: the strongest outcome of this gate is eligibility for a human to review. It creates no payment and no approval."
+        },
+        "evidence_source": "FIXTURE_REPLAY",
+        "document_id": "DOC-PTC-2041-INV",
+        "document_binding": "REGISTERED_DOCUMENT",
+        "evaluated_at_ms": 1794780060000,
+        "expires_at_ms": 1794780660000,
+        "policy_version": "agentPolicy.evaluate/11-proof/v1@6063b1c"
+      },
+      "authorization": null,
+      "ledger": null,
+      "submission": {
+        "attempt_id": null,
+        "attempt_recorded_at_ms": null,
+        "provider_mode": null,
+        "provider_transfer_id": null,
+        "create_http_status": null,
+        "create_reported_status": null,
+        "last_provider_status": null,
+        "last_provider_read_at_ms": null
+      },
+      "audit": {
+        "count": 3,
+        "head": "3fb24a439ca8b16dbd4264175b734c45cffd0cd60a65fc23f8989998c75de9df",
+        "verified": true,
+        "code": null
+      },
+      "echo": {
+        "proposal_digest": "87a45aec1a89406d2ab6d53478ffae5b4c80ccd3f74ac997e08748d31425085e",
+        "gate_digest": "109fa9f211c3e881640f53b102bff39cf21fab53f1dcf94a066410b6a5dc568f",
+        "authorization_digest": null
+      },
+      "balance_display": null,
+      "provider_mode": "sandbox",
+      "flags": {
+        "ledger": false,
+        "e3": false,
+        "external_audit": false
+      }
+    }
+  ]
+}

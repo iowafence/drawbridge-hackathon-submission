@@ -1,0 +1,383 @@
+{
+ "provenance": "SYNTHETIC_REGISTRY_INTEGRATED",
+ "note": "Synthetic, read-only registry for the integrated flow (contract flow-v1). It contains every obligation of agent_registry_synthetic_v1.json unchanged, plus CASE-SBX-0002 (the one sandbox demonstration payable) and three obligations standing for the synthetic E3 project requests, which are funding-blocked and far above the demo cap. Fixture data only: not a real approval system, supplier, document or payable. The approval, document and dispute fields of the E3 entries are a registry-shaped rendering of the E3 scenario facts.",
+ "authorities": [
+  "PM-SYNTH-01",
+  "OR-SYNTH-01"
+ ],
+ "obligations": [
+  {
+   "case_id": "CASE-PTC-2041",
+   "reference": "PTC-2041",
+   "payee": "Prairie Test Concrete LLC",
+   "currency": "USD",
+   "kind": "PAYABLE",
+   "funding_source": "SANDBOX_DEMO",
+   "amount": {
+    "line_items": [
+     {
+      "description": "sample cylinder testing, pour 3",
+      "unit_price": "5.00",
+      "quantity": "1"
+     }
+    ],
+    "retainage": "0.00",
+    "tax": "0.00",
+    "credits": "0.00",
+    "net_payable": "5.00"
+   },
+   "approval": {
+    "approval_id": "PM-118",
+    "status": "APPROVED",
+    "authority": "PM-SYNTH-01",
+    "payee": "Prairie Test Concrete LLC",
+    "amount": "5.00",
+    "currency": "USD",
+    "conditions": [],
+    "required_documents": [
+     "SIGNED_DELIVERY_TICKET",
+     "CONDITIONAL_LIEN_WAIVER"
+    ]
+   },
+   "documents": [
+    {
+     "type": "SIGNED_DELIVERY_TICKET",
+     "status": "RECEIVED"
+    },
+    {
+     "type": "CONDITIONAL_LIEN_WAIVER",
+     "status": "RECEIVED"
+    }
+   ],
+   "dispute": {
+    "status": "CLEAR",
+    "as_of": "2026-11-15"
+   },
+   "registered_documents": [
+    {
+     "document_id": "DOC-PTC-2041-INV",
+     "text": "SYNTHETIC TEST DOCUMENT - SUPPLIER PAYMENT REQUEST\nFrom: Prairie Test Concrete LLC (synthetic supplier)\nInvoice: PTC-2041\nAmount due: $5.00 USD\nTerms: Net 15\nScope: sample cylinder testing, pour 3.\nApproval: Payment approved by the project manager on 2026-11-14 (approval record PM-118).\nSupporting documents: signed delivery ticket and conditional lien waiver are attached.\nNo disputes are open on this invoice."
+    }
+   ]
+  },
+  {
+   "case_id": "CASE-PTC-2043",
+   "reference": "PTC-2043",
+   "payee": "Prairie Test Concrete LLC",
+   "currency": "USD",
+   "kind": "PAYABLE",
+   "funding_source": "SANDBOX_DEMO",
+   "amount": {
+    "line_items": [
+     {
+      "description": "sample cylinder testing, pour 4",
+      "unit_price": "5.00",
+      "quantity": "1"
+     }
+    ],
+    "retainage": "0.00",
+    "tax": "0.00",
+    "credits": "0.00",
+    "net_payable": "5.00"
+   },
+   "approval": {
+    "approval_id": "PM-121",
+    "status": "PENDING",
+    "authority": "PM-SYNTH-01",
+    "payee": "Prairie Test Concrete LLC",
+    "amount": "5.00",
+    "currency": "USD",
+    "conditions": [],
+    "required_documents": [
+     "SIGNED_DELIVERY_TICKET",
+     "CONDITIONAL_LIEN_WAIVER"
+    ]
+   },
+   "documents": [
+    {
+     "type": "SIGNED_DELIVERY_TICKET",
+     "status": "RECEIVED"
+    },
+    {
+     "type": "CONDITIONAL_LIEN_WAIVER",
+     "status": "MISSING"
+    }
+   ],
+   "dispute": {
+    "status": "OPEN",
+    "as_of": "2026-11-15"
+   },
+   "registered_documents": [
+    {
+     "document_id": "DOC-PTC-2043-INV",
+     "text": "SYNTHETIC TEST DOCUMENT - SUPPLIER PAYMENT REQUEST\nFrom: Prairie Test Concrete LLC (synthetic supplier)\nInvoice: PTC-2043\nAmount due: $5.00 USD\nTerms: Net 15\nScope: sample cylinder testing, pour 4.\nNOTICE from the general contractor, 2026-11-15: this invoice is disputed. The cylinders failed the 7-day break and the lien waiver has not been received. Do not pay until the dispute is resolved.\nApproval: not yet approved by the project manager."
+    }
+   ]
+  },
+  {
+   "case_id": "CASE-RTE-0101",
+   "reference": "RTE-0101",
+   "payee": "Redwing Test Electric Co.",
+   "currency": "USD",
+   "kind": "PAYABLE",
+   "funding_source": "SANDBOX_DEMO",
+   "amount": {
+    "line_items": [
+     {
+      "description": "conduit run",
+      "unit_price": "1.50",
+      "quantity": "4"
+     }
+    ],
+    "retainage": "0.60",
+    "retainage_percent": "10",
+    "tax": "0.00",
+    "credits": "0.00",
+    "net_payable": "5.40"
+   },
+   "approval": {
+    "approval_id": "OR-207",
+    "status": "APPROVED",
+    "authority": "OR-SYNTH-01",
+    "payee": "Redwing Test Electric Co.",
+    "amount": "5.40",
+    "currency": "USD",
+    "conditions": [],
+    "required_documents": [
+     "CERTIFIED_PAYROLL",
+     "UNCONDITIONAL_LIEN_WAIVER"
+    ]
+   },
+   "documents": [
+    {
+     "type": "CERTIFIED_PAYROLL",
+     "status": "RECEIVED"
+    },
+    {
+     "type": "UNCONDITIONAL_LIEN_WAIVER",
+     "status": "RECEIVED"
+    }
+   ],
+   "dispute": {
+    "status": "CLEAR",
+    "as_of": "2026-11-15"
+   },
+   "registered_documents": [
+    {
+     "document_id": "DOC-RTE-0101-APP",
+     "text": "SYNTHETIC TEST DOCUMENT - SUBCONTRACTOR PAYMENT APPLICATION\nSubcontractor: Redwing Test Electric Co. (synthetic)\nApplication: RTE-0101\nWork completed: 4 conduit runs at $1.50 USD each, subtotal $6.00 USD.\nLess 10% retainage: $0.60 USD.\nNet amount due: $5.40 USD\nTerms: Net 30\nOwner's representative approval record OR-207 covers this application.\nCertified payroll and unconditional lien waiver received."
+    }
+   ]
+  },
+  {
+   "case_id": "CASE-SBX-0002",
+   "reference": "DB-SBX-0002",
+   "payee": "Prairie Test Concrete LLC",
+   "currency": "USD",
+   "kind": "PAYABLE",
+   "funding_source": "SANDBOX_DEMO",
+   "amount": {
+    "line_items": [
+     {
+      "description": "sample cylinder testing, pour 5",
+      "unit_price": "5.00",
+      "quantity": "1"
+     }
+    ],
+    "retainage": "0.00",
+    "tax": "0.00",
+    "credits": "0.00",
+    "net_payable": "5.00"
+   },
+   "approval": {
+    "approval_id": "PM-124",
+    "status": "APPROVED",
+    "authority": "PM-SYNTH-01",
+    "payee": "Prairie Test Concrete LLC",
+    "amount": "5.00",
+    "currency": "USD",
+    "conditions": [],
+    "required_documents": [
+     "SIGNED_DELIVERY_TICKET",
+     "CONDITIONAL_LIEN_WAIVER"
+    ]
+   },
+   "documents": [
+    {
+     "type": "SIGNED_DELIVERY_TICKET",
+     "status": "RECEIVED"
+    },
+    {
+     "type": "CONDITIONAL_LIEN_WAIVER",
+     "status": "RECEIVED"
+    }
+   ],
+   "dispute": {
+    "status": "CLEAR",
+    "as_of": "2026-11-15"
+   },
+   "registered_documents": [
+    {
+     "document_id": "DOC-SBX-0002-INV",
+     "text": "SYNTHETIC TEST DOCUMENT - SUPPLIER PAYMENT REQUEST\nFrom: Prairie Test Concrete LLC (synthetic supplier)\nInvoice: DB-SBX-0002\nAmount due: $5.00 USD\nTerms: Net 15\nScope: sample cylinder testing, pour 5.\nApproval: Payment approved by the project manager on 2026-11-15 (approval record PM-124).\nSupporting documents: signed delivery ticket and conditional lien waiver are attached.\nNo disputes are open on this invoice."
+    }
+   ]
+  },
+  {
+   "case_id": "CASE-E3-OBL-STEEL",
+   "reference": "REQ-STEEL-001",
+   "payee": "Steel subcontractor (synthetic)",
+   "currency": "USD",
+   "kind": "PAYABLE",
+   "funding_source": "E3_PROJECT",
+   "amount": {
+    "line_items": [
+     {
+      "description": "structural steel pay application",
+      "unit_price": "420000.00",
+      "quantity": "1"
+     }
+    ],
+    "retainage": "0.00",
+    "tax": "0.00",
+    "credits": "0.00",
+    "net_payable": "420000.00"
+   },
+   "approval": {
+    "approval_id": "E3-AP-STEEL",
+    "status": "PENDING",
+    "authority": "PM-SYNTH-01",
+    "payee": "Steel subcontractor (synthetic)",
+    "amount": "420000.00",
+    "currency": "USD",
+    "conditions": [],
+    "required_documents": [
+     "PAY_APPLICATION",
+     "DISPUTE_RESOLUTION"
+    ]
+   },
+   "documents": [
+    {
+     "type": "PAY_APPLICATION",
+     "status": "RECEIVED"
+    },
+    {
+     "type": "DISPUTE_RESOLUTION",
+     "status": "MISSING"
+    }
+   ],
+   "dispute": {
+    "status": "OPEN",
+    "as_of": "2026-11-15"
+   },
+   "registered_documents": [
+    {
+     "document_id": "DOC-E3-STEEL-001",
+     "text": "SYNTHETIC TEST DOCUMENT - SUBCONTRACTOR PAY APPLICATION\nFrom: Steel subcontractor (synthetic)\nRequest: REQ-STEEL-001\nAmount requested: $420000.00 USD\nScope: structural steel pay application.\nStatus: this pay application is disputed and its evidence is incomplete.\nProject: synthetic E3 project. This is scenario fixture text, not a real payable."
+    }
+   ]
+  },
+  {
+   "case_id": "CASE-E3-OBL-ELEC-CO",
+   "reference": "REQ-ELEC-001",
+   "payee": "Electrical subcontractor (synthetic)",
+   "currency": "USD",
+   "kind": "PAYABLE",
+   "funding_source": "E3_PROJECT",
+   "amount": {
+    "line_items": [
+     {
+      "description": "electrical change order",
+      "unit_price": "185000.00",
+      "quantity": "1"
+     }
+    ],
+    "retainage": "0.00",
+    "tax": "0.00",
+    "credits": "0.00",
+    "net_payable": "185000.00"
+   },
+   "approval": {
+    "approval_id": "E3-AP-ELEC",
+    "status": "PENDING",
+    "authority": "PM-SYNTH-01",
+    "payee": "Electrical subcontractor (synthetic)",
+    "amount": "185000.00",
+    "currency": "USD",
+    "conditions": [
+     "SIGNED_CHANGE_ORDER"
+    ],
+    "required_documents": [
+     "SIGNED_CHANGE_ORDER"
+    ]
+   },
+   "documents": [
+    {
+     "type": "SIGNED_CHANGE_ORDER",
+     "status": "MISSING"
+    }
+   ],
+   "dispute": {
+    "status": "CLEAR",
+    "as_of": "2026-11-15"
+   },
+   "registered_documents": [
+    {
+     "document_id": "DOC-E3-ELEC-001",
+     "text": "SYNTHETIC TEST DOCUMENT - CHANGE ORDER PAYMENT REQUEST\nFrom: Electrical subcontractor (synthetic)\nRequest: REQ-ELEC-001\nAmount requested: $185000.00 USD\nScope: electrical change order.\nStatus: the change order has not been signed.\nProject: synthetic E3 project. This is scenario fixture text, not a real payable."
+    }
+   ]
+  },
+  {
+   "case_id": "CASE-E3-OBL-CONCRETE",
+   "reference": "REQ-CONC-001",
+   "payee": "Concrete supplier (synthetic)",
+   "currency": "USD",
+   "kind": "PAYABLE",
+   "funding_source": "E3_PROJECT",
+   "amount": {
+    "line_items": [
+     {
+      "description": "concrete supply transfer",
+      "unit_price": "310000.00",
+      "quantity": "1"
+     }
+    ],
+    "retainage": "0.00",
+    "tax": "0.00",
+    "credits": "0.00",
+    "net_payable": "310000.00"
+   },
+   "approval": {
+    "approval_id": "E3-AP-CONC",
+    "status": "PENDING",
+    "authority": "PM-SYNTH-01",
+    "payee": "Concrete supplier (synthetic)",
+    "amount": "310000.00",
+    "currency": "USD",
+    "conditions": [
+     "PRIOR_TRANSFER_STATE_RESOLVED"
+    ],
+    "required_documents": [
+     "PRIOR_TRANSFER_INVESTIGATION"
+    ]
+   },
+   "documents": [
+    {
+     "type": "PRIOR_TRANSFER_INVESTIGATION",
+     "status": "MISSING"
+    }
+   ],
+   "dispute": {
+    "status": "CLEAR",
+    "as_of": "2026-11-15"
+   },
+   "registered_documents": [
+    {
+     "document_id": "DOC-E3-CONC-001",
+     "text": "SYNTHETIC TEST DOCUMENT - SUPPLIER TRANSFER REQUEST\nFrom: Concrete supplier (synthetic)\nRequest: REQ-CONC-001\nAmount requested: $310000.00 USD\nScope: concrete supply transfer.\nStatus: the state of a prior transfer for this request is unknown and under investigation.\nProject: synthetic E3 project. This is scenario fixture text, not a real payable."
+    }
+   ]
+  }
+ ]
+}

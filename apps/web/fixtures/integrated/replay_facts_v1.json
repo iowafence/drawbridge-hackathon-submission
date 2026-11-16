@@ -1,0 +1,205 @@
+{
+ "DOC-PTC-2041-INV": {
+  "reference": {
+   "value": "PTC-2041",
+   "quote": "Invoice: PTC-2041"
+  },
+  "payee": {
+   "value": "Prairie Test Concrete LLC",
+   "quote": "From: Prairie Test Concrete LLC (synthetic supplier)"
+  },
+  "currency": {
+   "value": "USD",
+   "quote": "Amount due: $5.00 USD"
+  },
+  "amounts": [
+   {
+    "kind": "NET_PAYABLE",
+    "value": "5.00",
+    "quote": "Amount due: $5.00 USD"
+   }
+  ],
+  "adverse_findings": []
+ },
+ "DOC-PTC-2043-INV": {
+  "reference": {
+   "value": "PTC-2043",
+   "quote": "Invoice: PTC-2043"
+  },
+  "payee": {
+   "value": "Prairie Test Concrete LLC",
+   "quote": "From: Prairie Test Concrete LLC (synthetic supplier)"
+  },
+  "currency": {
+   "value": "USD",
+   "quote": "Amount due: $5.00 USD"
+  },
+  "amounts": [
+   {
+    "kind": "NET_PAYABLE",
+    "value": "5.00",
+    "quote": "Amount due: $5.00 USD"
+   }
+  ],
+  "adverse_findings": [
+   {
+    "kind": "DISPUTE",
+    "summary": "The general contractor states the invoice is disputed and must not be paid.",
+    "quote": "NOTICE from the general contractor, 2026-11-15: this invoice is disputed. The cylinders failed the 7-day break and the lien waiver has not been received. Do not pay until the dispute is resolved."
+   },
+   {
+    "kind": "MISSING_APPROVAL",
+    "summary": "The document says the project manager has not approved it.",
+    "quote": "Approval: not yet approved by the project manager."
+   }
+  ]
+ },
+ "DOC-SBX-0002-INV": {
+  "reference": {
+   "value": "DB-SBX-0002",
+   "quote": "Invoice: DB-SBX-0002"
+  },
+  "payee": {
+   "value": "Prairie Test Concrete LLC",
+   "quote": "From: Prairie Test Concrete LLC (synthetic supplier)"
+  },
+  "currency": {
+   "value": "USD",
+   "quote": "Amount due: $5.00 USD"
+  },
+  "amounts": [
+   {
+    "kind": "NET_PAYABLE",
+    "value": "5.00",
+    "quote": "Amount due: $5.00 USD"
+   }
+  ],
+  "adverse_findings": []
+ },
+ "DOC-E3-STEEL-001": {
+  "reference": {
+   "value": "REQ-STEEL-001",
+   "quote": "Request: REQ-STEEL-001"
+  },
+  "payee": {
+   "value": "Steel subcontractor (synthetic)",
+   "quote": "From: Steel subcontractor (synthetic)"
+  },
+  "currency": {
+   "value": "USD",
+   "quote": "Amount requested: $420000.00 USD"
+  },
+  "amounts": [
+   {
+    "kind": "NET_PAYABLE",
+    "value": "420000.00",
+    "quote": "Amount requested: $420000.00 USD"
+   }
+  ],
+  "adverse_findings": [
+   {
+    "kind": "OTHER",
+    "summary": "The document states a blocking status.",
+    "quote": "Status: this pay application is disputed and its evidence is incomplete."
+   }
+  ]
+ },
+ "DOC-E3-ELEC-001": {
+  "reference": {
+   "value": "REQ-ELEC-001",
+   "quote": "Request: REQ-ELEC-001"
+  },
+  "payee": {
+   "value": "Electrical subcontractor (synthetic)",
+   "quote": "From: Electrical subcontractor (synthetic)"
+  },
+  "currency": {
+   "value": "USD",
+   "quote": "Amount requested: $185000.00 USD"
+  },
+  "amounts": [
+   {
+    "kind": "NET_PAYABLE",
+    "value": "185000.00",
+    "quote": "Amount requested: $185000.00 USD"
+   }
+  ],
+  "adverse_findings": [
+   {
+    "kind": "OTHER",
+    "summary": "The document states a blocking status.",
+    "quote": "Status: the change order has not been signed."
+   }
+  ]
+ },
+ "DOC-E3-CONC-001": {
+  "reference": {
+   "value": "REQ-CONC-001",
+   "quote": "Request: REQ-CONC-001"
+  },
+  "payee": {
+   "value": "Concrete supplier (synthetic)",
+   "quote": "From: Concrete supplier (synthetic)"
+  },
+  "currency": {
+   "value": "USD",
+   "quote": "Amount requested: $310000.00 USD"
+  },
+  "amounts": [
+   {
+    "kind": "NET_PAYABLE",
+    "value": "310000.00",
+    "quote": "Amount requested: $310000.00 USD"
+   }
+  ],
+  "adverse_findings": [
+   {
+    "kind": "OTHER",
+    "summary": "The document states a blocking status.",
+    "quote": "Status: the state of a prior transfer for this request is unknown and under investigation."
+   }
+  ]
+ },
+ "DOC-RTE-0101-APP": {
+  "reference": {
+   "value": "RTE-0101",
+   "quote": "Application: RTE-0101"
+  },
+  "payee": {
+   "value": "Redwing Test Electric Co.",
+   "quote": "Subcontractor: Redwing Test Electric Co. (synthetic)"
+  },
+  "currency": {
+   "value": "USD",
+   "quote": "Net amount due: $5.40 USD"
+  },
+  "amounts": [
+   {
+    "kind": "QUANTITY",
+    "value": "4",
+    "quote": "Work completed: 4 conduit runs at $1.50 USD each, subtotal $6.00 USD."
+   },
+   {
+    "kind": "UNIT_PRICE",
+    "value": "1.50",
+    "quote": "Work completed: 4 conduit runs at $1.50 USD each, subtotal $6.00 USD."
+   },
+   {
+    "kind": "SUBTOTAL",
+    "value": "6.00",
+    "quote": "Work completed: 4 conduit runs at $1.50 USD each, subtotal $6.00 USD."
+   },
+   {
+    "kind": "RETAINAGE",
+    "value": "0.60",
+    "quote": "Less 10% retainage: $0.60 USD."
+   },
+   {
+    "kind": "NET_PAYABLE",
+    "value": "5.40",
+    "quote": "Net amount due: $5.40 USD"
+   }
+  ],
+  "adverse_findings": []
+ }
+}

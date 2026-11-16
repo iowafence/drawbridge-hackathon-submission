@@ -1,0 +1,32 @@
+{
+ "CASE-SBX-0002": {
+  "beneficiary_label": "Synthetic test supplier",
+  "reason": "goods_purchased",
+  "ledger_allocation_key": null,
+  "e3_no_provider_beneficiary": false
+ },
+ "CASE-PTC-2043": {
+  "beneficiary_label": "Synthetic test supplier",
+  "reason": "goods_purchased",
+  "ledger_allocation_key": null,
+  "e3_no_provider_beneficiary": false
+ },
+ "CASE-E3-OBL-STEEL": {
+  "beneficiary_label": "E3 steel subcontractor (no provider beneficiary)",
+  "reason": "goods_purchased",
+  "ledger_allocation_key": null,
+  "e3_no_provider_beneficiary": true
+ },
+ "CASE-E3-OBL-ELEC-CO": {
+  "beneficiary_label": "E3 electrical subcontractor (no provider beneficiary)",
+  "reason": "goods_purchased",
+  "ledger_allocation_key": null,
+  "e3_no_provider_beneficiary": true
+ },
+ "CASE-E3-OBL-CONCRETE": {
+  "beneficiary_label": "E3 concrete supplier (no provider beneficiary)",
+  "reason": "goods_purchased",
+  "ledger_allocation_key": null,
+  "e3_no_provider_beneficiary": true
+ }
+}
