@@ -1,6 +1,14 @@
 # DRAWBRIDGE
 
-**Demo video:** [Watch the DRAWBRIDGE Demo (4:12)](https://drive.google.com/file/d/1AbEwaq3Op9TUT1PVn7-exSrqh524vsEf/view?usp=drive_link)
+## Demo Videos
+
+**Updated DRAWBRIDGE demonstration (4:31) — Recommended**
+
+[Watch the updated DRAWBRIDGE demonstration](https://drive.google.com/file/d/1vxt9AsoGocjRTmru5Z2sgNUGY460eh6F/view?usp=sharing)
+
+**Original hackathon submission (4:12)**
+
+[Watch the original DRAWBRIDGE demonstration](https://drive.google.com/file/d/1AbEwaq3Op9TUT1PVn7-exSrqh524vsEf/view?usp=drive_link)
 
 Copyright 2026 Iowa Fence Inc. All rights reserved. See `NOTICE`. No open-source license is granted.
 
@@ -70,8 +78,6 @@ These are two demonstrations of the same rule (deterministic code decides, a per
 payment system. No E3 obligation was paid, and no E3 figure uses a sandbox balance. Evidence:
 `docs/evidence/airwallex_sandbox_transfer_2026-11-15_sanitized.md`. Design, controls and limits:
 `docs/AIRWALLEX_SANDBOX_INTEGRATION.md`.
-
-Demo video: [Watch the DRAWBRIDGE Demo (4:12)](https://drive.google.com/file/d/1AbEwaq3Op9TUT1PVn7-exSrqh524vsEf/view?usp=drive_link)
 
 ---
 
@@ -240,11 +246,10 @@ See `docs/KNOWN_LIMITATIONS.md` for the full list. In short:
 - Source comments cite internal review and governance identifiers (for example `G1S`, `LOOM-2 V04`, `AWX-P2-…`).
   Those documents are not included.
 
-## 8. Demo video
+## 8. Demo videos
 
-[Watch the DRAWBRIDGE Demo (4:12)](https://drive.google.com/file/d/1AbEwaq3Op9TUT1PVn7-exSrqh524vsEf/view?usp=drive_link)
-
-Updated walkthrough covering all four demonstrations (4:31): [Watch the updated DRAWBRIDGE walkthrough (4:31)](https://drive.google.com/file/d/1vxt9AsoGocjRTmru5Z2sgNUGY460eh6F/view?usp=sharing)
+Both videos are linked under [Demo Videos](#demo-videos) at the top of this README: the **updated 4:31 demonstration
+(recommended)**, which covers all four demonstrations, and the original 4:12 hackathon submission (archived).
 
 ## Repository contents and provenance
 
