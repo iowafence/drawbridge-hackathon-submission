@@ -18,6 +18,13 @@ screen added on 2026-11-15:
 | Airwallex read-only provider | `providers/airwallex/` | Standalone, sandbox-only Airwallex client restricted to login and three read endpoints | Your own sandbox credentials, if you choose to run the live preflight |
 | Funding ledger (G2C1) | `db/migrations/`, `services/api/app/domain/g2_db/`, `fixtures/`, `contracts/` | PostgreSQL double-entry funding ledger schema, hash-pinned cluster runner, Python replay/reconcile/manifest tooling | Synthetic |
 
+**Integrated mock flow backend (prototype, added after the original submission):** `apps/web/integrated/`, the
+`/sandbox/flow` action endpoint and preview pages, and `apps/web/tests/integrated/`. It carries one synthetic obligation
+through evidence, the 11-proof gate, a passphrase-confirmed human approval and at most one submission to a **mock
+provider**. The flow pages are UI previews, not wired to live flow state. It does not call the model or Airwallex. See
+[`docs/integrated/INTEGRATED_MOCK_BACKEND.md`](docs/integrated/INTEGRATED_MOCK_BACKEND.md) for setup, the reproducible
+mock demo, and its open residual risks (R-1, R-2, R-3). Real-Airwallex execution safety is **not verified**.
+
 **The six Incident Room screens (the E3 scenario) are synthetic and do not call Airwallex or read the ledger. The
 ledger does not call Airwallex.** The `/sandbox` screen talks to the Airwallex **sandbox** only; it shares no data,
 balance or decision engine with the E3 scenario. Nothing here is connected to a real bank account or real money.
@@ -194,6 +201,7 @@ cluster created by the runner and operator-approved migration digests. See `docs
 | Concurrency, durability/crash recovery, injection resistance, production readiness | **Not established** |
 | AI on the Incident Room (E3) screens | The "agent findings" there are synthetic fixture text. No model is called |
 | Evidence Analysis Agent (`/agent`) | Implemented: live Claude Opus 5.5 inference with client tool use (or local Ollama when selected), excerpt checks and a positive-proof gate over a synthetic trusted registry. Recommends only; no financial authority |
+| Integrated mock flow (`/sandbox/flow/action`) | Implemented as a prototype: server-built proposal, 11-proof gate binding, passphrase-confirmed approval, single guarded submission to a **mock provider**, provider read-back, local audit trail. Preview pages are not wired to live flows. Residuals R-1, R-2, R-3 open; real-Airwallex behaviour unverified |
 
 ## 7. Known limitations and untested claims
 
