@@ -7,6 +7,21 @@ Copyright 2026 Iowa Fence Inc. All rights reserved. See `NOTICE`. No open-source
 DRAWBRIDGE is a treasury-control prototype for a construction contractor. Its rule is: **AI investigates and explains,
 deterministic code decides eligibility, a person approves, and nothing moves until the controls say so.**
 
+## At a glance: four separate demonstrations
+
+DRAWBRIDGE shows the same rule in four **separate** demonstrations. They are **not** one live-connected payment system:
+none of them passes data, balances or decisions to another.
+
+| # | Demonstration | What is real | What it is not |
+|---|---|---|---|
+| 1 | **Incident Room** (`/overview`, `/incident`, …) | A synthetic $24.8M commercial build with a delayed owner draw, a projected $1.3M week-two cash gap and **$0 ready to send** | Synthetic fixtures only; no model call, no provider, no money |
+| 2 | **Evidence Analysis Agent** (`/agent`) | **Genuine Claude Opus 5.5 inference** with read-only tools over synthetic evidence; an 11-proof deterministic gate decides HOLD or ELIGIBLE FOR HUMAN REVIEW | The model has no financial authority and cannot create, approve or submit a payment |
+| 3 | **Integrated mock payment controls** (`apps/web/integrated/`, `/sandbox/flow/action`) | A real HTTP backend: server-built proposal, gate binding, passphrase-confirmed human approval, one guarded submission to a **mock provider**, submission history, read-back and audit trail; beneficiary-swap and restart-replay attempts are refused | Mock provider only; the `/sandbox/flow` pages are illustrative previews, not wired to live flow state; a prototype, not a production payment system |
+| 4 | **Airwallex sandbox** (`/sandbox`) | One human-approved **5.00 USD Airwallex sandbox transfer** made on 2026-11-15 through the real sandbox API: balance read, reserve policy, validate (HTTP 200), create (HTTP 201, `SCHEDULED`), status read `PROCESSING` | Sandbox test funds only; **not reported as paid or settled**; not initiated by the integrated mock flow |
+
+Details: §1 below, `docs/EVIDENCE_AGENT.md`, `docs/integrated/INTEGRATED_MOCK_BACKEND.md` and
+`docs/evidence/airwallex_sandbox_transfer_2026-11-15_sanitized.md`.
+
 This repository is a curated hackathon submission. It contains three **separate** components, plus one integration
 screen added on 2026-11-15:
 
@@ -66,6 +81,13 @@ Demo video: [Watch the DRAWBRIDGE Demo (4:12)](https://drive.google.com/file/d/1
   delayed; no gap when it arrives on time). The screens show which commitments are stopped and why, which payables are
   eligible or excluded, the approval dependencies, bounded agent findings, and a hash-chained evidence trail (Recorder).
   "Ready to send" is $0.00 in both cases and every release control is disabled by design.
+- **Evidence Analysis Agent.** Genuine Claude Opus 5.5 inference over synthetic evidence with up to two read-only tools.
+  The model recommends; an 11-proof deterministic gate over a trusted synthetic registry decides eligibility for human
+  review; a person approves. See "Runtime AI" above.
+- **Integrated mock payment controls (prototype).** One synthetic obligation through evidence, the gate, a
+  passphrase-confirmed human approval and at most one submission to a mock provider, with a submission history that
+  refuses a second create after a database rollback and restart. Known residual risks R-1, R-2 and R-3 (full local-state
+  restoration) and the scanner's limits are listed in `docs/integrated/INTEGRATED_MOCK_BACKEND.md`.
 - **Airwallex provider.** A permission boundary in code: the client refuses production hosts, any method or path outside
   its allowlist, and any credential file other than an owner-only `.env.read`, all before any network access.
 - **Funding ledger.** An append-only double-entry ledger in PostgreSQL (allocation events, journal headers and legs,
@@ -221,6 +243,8 @@ See `docs/KNOWN_LIMITATIONS.md` for the full list. In short:
 ## 8. Demo video
 
 [Watch the DRAWBRIDGE Demo (4:12)](https://drive.google.com/file/d/1AbEwaq3Op9TUT1PVn7-exSrqh524vsEf/view?usp=drive_link)
+
+Updated walkthrough covering all four demonstrations (4:31): NEW_VIDEO_LINK_PLACEHOLDER
 
 ## Repository contents and provenance
 
