@@ -152,7 +152,7 @@ test("A5-06 envelope fields are validated: flow id, type, actor, states, version
     ["EVENT_KEYS", { hash: DIGEST }], // a caller cannot supply chain fields
   ];
   for (const [want, change] of cases) assert.equal(auditInputProblem({ ...good, ...change }), want, JSON.stringify(change));
-  for (const actor of ["server", "system:recovery", "human:operator", "human:Jordan W."]) assert.equal(auditInputProblem({ ...good, actor }), null, actor);
+  for (const actor of ["server", "system:recovery", "human:operator", "human:Test Operator B."]) assert.equal(auditInputProblem({ ...good, actor }), null, actor);
   assert.equal(auditInputProblem(null), "EVENT_NOT_OBJECT");
   // a string CANON-1 refuses fails closed with the contract's own error
   assert.equal(refusal(() => auditPort.append(openDb(), { ...good, data: { note: "é" } })), "CANON_STRING_NOT_NFC");
